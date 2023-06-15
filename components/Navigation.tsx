@@ -1,10 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
 import Link from 'next/link'
+import {
+   Popover,
+   PopoverContent,
+   PopoverTrigger,
+} from "@/components/Popover"
 
 export default function Navigation() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,7 +22,7 @@ export default function Navigation() {
                         <div>Boland Co.</div>
                      </Link>
                      <nav
-                        className={classNames("flex-col flex-grow lg:py-0 md:flex lg:items-end justify-center", mobileMenuOpen ? 'flex' : 'hidden')}
+                        className="flex-col flex-grow lg:py-0 lg:items-end justify-center hidden md:flex"
                      >
                         <ul className="space-y-2 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left">
                            <li>
@@ -58,29 +61,73 @@ export default function Navigation() {
                            </li>
                         </ul>
                      </nav>
-                     <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="inline-flex justify-center p-0 text-slate-400 hover:text-blue-300 focus:outline-none focus:text-white md:hidden"
-                     >
-                        <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                           <path
-                              className={classNames(mobileMenuOpen ? 'hidden' : 'inline-flex')}
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16"
+                     <Popover onOpenChange={(e: boolean) => setMobileMenuOpen(e)}>
+                        <PopoverTrigger className='flex justify-center'>
+                           <div
+                              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                              className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-white md:hidden"
                            >
-                           </path>
-                           <path
-                              className={classNames(mobileMenuOpen ? 'inline-flex' : 'hidden')}
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M6 18L18 6M6 6l12 12"
-                           >
-                           </path>
-                        </svg>
-                     </button>
+                              <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                 <path
+                                    className={classNames(mobileMenuOpen ? 'hidden' : 'inline-flex')}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                 >
+                                 </path>
+                                 <path
+                                    className={classNames(mobileMenuOpen ? 'inline-flex' : 'hidden')}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                 >
+                                 </path>
+                              </svg>
+                           </div>
+                        </PopoverTrigger>
+                        <PopoverContent className='bg-dark-bg/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
+                           <div>
+                              <ul className="space-y-4 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left my-4">
+                                 <li>
+                                    <a href="#process" className="text-sm text-slate-400 hover:text-blue-300">
+                                       Process
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#benefits" className="text-sm text-slate-400 hover:text-blue-300 hover:border-blue-500">
+                                       Benefits
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#pricing" className="text-sm text-slate-400 hover:text-blue-300">
+                                       Pricing
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="/faq" className="text-sm text-slate-400 hover:text-blue-300">
+                                       FAQ
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="/submit" className="text-sm text-slate-400 hover:text-blue-300">
+                                       Contact
+                                    </a>
+                                 </li>
+                                 <li className='text-white hover:text-blue-300 pt-4'>
+                                    <Link
+                                       href="#"
+                                       target="_blank"
+                                       className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/20"
+                                    >
+                                       Login
+                                    </Link>
+                                 </li>
+                              </ul>
+                           </div>
+                        </PopoverContent>
+                     </Popover>
                   </div>
                </div>
             </div>
