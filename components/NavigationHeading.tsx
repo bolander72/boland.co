@@ -27,7 +27,7 @@ export default function NavigationHeading() {
                </Link>
             </div>
             <div className='text-xs pt-6 text-white text-center'>
-               <span>Code you'll enjoy, guaranteed.</span>
+               <span>Code you&apos;ll enjoy, guaranteed.</span>
             </div>
          </div>
       </div>
