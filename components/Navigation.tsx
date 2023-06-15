@@ -64,27 +64,20 @@ export default function Navigation() {
                      <Popover onOpenChange={(e: boolean) => setMobileMenuOpen(e)}>
                         <PopoverTrigger className='flex justify-center'>
                            <div
-                              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                               className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-white md:hidden"
                            >
-                              <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                 <path
-                                    className={classNames(mobileMenuOpen ? 'hidden' : 'inline-flex')}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                 >
-                                 </path>
-                                 <path
-                                    className={classNames(mobileMenuOpen ? 'inline-flex' : 'hidden')}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                 >
-                                 </path>
-                              </svg>
+                              <button className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
+                                 <span
+                                    aria-hidden="true"
+                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? 'rotate-45' : '-translate-y-1.5')}
+                                 />
+                                 <span
+                                    aria-hidden="true"
+                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen && 'opacity-0')} />
+                                 <span
+                                    aria-hidden="true"
+                                       className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? "-rotate-45" : "translate-y-1.5")} />
+                              </button>
                            </div>
                         </PopoverTrigger>
                         <PopoverContent className='bg-dark-bg/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
