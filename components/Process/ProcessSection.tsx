@@ -1,4 +1,5 @@
 import { ArrowPathIcon, UsersIcon, RectangleGroupIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const features = [
    {
@@ -7,7 +8,7 @@ const features = [
       description: (
          <ul>
             <li>- Subscribe to a plan</li>
-            <li>- Join us at HelloIvy</li>
+            <li>- Join us at <Link href="https://helloivy.co" target="_blank" className="underline">Hello Ivy</Link></li>
          </ul>
       ),
       icon: UsersIcon,
@@ -38,7 +39,7 @@ const features = [
 
 export default function ProcessSection() {
    return (
-      <div id="process" className='space-y-2 px-12 my-24'>
+      <div id="process" className='space-y-2 px-6 my-24'>
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-lightBlack font-bold'>A new twist</h1>
@@ -49,10 +50,10 @@ export default function ProcessSection() {
          </div>
 
          <div className='tracking-normal text-center'>
-            <div className='pt-16 text-lg sm:text-2xl text-lightBlack'>
-               The days of misaligned incentives are over.
+            <div className='pt-10 text-lg sm:text-2xl text-lightBlack'>
+               No more misaligned incentives.
             </div>
-            <div className='pt-0 text-lg sm:text-2xl text-lightBlack'>Goodbye wasted time, hello sanity.</div>
+            <div className='text-lg sm:text-2xl text-lightBlack'>Goodbye wasted time, hello sanity.</div>
          </div>
 
          <div className="pt-20 sm:mt-20 lg:mt-24">

@@ -20,9 +20,10 @@ export default function HeroSection() {
    ]
 
    const word: string = words[Math.floor(Math.random() * words.length)]
+   // TODO: still not working
 
    return (
-      <div className='space-y-2 px-12 mt-16'>
+      <div className='space-y-2 mt-16'>
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
                <h1 className='text-5xl sm:text-6xl md:text-7xl text-easyWhite font-bold'>A web studio</h1>
