@@ -57,7 +57,7 @@ export default function ProcessSection() {
          </div>
 
          <div className="pt-20 sm:mt-20 lg:mt-24">
-            <dl className="flex flex-col space-y-16 md:space-y-0 md:flex-row justify-around md:space-x-12">
+            <dl className="flex flex-col space-y-16 md:space-y-0 md:flex-row justify-around">
                {features.map((feature) => (
                   <div key={feature.id} className="flex flex-col items-center md:items-baseline">
                      <dt className="flex justify-center text-base font-semibold leading-7 text-lightBlack">

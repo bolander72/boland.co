@@ -18,7 +18,7 @@ export default function Navigation() {
             <div className="w-full mx-auto">
                <div className="relative flex flex-col w-full p-5 mx-auto bg-darkGray/70 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl lg:px-8">
                   <div className="flex flex-row items-center justify-between lg:justify-start">
-                     <Link href="/" className="text-lg font-bold tracking-tighter text-white transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
+                     <Link href="/" className="text-lg font-bold tracking-tighter text-easyWhite transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
                         <div>Boland Co.</div>
                      </Link>
                      <nav
@@ -50,11 +50,11 @@ export default function Navigation() {
                                  Contact
                               </a>
                            </li>
-                           <li className='text-white hover:text-blue-300'>
+                           <li className='text-easyWhite hover:text-blue-300'>
                               <Link
                                  href="#"
                                  target="_blank"
-                                 className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/20"
+                                 className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
                               >
                                  Login
                               </Link>
@@ -64,7 +64,7 @@ export default function Navigation() {
                      <Popover onOpenChange={(e: boolean) => setMobileMenuOpen(e)}>
                         <PopoverTrigger className='flex justify-center'>
                            <div
-                              className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-white md:hidden"
+                              className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-easyWhite md:hidden"
                            >
                               <div className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
                                  <span
@@ -108,11 +108,11 @@ export default function Navigation() {
                                        Contact
                                     </a>
                                  </li>
-                                 <li className='text-white hover:text-blue-300 pt-4'>
+                                 <li className='text-easyWhite hover:text-blue-300 pt-4'>
                                     <Link
                                        href="#"
                                        target="_blank"
-                                       className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/20"
+                                       className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
                                     >
                                        Login
                                     </Link>
