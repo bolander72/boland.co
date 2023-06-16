@@ -16,7 +16,7 @@ export default function Navigation() {
       <div className="fixed top-5 inset-x-0 z-50 aos-init aos-animate" data-aos="fade-down" data-aos-duration="1500">
          <div className="lg:max-w-4xl mx-auto px-8">
             <div className="w-full mx-auto">
-               <div className="relative flex flex-col w-full p-5 mx-auto bg-dark-bg/70 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl lg:px-8">
+               <div className="relative flex flex-col w-full p-5 mx-auto bg-darkGray/70 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl lg:px-8">
                   <div className="flex flex-row items-center justify-between lg:justify-start">
                      <Link href="/" className="text-lg font-bold tracking-tighter text-white transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
                         <div>Boland Co.</div>
@@ -80,7 +80,7 @@ export default function Navigation() {
                               </button>
                            </div>
                         </PopoverTrigger>
-                        <PopoverContent className='bg-dark-bg/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
+                        <PopoverContent className='bg-darkGray/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
                            <div>
                               <ul className="space-y-4 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left my-4">
                                  <li>
