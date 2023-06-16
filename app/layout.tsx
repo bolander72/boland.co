@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/Navigation/Navigation'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import classNames from 'classnames'

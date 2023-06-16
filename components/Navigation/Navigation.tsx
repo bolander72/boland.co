@@ -7,7 +7,7 @@ import {
    Popover,
    PopoverContent,
    PopoverTrigger,
-} from "@/components/Popover"
+} from "@/components/Navigation/Popover"
 
 export default function Navigation() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -66,7 +66,7 @@ export default function Navigation() {
                            <div
                               className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-white md:hidden"
                            >
-                              <button className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
+                              <div className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
                                  <span
                                     aria-hidden="true"
                                     className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? 'rotate-45' : '-translate-y-1.5')}
@@ -77,7 +77,7 @@ export default function Navigation() {
                                  <span
                                     aria-hidden="true"
                                        className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? "-rotate-45" : "translate-y-1.5")} />
-                              </button>
+                              </div>
                            </div>
                         </PopoverTrigger>
                         <PopoverContent className='bg-darkGray/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
