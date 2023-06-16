@@ -56,7 +56,7 @@ export default function NavigationHeading() {
             </Link>
          </div> */}
          <div className='text-sm pt-6 text-white text-center'>
-            <span>Code you&apos;ll enjoy, guaranteed.</span>
+            <span>Happy results, guaranteed.</span>
          </div>
          <section aria-labelledby="logocloud-one" className="mt-12 text-center overflow-hidden">
             <div className="relative items-center">

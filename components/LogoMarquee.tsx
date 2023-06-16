@@ -16,11 +16,11 @@ const LogoMarquee = () => {
    ];
 
    return (
-      <div className="relative flex w-screen bg-white py-16 border border-double border-darkGray">
+      <div className="relative flex w-screen bg-white/95 py-9 border border-double border-darkGray">
          <Marquee speed={60} className="flex items-center">
             {logos.map((logo) => (
                <div className="mx-8" key={logo}>
-                  <img src={logo} alt="hy-vee" className='max-w-24 h-12' />
+                  <img src={logo} alt="hy-vee" className='max-w-24 h-10' />
                </div>
             ))}
          </Marquee>
