@@ -1,26 +1,34 @@
+'use client'
+
+import { useEffect, useState } from "react";
 import LogoMarquee from "./LogoMarquee";
 
-export default function HeroSection() {
-   const words = [
-      '(d)app',
-      'campaign',
-      'concept',
-      'creation',
-      'demo',
-      'event',
-      'feature',
-      'idea',
-      'iteration',
-      'product',
-      'project',
-      'raise',
-      'startup',
-      'venture',
-      'website'
-   ]
+const words = [
+   '(d)app',
+   'campaign',
+   'demo',
+   'event',
+   'feature',
+   'iteration',
+   'product',
+   'project',
+   'raise',
+   'startup',
+   'venture',
+   'website'
+]
 
-   const word: string = words[Math.floor(Math.random() * words.length)]
-   // TODO: still not working
+export default function HeroSection() {
+
+   const [word, setWord] = useState('project');
+
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setWord(words[Math.floor(Math.random() * words.length)]);
+      }, 15000);
+
+      return () => clearInterval(interval);
+   }, [word])
 
    return (
       <div className='space-y-2 mt-16'>
@@ -30,7 +38,7 @@ export default function HeroSection() {
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyWhite font-bold'>for your next
                   <div className='mt-1'>
                      <span className='bg-gradient-to-r bg-clip-text bg-300% text-transparent from-blue-400 to-orange-500 via-purple-500 animate-gradient-x'>
-                        {word}
+                        <span className="animate-in fade-in-10 direction-normal duration-300">{word}</span>
                      </span>.
                   </div>
                </h1>
