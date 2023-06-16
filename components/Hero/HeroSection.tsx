@@ -28,8 +28,8 @@ export default function HeroSection() {
       <div className='space-y-2'>
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
-               <h1 className='text-6xl sm:text-7xl text-white font-bold'>A web studio</h1>
-               <h1 className='text-5xl sm:text-6xl text-white font-bold'>for your next
+               <h1 className='text-5xl sm:text-6xl md:text-7xl text-white font-bold'>A web studio</h1>
+               <h1 className='text-4xl sm:text-5xl md:text-6xl text-white font-bold'>for your next
                   <div className='mt-1'>
                      <span className='bg-gradient-to-r bg-clip-text bg-300% text-transparent from-blue-400 to-orange-500 via-purple-500 animate-gradient-x'>
                         {word}
