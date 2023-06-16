@@ -16,7 +16,7 @@ const LogoMarquee = () => {
    ];
 
    return (
-      <div className="relative flex w-screen bg-[#111111] py-6 sm:py-8 border-y border-t-easyWhite border-b-[#BE9C6F]">
+      <div className="relative flex w-screen bg-[#111111] py-6 sm:py-8 border-t border-t-easyWhite">
          <Marquee autoFill speed={60} className="flex items-center">
             {logos.map((logo) => (
                <div className="mx-6" key={logo}>
