@@ -69,14 +69,14 @@ export default function Navigation() {
                               <div className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
                                  <span
                                     aria-hidden="true"
-                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? 'rotate-45' : '-translate-y-1.5')}
+                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out", mobileMenuOpen ? 'rotate-45' : '-translate-y-1.5')}
                                  />
                                  <span
                                     aria-hidden="true"
-                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen && 'opacity-0')} />
+                                    className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out", mobileMenuOpen && 'opacity-0')} />
                                  <span
                                     aria-hidden="true"
-                                       className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out", mobileMenuOpen ? "-rotate-45" : "translate-y-1.5")} />
+                                       className={classNames("block absolute h-0.5 w-5 bg-current transform transition duration-200 ease-in-out", mobileMenuOpen ? "-rotate-45" : "translate-y-1.5")} />
                               </div>
                            </div>
                         </PopoverTrigger>
