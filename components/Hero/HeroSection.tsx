@@ -1,35 +1,21 @@
-'use client'
-
-import { useEffect, useState } from "react";
 import LogoMarquee from "./LogoMarquee";
+import TextEffect from "../TextEffect";
 
 const words = [
    '(d)app',
    'campaign',
    'demo',
+   'design',
    'event',
    'feature',
-   'iteration',
    'product',
    'project',
    'raise',
-   'startup',
-   'venture',
+   'version',
    'website'
 ]
 
 export default function HeroSection() {
-
-   const [word, setWord] = useState('project');
-
-   useEffect(() => {
-      const interval = setInterval(() => {
-         setWord(words[Math.floor(Math.random() * words.length)]);
-      }, 15000);
-
-      return () => clearInterval(interval);
-   }, [word])
-
    return (
       <div className='space-y-2 mt-16'>
          <div className='flex flex-col items-center'>
@@ -38,7 +24,7 @@ export default function HeroSection() {
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyWhite font-bold'>for your next
                   <div className='mt-1'>
                      <span className='bg-gradient-to-r bg-clip-text bg-300% text-transparent from-blue-400 to-orange-500 via-purple-500 animate-gradient-x'>
-                        <span className="animate-in fade-in-10 direction-normal duration-300">{word}</span>
+                        {words[Math.floor(Math.random() * words.length)]}
                      </span>.
                   </div>
                </h1>
@@ -55,23 +41,11 @@ export default function HeroSection() {
             <div className='pt-0 text-md sm:text-xl text-blue-300'>Perfect for fixed timelines and budgets</div>
          </div>
 
-         {/* <div className='pt-10 text-center'>
-            <Link
-               href="#pricing"
-               type="button"
-               className="rounded-lg bg-[#A6A999] px-10 md:px-20 py-2.5 md:py-5 text-sm: md:first-line:text-lg font-semibold text-darkGray shadow-xl shadow-black/50 hover:shadow-none focus-visible:outline cursor-pointer border-8 border-darkGray border-double"
-            >
-               See Plans
-            </Link>
-         </div> */}
          <div className='text-sm pt-6 text-easyWhite text-center'>
-            <span>Happy results, <span className="italic">guaranteed</span>.</span>
+            <span>Better results, <span className="italic">guaranteed</span>.</span>
          </div>
          <section aria-labelledby="logocloud-one" className="mt-12 text-center overflow-hidden">
             <div className="relative items-center">
-               {/* <p className="text-base text-blue-300">
-                  Products trusted by companies big and small -
-               </p> */}
                <div className="mt-20 lg:mt-28 overflow-x-hidden">
                   <LogoMarquee />
                </div>

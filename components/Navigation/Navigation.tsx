@@ -9,6 +9,27 @@ import {
    PopoverTrigger,
 } from "@/components/Navigation/Popover"
 
+function AnimatedLink ({ href, title }: { href: string, title: string }) {
+   return (
+      <a
+         href={href}
+         className="px-2 lg:px-6 my-10 md:px-3 text-sm text-easyWhite/95 hover:text-blue-300 group relative antialiased focus:outline-none"
+      >
+         <span
+            className="inline-block opacity-0 group-hover:mr-2.5 transition-all duration-300 transform translate-x-5 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"
+         >
+            [
+         </span>
+         {title}
+         <span
+            className="inline-block opacity-0 group-hover:ml-2.5 transition-all duration-300 transform -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"
+         >
+            ]
+         </span>
+      </a>
+   )
+}
+
 export default function Navigation() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -26,29 +47,19 @@ export default function Navigation() {
                      >
                         <ul className="space-y-2 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left">
                            <li>
-                              <a href="#process" className="px-2 lg:px-6 py-10 md:px-3 text-sm text-slate-400 hover:text-blue-300">
-                                 Process
-                              </a>
+                             <AnimatedLink href="/#process" title="Process" />
                            </li>
                            <li>
-                              <a href="#benefits" className="px-2 lg:px-6 py-10 md:px-3 text-sm text-slate-400 hover:text-blue-300 hover:border-blue-500">
-                                 Benefits
-                              </a>
+                              <AnimatedLink href="/#benefits" title="Benefits" />
                            </li>
                            <li>
-                              <a href="#pricing" className="px-2 lg:px-6 py-10 md:px-3 text-sm text-slate-400 hover:text-blue-300">
-                                 Pricing
-                              </a>
+                              <AnimatedLink href="/#pricing" title="Pricing" />
                            </li>
                            <li>
-                              <a href="/faq" className="px-2 lg:px-6 py-10 md:px-3 text-sm text-slate-400 hover:text-blue-300">
-                                 FAQ
-                              </a>
+                              <AnimatedLink href="/#faqs" title="FAQs" />
                            </li>
                            <li>
-                              <a href="/submit" className="px-2 lg:px-6 py-10 md:px-3 text-sm text-slate-400 hover:text-blue-300">
-                                 Contact
-                              </a>
+                              <AnimatedLink href="/#contact" title="Contact" />
                            </li>
                            <li className='text-easyWhite hover:text-blue-300'>
                               <Link
@@ -64,7 +75,7 @@ export default function Navigation() {
                      <Popover onOpenChange={(e: boolean) => setMobileMenuOpen(e)}>
                         <PopoverTrigger className='flex justify-center'>
                            <div
-                              className="inline-flex justify-center text-slate-400 hover:text-blue-300 focus:outline-none focus:text-easyWhite md:hidden"
+                              className="inline-flex justify-center text-easyWhite/95 hover:text-blue-300 focus:outline-none focus:text-easyWhite md:hidden"
                            >
                               <div className="flex  cursor-pointer w-10 h-10 relative justify-center items-center" >
                                  <span
@@ -84,29 +95,19 @@ export default function Navigation() {
                            <div>
                               <ul className="space-y-4 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left my-4">
                                  <li>
-                                    <a href="#process" className="text-sm text-slate-400 hover:text-blue-300">
-                                       Process
-                                    </a>
+                                    <AnimatedLink href="/#process" title="Process" />
                                  </li>
                                  <li>
-                                    <a href="#benefits" className="text-sm text-slate-400 hover:text-blue-300 hover:border-blue-500">
-                                       Benefits
-                                    </a>
+                                    <AnimatedLink href="/#benefits" title="Benefits" />
                                  </li>
                                  <li>
-                                    <a href="#pricing" className="text-sm text-slate-400 hover:text-blue-300">
-                                       Pricing
-                                    </a>
+                                    <AnimatedLink href="/#pricing" title="Pricing" />
                                  </li>
                                  <li>
-                                    <a href="/faq" className="text-sm text-slate-400 hover:text-blue-300">
-                                       FAQ
-                                    </a>
+                                    <AnimatedLink href="/#faqs" title="FAQs" />
                                  </li>
                                  <li>
-                                    <a href="/submit" className="text-sm text-slate-400 hover:text-blue-300">
-                                       Contact
-                                    </a>
+                                    <AnimatedLink href="/#contact" title="Contact" />
                                  </li>
                                  <li className='text-easyWhite hover:text-blue-300 pt-4'>
                                     <Link

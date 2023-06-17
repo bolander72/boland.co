@@ -14,9 +14,20 @@ module.exports = {
       },
       colors: {
         easyWhite: '#FFFDFA',
+        easyBlack: '#111111',
+
+        lightGray: '#44515E',
         darkGray: '#1C1B22',
-        lightBlack: '#111111',
-        paleGreen: '#A6A999'
+
+        lightGreen: '#B4B296',
+        paleGreen: '#A6A999',
+        neonGreen: '#208320',
+
+        paleYellow: '#D9BE7F',
+        creamsicle: '#BE9C6F',
+
+        salmon: '#987779',
+        palePurple: '#46404B'
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',
@@ -24,6 +35,7 @@ module.exports = {
         'gradient-xy': 'gradient-xy 15s ease infinite',
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
+        slowBounce: 'bounce 2s ease infinite'
       },
       keyframes: {
         'gradient-y': {

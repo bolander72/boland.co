@@ -1,77 +1,84 @@
-import { ArrowPathIcon, UsersIcon, RectangleGroupIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, UsersIcon, RectangleGroupIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import ProcessStep from './ProcessStep'
 
-const features = [
+const steps = [
    {
-      name: 'Intro',
-      id: 1,
+      name: 'Subscribe',
       description: (
-         <ul>
-            <li>- Subscribe to a plan</li>
-            <li>- Join us at <Link href="https://helloivy.co" target="_blank" className="underline">Hello Ivy</Link></li>
-         </ul>
+         <div className='ml-3'>
+            Select a plan in the pricing section. You&apos;ll then be directed to Stripe to confirm and pay. Once completed, you&apos;ll be dropped back onto an onboarding page here.
+         </div>
       ),
-      icon: UsersIcon,
+      step: 1,
    },
    {
-      name: 'Organize',
-      id: 2,
+      name: 'Onboard',
       description: (
-         <ul>
-            <li>- Request work items</li>
-            <li>- Track task progress</li>
-         </ul>
+         <div className='ml-3'>
+            Browse the onboarding page. You&apos;ll find a welcome message and helpful links. Simultaneously, you should receive an automated email with a Trello board invite.
+         </div>
       ),
-      icon: RectangleGroupIcon,
+      step: 2
    },
    {
-      name: 'Sync',
-      id: 3,
+      name: 'Manage',
       description: (
-         <ul>
-            <li>- Share feedback</li>
-            <li>- Revise as needed</li>
-         </ul>
+         <div className='ml-3'>
+            Accept the invite and start adding tasks to your board. Invite your team, add requirements and assets, and track the progress of work items from their respective status columns.
+         </div>
       ),
-      icon: ArrowPathIcon,
+      step: 3,
+   },
+   {
+      name: 'Review',
+      description: (
+         <div className='ml-3'>
+            Once a task is completed, it will move to the review column. You can then review the work and request changes if necessary. Once you&apos;re satisfied, you can mark the task as delivered.
+         </div>
+      ),
+      step: 4,
+   },
+   {
+      name: 'Scale',
+      description: (
+         <div className='ml-3'>
+            Scale up or down as needed, and pause or cancel at anytime. Click the login button to access your Stripe account and manage your subscription. You can also view your invoices there.
+         </div>
+      ),
+      step: 5,
    },
 ]
 
 export default function ProcessSection() {
    return (
       <div id="process" className='space-y-2 px-6 my-24'>
+
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-lightBlack font-bold'>A new twist</h1>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-lightBlack font-bold'>
-                  on an old recipe.
+               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
+               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>
+                  to the process.
                </h1>
             </div>
          </div>
 
          <div className='tracking-normal text-center'>
-            <div className='pt-10 text-lg sm:text-2xl text-lightBlack'>
-               No more misaligned incentives.
+            <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
+               No more misaligned incentives -
             </div>
-            <div className='text-lg sm:text-2xl text-lightBlack'>Goodbye wasted time, hello sanity.</div>
+            <div className='text-lg sm:text-2xl text-easyBlack'>goodbye wasted time, hello sanity.</div>
          </div>
 
-         <div className="pt-20 sm:mt-20 lg:mt-24">
-            <dl className="flex flex-col space-y-16 md:space-y-0 md:flex-row justify-around">
-               {features.map((feature) => (
-                  <div key={feature.id} className="flex flex-col items-center md:items-baseline">
-                     <dt className="flex justify-center text-base font-semibold leading-7 text-lightBlack">
-                        <div className="mb-6 mr-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-300">
-                           <feature.icon className="h-6 w-6 text-lightBlack" aria-hidden="true" />
-                        </div>
-                        {feature.name}
-                     </dt>
-                     <dd className="mt-1 flex flex-auto flex-col text-lg leading-7 text-lightBlack">
-                        <div className="flex-auto">{feature.description}</div>
-                     </dd>
-                  </div>
-               ))}
-            </dl>
+         <div className='lg:flex lg:flex-col lg:items-center'>
+            <div className="max-w-7xl px-6 lg:px-8 py-20">
+               <div className="mx-auto max-w-2xl lg:mx-0 space-y-12">
+                  {steps.map((item) => (
+                     <ProcessStep key={item.name} {...item} />
+                  ))}
+            </div>
+         </div>
+
          </div>
       </div>
    )
