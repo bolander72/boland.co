@@ -29,7 +29,7 @@ export default function ProcessStep({ name, description, step }: Props) {
             <span className='text-2xl'>{name}</span>
 
             <div
-               className="h-px bg-easyBlack/10 mx-8 w-screen translate-x-0"
+               className="h-px bg-easyBlack/10 mx-8 w-full translate-x-0"
                aria-hidden="true"
             />
             <div>

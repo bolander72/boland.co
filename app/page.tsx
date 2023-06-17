@@ -9,12 +9,19 @@ export default function Home() {
       <div className='bg-darkGray'>
         <HeroSection />
       </div>
-      <div className='bg-gradient-to-b from-easyWhite via-easyWhite to-emerald-50 w-screen border-b'>
-        <MethodSection />
-        <Divider strokeClass='stroke-emerald-900/10' />
+      <div
+        className='bg-gradient-to-b from-easyWhite from-10% via-easyWhite via-80% to-emerald-50 to-90% flex flex-col justify-center items-center w-screen'
+      >
+        <div className="max-w-3xl">
+          <MethodSection />
+        </div>
+        <Divider strokeClass='stroke-emerald-900/10' id='process' />
       </div>
-      <div className='bg-gradient-to-b from-emerald-50 via-emerald-50 to-blue-100 w-screen'>
-        <ProcessSection />
+      <div
+        className='bg-gradient-to-b from-emerald-50 from-10% via-easyWhite via-20% to-easyWhite to-90%  flex flex-col justify-center items-center w-screen'>
+        <div className="max-w-3xl">
+          <ProcessSection />
+        </div>
         <Divider strokeClass='stroke-blue-900/10' />
       </div>
     </main>

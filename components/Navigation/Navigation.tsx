@@ -9,11 +9,34 @@ import {
    PopoverTrigger,
 } from "@/components/Navigation/Popover"
 
+const links = [
+   {
+      title: 'Method',
+      href: '#method'
+   },
+   {
+      title: 'Process',
+      href: '#process'
+   },
+   {
+      title: 'Benefits',
+      href: '#benefits'
+   },
+   {
+      title: 'Pricing',
+      href: '#pricing'
+   },
+   {
+      title: 'FAQs',
+      href: '#faqs'
+   },
+]
+
 function AnimatedLink ({ href, title }: { href: string, title: string }) {
    return (
       <a
          href={href}
-         className="px-2 lg:px-6 my-10 md:px-3 text-sm text-easyWhite/95 hover:text-blue-300 group relative antialiased focus:outline-none"
+         className="px-2 my-10 md:px-3 text-sm text-easyWhite/95 hover:text-blue-300 group relative antialiased focus:outline-none"
       >
          <span
             className="inline-block opacity-0 group-hover:mr-2.5 transition-all duration-300 transform translate-x-5 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"
@@ -39,29 +62,19 @@ export default function Navigation() {
             <div className="w-full mx-auto">
                <div className="relative flex flex-col w-full p-5 mx-auto bg-darkGray/70 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl lg:px-8">
                   <div className="flex flex-row items-center justify-between lg:justify-start">
-                     <Link href="/" className="text-lg font-bold tracking-tighter text-easyWhite transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
+                     <Link href="/" className="text-lg font-bold text-easyWhite transition duration-500 ease-in-out transform tracking-wide lg:pr-8">
                         <div>Boland Co.</div>
                      </Link>
                      <nav
                         className="flex-col flex-grow lg:py-0 lg:items-end justify-center hidden md:flex"
                      >
                         <ul className="space-y-2 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left">
-                           <li>
-                             <AnimatedLink href="/#process" title="Process" />
-                           </li>
-                           <li>
-                              <AnimatedLink href="/#benefits" title="Benefits" />
-                           </li>
-                           <li>
-                              <AnimatedLink href="/#pricing" title="Pricing" />
-                           </li>
-                           <li>
-                              <AnimatedLink href="/#faqs" title="FAQs" />
-                           </li>
-                           <li>
-                              <AnimatedLink href="/#contact" title="Contact" />
-                           </li>
-                           <li className='text-easyWhite hover:text-blue-300'>
+                           {links.map(({ href, title }) => (
+                              <li key={title}>
+                                 <AnimatedLink href={href} title={title} />
+                              </li>
+                           ))}
+                           <li className='text-easyWhite hover:text-blue-300 ml-5'>
                               <Link
                                  href="#"
                                  target="_blank"
@@ -94,21 +107,11 @@ export default function Navigation() {
                         <PopoverContent className='bg-darkGray/70 opacity-100 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl mt-8 md:hidden'>
                            <div>
                               <ul className="space-y-4 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left my-4">
-                                 <li>
-                                    <AnimatedLink href="/#process" title="Process" />
-                                 </li>
-                                 <li>
-                                    <AnimatedLink href="/#benefits" title="Benefits" />
-                                 </li>
-                                 <li>
-                                    <AnimatedLink href="/#pricing" title="Pricing" />
-                                 </li>
-                                 <li>
-                                    <AnimatedLink href="/#faqs" title="FAQs" />
-                                 </li>
-                                 <li>
-                                    <AnimatedLink href="/#contact" title="Contact" />
-                                 </li>
+                                 {links.map(({ href, title }) => (
+                                    <li key={title}>
+                                       <AnimatedLink href={href} title={title} />
+                                    </li>
+                                 ))}
                                  <li className='text-easyWhite hover:text-blue-300 pt-4'>
                                     <Link
                                        href="#"

@@ -1,10 +1,11 @@
 interface Props {
    strokeClass?: string
+   id?: string
 }
 
-export default function Divider({ strokeClass = 'stroke-black/10' }: Props) {
+export default function Divider({ strokeClass = 'stroke-black/10', id = '' }: Props) {
    return (
-      <svg className="h-20 w-screen" aria-hidden="true">
+      <svg className="h-20 w-screen" aria-hidden="true" id={id}>
          <defs>
             <pattern id=":R1t6:" width="6" height="8" patternUnits="userSpaceOnUse">
                <path d="M0 0H6M0 8H6" className={strokeClass} fill="none">

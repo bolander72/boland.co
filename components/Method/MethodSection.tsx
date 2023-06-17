@@ -18,21 +18,29 @@ const methods = [
 
 export default function MethodSection() {
    return (
-      <div id="process" className='space-y-2 px-6 mt-24'>
+      <div className='space-y-2 px-6 mt-24'>
          <div className='flex flex-col items-center'>
-            <div className='flex-col'>
+            {/* <div className='flex-col'>
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>All the time </h1>
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>
                   it&apos;s getting better.
                </h1>
+            </div> */}
+            <div className='flex-col'>
+               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>It&apos;s better,</h1>
+               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>
+                  <span className="underline underline-offset-8 decoration-blue-300">simply</span> better
+               </h1>
             </div>
          </div>
 
-         <div className='tracking-normal text-center'>
-            <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
-               Replace unreliable and pricey -
+         <div className='flex flex-col items-center'>
+            <div className='tracking-normal text-left'>
+               <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
+                  We replace unreliable freelancers and expensive agencies with a flat monthly fee, building products you&apos;re going to love.
+               </div>
+               {/* <div className='text-lg sm:text-2xl text-easyBlack'>No more dreaded "syncs".</div> */}
             </div>
-            <div className='text-lg sm:text-2xl text-easyBlack'>leveraging some flexible methods.</div>
          </div>
          <div className="overflow-hidden py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">

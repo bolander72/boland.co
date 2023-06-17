@@ -52,7 +52,7 @@ const steps = [
 
 export default function ProcessSection() {
    return (
-      <div id="process" className='space-y-2 px-6 my-24'>
+      <div className='space-y-2 px-6 my-24'>
 
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
@@ -63,11 +63,10 @@ export default function ProcessSection() {
             </div>
          </div>
 
-         <div className='tracking-normal text-center'>
+         <div className='tracking-normal text-left'>
             <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
-               No more misaligned incentives -
+               The typical process? Bloated with misaligned incentives. We&apos;ve reduced the model to its core, and made it easy to manage.
             </div>
-            <div className='text-lg sm:text-2xl text-easyBlack'>goodbye wasted time, hello sanity.</div>
          </div>
 
          <div className='lg:flex lg:flex-col lg:items-center'>
