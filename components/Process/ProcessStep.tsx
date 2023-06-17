@@ -29,14 +29,22 @@ export default function ProcessStep({ name, description, step }: Props) {
             <span className='text-2xl'>{name}</span>
 
             <div
-               className="h-px bg-easyBlack/10 static mr-8 ml-8 w-screen translate-x-0"
+               className="h-px bg-easyBlack/10 mx-8 w-screen translate-x-0"
                aria-hidden="true"
             />
+            <div>
             {!open ? (
-               <ChevronUpIcon className="h-14 w-14 text-easyBlack block transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true" onClick={() => setOpen(true)} />
+               <ChevronUpIcon
+                  className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
+                  onClick={() => setOpen(true)}
+               />
             ) : (
-                  <ChevronDownIcon className="h-14 w-14 text-easyBlack block transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true" onClick={() => setOpen(false)} />
+               <ChevronDownIcon
+                  className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
+                  onClick={() => setOpen(false)}
+               />
             )}
+            </div>
          </div>
          <div className={classNames('ml-6 lg:ml-0', open ? 'block' : 'hidden')}>
             <div className="mt-6 text-lg leading-7 text-easyBlack">
