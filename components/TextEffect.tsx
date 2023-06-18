@@ -83,11 +83,8 @@ export default function TextEffect() {
       'demo',
       'event',
       'feature',
-      'POC',
       'product',
       'project',
-      'venture',
-      'version',
       'website'
    ]
 

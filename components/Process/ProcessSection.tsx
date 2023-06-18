@@ -1,5 +1,3 @@
-import { ArrowPathIcon, UsersIcon, RectangleGroupIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 import ProcessStep from './ProcessStep'
 
 const steps = [
@@ -56,26 +54,24 @@ export default function ProcessSection() {
 
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>
-                  to the process.
+               <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
+               <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
+                  to the process
                </h1>
             </div>
          </div>
 
          <div className='tracking-normal text-left'>
-            <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
+            <div className='pt-10 px-10 text-xl sm:text-2xl text-easyBlack'>
                The typical process? Bloated with misaligned incentives. We&apos;ve reduced the model to its core, and made it easy to manage.
             </div>
          </div>
 
-         <div className='lg:flex lg:flex-col lg:items-center'>
-            <div className="max-w-7xl px-6 lg:px-8 py-20">
-               <div className="mx-auto max-w-2xl lg:mx-0 space-y-12">
-                  {steps.map((item) => (
-                     <ProcessStep key={item.name} {...item} />
-                  ))}
-            </div>
+         <div className="py-20 ">
+            <div className="space-y-12">
+               {steps.map((item) => (
+                  <ProcessStep key={item.name} {...item} />
+               ))}
          </div>
 
          </div>

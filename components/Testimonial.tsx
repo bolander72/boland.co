@@ -6,7 +6,7 @@ interface Props {
 
 export default function Testimonial({ quote, name, title }: Props) {
    return (
-      <li className="list-item rounded-xl decoration-none bg-easyWhite">
+      <li className="rounded-xl decoration-none bg-easyWhite">
          <figure className="relative isolate rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-1000 hover:scale-[1.0125] ring-1 ring-slate-900/5">
             <svg
                viewBox="0 0 162 128"

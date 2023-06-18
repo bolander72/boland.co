@@ -27,8 +27,8 @@ export default function MethodSection() {
                </h1>
             </div> */}
             <div className='flex-col'>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>It&apos;s better,</h1>
-               <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyBlack font-bold'>
+               <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>It&apos;s better,</h1>
+               <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
                   <span className="underline underline-offset-8 decoration-blue-300">simply</span> better
                </h1>
             </div>
@@ -36,20 +36,20 @@ export default function MethodSection() {
 
          <div className='flex flex-col items-center'>
             <div className='tracking-normal text-left'>
-               <div className='pt-10 text-lg sm:text-2xl text-easyBlack'>
+               <div className='pt-10 px-10 text-wrap text-xl sm:text-2xl text-easyBlack'>
                   We replace unreliable freelancers and expensive agencies with a flat monthly fee, building products you&apos;re going to love.
                </div>
                {/* <div className='text-lg sm:text-2xl text-easyBlack'>No more dreaded "syncs".</div> */}
             </div>
          </div>
-         <div className="overflow-hidden py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+         <div className="py-24 sm:py-32">
+            <div className="">
+               <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                   <div className="lg:ml-auto lg:pl-4">
                      <div className="lg:max-w-lg">
-                        <dl className="max-w-xl space-y-12 text-base leading-7 text-easyBlack lg:max-w-none">
+                        <dl className="max-w-xl space-y-12 text-base leading-6 text-easyBlack lg:max-w-none">
                            {methods.map((item) => (
-                              <div key={item.name} className="relative pl-9">
+                              <div key={item.name} className="relative">
                                  <dt className="font-semibold text-xl block mb-3">
                                     {/* <feature.icon className="absolute left-1 top-1 h-5 w-5 text-indigo-600" aria-hidden="true" /> */}
                                     {item.name}

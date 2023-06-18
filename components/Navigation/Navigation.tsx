@@ -63,7 +63,7 @@ export default function Navigation() {
                <div className="relative flex flex-col w-full p-5 mx-auto bg-darkGray/70 border border-white/5 shadow-thick backdrop-blur-xl backdrop-filter rounded-2xl lg:px-8">
                   <div className="flex flex-row items-center justify-between lg:justify-start">
                      <Link href="/" className="text-lg font-bold text-easyWhite transition duration-500 ease-in-out transform tracking-wide lg:pr-8">
-                        <div>Boland Co.</div>
+                        <div className="hover:opacity-90">Boland Co.</div>
                      </Link>
                      <nav
                         className="flex-col flex-grow lg:py-0 lg:items-end justify-center hidden md:flex"

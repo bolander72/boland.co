@@ -5,13 +5,10 @@ const words = [
    '(d)app',
    'campaign',
    'demo',
-   'design',
    'event',
    'feature',
    'product',
    'project',
-   'raise',
-   'version',
    'website'
 ]
 
