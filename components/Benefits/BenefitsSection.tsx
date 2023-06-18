@@ -1,10 +1,37 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { TbBrandTrello } from 'react-icons/tb';
 
-import Testimonial from '../Testimonial'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { useNavigationContext } from '@/contexts/NavigationContext'
+
+const benefits = [
+   {
+      name: 'Project Board',
+      description:
+         'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+      icon: TbBrandTrello,
+   },
+   {
+      name: 'SSL certificates',
+      description:
+         'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+      icon: TbBrandTrello,
+   },
+   {
+      name: 'Simple queues',
+      description:
+         'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      icon: TbBrandTrello,
+   },
+   {
+      name: 'Advanced security',
+      description:
+         'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      icon: TbBrandTrello,
+   },
+]
 
 const methods = [
    {
@@ -22,7 +49,7 @@ const methods = [
    },
 ]
 
-export default function MethodSection() {
+export default function BenefitsSection() {
    const ref = useRef<HTMLDivElement | null>(null)
    const entry = useIntersectionObserver(ref, {})
    const isVisible = !!entry?.isIntersecting
@@ -31,10 +58,8 @@ export default function MethodSection() {
    useEffect(() => {
       if (isVisible) {
          setVisibleSection('#method')
-      } else if ((entry?.intersectionRatio && entry?.intersectionRatio  > 0)) {
-         setVisibleSection('')
       }
-   }, [entry?.intersectionRatio, isVisible, setVisibleSection])
+   }, [isVisible, setVisibleSection])
 
    return (
       <div className='space-y-2 px-6 mt-24'>
@@ -63,31 +88,20 @@ export default function MethodSection() {
          </div>
          <div className="py-24 sm:py-32">
             <div className="">
-               <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                  <div className="lg:ml-auto lg:pl-4">
-                     <div className="lg:max-w-lg">
-                        <dl className="max-w-xl space-y-12 text-base leading-6 text-easyBlack lg:max-w-none">
-                           {methods.map((item) => (
-                              <div key={item.name} className="relative">
-                                 <dt className="font-semibold text-xl block mb-3">
-                                    {/* <feature.icon className="absolute left-1 top-1 h-5 w-5 text-indigo-600" aria-hidden="true" /> */}
-                                    {item.name}
-                                 </dt>{' '}
-                                 <dd className="inline">{item.description}</dd>
+               <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                  <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                     {benefits.map((item) => (
+                        <div key={item.name} className="relative pl-16">
+                           <dt className="text-base font-semibold leading-7 text-gray-900">
+                              <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                 <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
                               </div>
-                           ))}
-                        </dl>
-                     </div>
-                  </div>
-                  <div className="flex items-start justify-end lg:order-first">
-                     <ul>
-                        <Testimonial
-                           quote="Mira’s teaching style is second to none. Everything was easy to follow every step of the way."
-                           name="John Doe"
-                           title="CEO, Acme"
-                        />
-                     </ul>
-                  </div>
+                              {item.name}
+                           </dt>
+                           <dd className="mt-2 text-base leading-7 text-gray-600">{item.description}</dd>
+                        </div>
+                     ))}
+                  </dl>
                </div>
             </div>
          </div>

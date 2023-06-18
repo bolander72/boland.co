@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircleIcon, ChevronDownIcon, ChevronUpIcon, EnvelopeOpenIcon, RectangleGroupIcon, RectangleStackIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import { TbCheckbox, TbMailOpened, TbLayout, TbLamp2, TbBoxAlignBottomLeft, TbChevronUp, TbChevronDown } from 'react-icons/tb';
 import classNames from "classnames";
 import { useState } from "react";
 
@@ -11,11 +11,11 @@ interface Props {
 }
 
 const stepIcons = {
-   1: <CheckCircleIcon className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   2: <EnvelopeOpenIcon className="h-5 w-5 text-easyBlack block" aria-hidden="true" />,
-   3: <RectangleGroupIcon className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   4: <UserGroupIcon className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   5: <RectangleStackIcon className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   1: <TbCheckbox className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   2: <TbMailOpened className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   3: <TbLayout className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   4: <TbLamp2 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   5: <TbBoxAlignBottomLeft className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
 }
 
 export default function ProcessStep({ name, description, step }: Props) {
@@ -38,12 +38,12 @@ export default function ProcessStep({ name, description, step }: Props) {
 
             <div>
                {!open ? (
-                  <ChevronUpIcon
+                  <TbChevronUp
                      className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
                      onClick={() => setOpen(true)}
                   />
                ) : (
-                  <ChevronDownIcon
+                  <TbChevronDown
                      className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
                      onClick={() => setOpen(false)}
                   />

@@ -29,7 +29,7 @@ export default function HeroSection() {
    }, [isVisible, setVisibleSection])
 
    return (
-      <div className='space-y-2 mt-16'>
+      <div className='space-y-2 h-screen pt-48'>
          <div className='flex flex-col items-center'>
             <div ref={ref} className='flex-col'>
                <h1 className='text-5xl sm:text-6xl md:text-7xl text-easyWhite font-bold'>A web studio</h1>
@@ -57,9 +57,9 @@ export default function HeroSection() {
          <div className='text-sm pt-6 text-easyWhite text-center'>
             <span>Better results, <span className="italic">guaranteed</span>.</span>
          </div>
-         <section aria-labelledby="logocloud-one" className="mt-12 text-center overflow-hidden">
-            <div className="relative items-center">
-               <div className="mt-20 lg:mt-28 overflow-x-hidden">
+         <section className="mt-12 text-center">
+            <div className="items-center absolute bottom-0 left-0">
+               <div className="mt-20 lg:mt-28">
                   <LogoMarquee />
                </div>
             </div>
