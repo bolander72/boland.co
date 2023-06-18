@@ -1,14 +1,12 @@
+'use client'
+
 import Navigation from '@/components/Navigation/Navigation'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import classNames from 'classnames'
+import { NavigationContextProvider } from '@/contexts/NavigationContext'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Boland Co - An indie web studio',
-  description: 'The subscription web studio.',
-}
 
 export default function RootLayout({
   children,
@@ -18,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={classNames(inter.className, 'bg-darkGray')}>
-        <Navigation />
-        {children}
+        <NavigationContextProvider>
+          <Navigation />
+          {children}
+        </NavigationContextProvider>
         </body>
     </html>
   )

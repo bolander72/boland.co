@@ -1,4 +1,10 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
 import Testimonial from '../Testimonial'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useNavigationContext } from '@/contexts/NavigationContext'
 
 const methods = [
    {
@@ -17,6 +23,17 @@ const methods = [
 ]
 
 export default function MethodSection() {
+   const ref = useRef<HTMLDivElement | null>(null)
+   const entry = useIntersectionObserver(ref, {})
+   const isVisible = !!entry?.isIntersecting
+   const { setVisibleSection } = useNavigationContext()
+
+   useEffect(() => {
+      if (isVisible) {
+         setVisibleSection('#method')
+      }
+   }, [isVisible, setVisibleSection])
+
    return (
       <div className='space-y-2 px-6 mt-24'>
          <div className='flex flex-col items-center'>
@@ -26,7 +43,7 @@ export default function MethodSection() {
                   it&apos;s getting better.
                </h1>
             </div> */}
-            <div className='flex-col'>
+            <div ref={ref} className='flex-col'>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>It&apos;s better,</h1>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
                   <span className="underline underline-offset-8 decoration-blue-300">simply</span> better

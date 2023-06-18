@@ -1,27 +1,43 @@
-import LogoMarquee from "./LogoMarquee";
-import TextEffect from "../TextEffect";
+'use client'
 
-const words = [
-   '(d)app',
-   'campaign',
-   'demo',
-   'event',
-   'feature',
-   'product',
-   'project',
-   'website'
-]
+import LogoMarquee from "./LogoMarquee";
+import { useEffect, useRef } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useNavigationContext } from "@/contexts/NavigationContext";
 
 export default function HeroSection() {
+   const ref = useRef<HTMLDivElement | null>(null)
+   const entry = useIntersectionObserver(ref, {})
+   const isVisible = !!entry?.isIntersecting
+   const { setVisibleSection } = useNavigationContext()
+
+   // const words = [
+   //    '(d)app',
+   //    'campaign',
+   //    'demo',
+   //    'event',
+   //    'feature',
+   //    'product',
+   //    'project',
+   //    'website'
+   // ]
+
+   useEffect(() => {
+      if (isVisible) {
+         setVisibleSection('')
+      }
+   }, [isVisible, setVisibleSection])
+
    return (
       <div className='space-y-2 mt-16'>
          <div className='flex flex-col items-center'>
-            <div className='flex-col'>
+            <div ref={ref} className='flex-col'>
                <h1 className='text-5xl sm:text-6xl md:text-7xl text-easyWhite font-bold'>A web studio</h1>
                <h1 className='text-4xl sm:text-5xl md:text-6xl text-easyWhite font-bold'>for your next
                   <div className='mt-1'>
                      <span className='bg-gradient-to-r bg-clip-text bg-300% text-transparent from-blue-400 to-orange-500 via-purple-500 animate-gradient-x'>
-                        {words[Math.floor(Math.random() * words.length)]}
+                        {/* {words[Math.floor(Math.random() * words.length)]} */}
+                        project
                      </span>.
                   </div>
                </h1>

@@ -8,6 +8,7 @@ import {
    PopoverContent,
    PopoverTrigger,
 } from "@/components/Navigation/Popover"
+import { useNavigationContext } from '@/contexts/NavigationContext'
 
 const links = [
    {
@@ -32,20 +33,29 @@ const links = [
    },
 ]
 
-function AnimatedLink ({ href, title }: { href: string, title: string }) {
+function AnimatedLink({ href, title, isVisible }: { href: string, title: string, isVisible: boolean }) {
    return (
       <a
          href={href}
-         className="px-2 my-10 md:px-3 text-sm text-easyWhite/95 hover:text-blue-300 group relative antialiased focus:outline-none"
+         className={classNames(
+            isVisible ? "!text-blue-300" : "!text-easyWhite/95",
+            "px-2 my-10 md:px-3 text-sm text-easyWhite/95 hover:text-blue-300 group relative antialiased focus:outline-none"
+         )}
       >
          <span
-            className="inline-block opacity-0 group-hover:mr-2.5 transition-all duration-300 transform translate-x-5 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"
+            className={classNames(
+               isVisible && "opacity-100 mr-2.5 !translate-x-0",
+               "inline-block opacity-0 group-hover:mr-2.5 transition-all duration-300 transform translate-x-5 group-hover:opacity-100 group-hover:translate-x-0")}
+               aria-hidden="true"
          >
             [
          </span>
          {title}
          <span
-            className="inline-block opacity-0 group-hover:ml-2.5 transition-all duration-300 transform -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true"
+            className={classNames(
+               isVisible && "opacity-100 ml-2.5 translate-x-0",
+               "inline-block opacity-0 group-hover:ml-2.5 transition-all duration-300 transform -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0")}
+               aria-hidden="true"
          >
             ]
          </span>
@@ -55,6 +65,8 @@ function AnimatedLink ({ href, title }: { href: string, title: string }) {
 
 export default function Navigation() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+   const { visibleSection } = useNavigationContext()
+   console.log(visibleSection)
 
    return (
       <div className="fixed top-5 inset-x-0 z-50 aos-init aos-animate" data-aos="fade-down" data-aos-duration="1500">
@@ -71,7 +83,11 @@ export default function Navigation() {
                         <ul className="space-y-2 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left">
                            {links.map(({ href, title }) => (
                               <li key={title}>
-                                 <AnimatedLink href={href} title={title} />
+                                 <AnimatedLink
+                                    href={href}
+                                    title={title}
+                                    isVisible={visibleSection === href}
+                                    />
                               </li>
                            ))}
                            <li className='text-easyWhite hover:text-blue-300 ml-5'>
@@ -109,7 +125,11 @@ export default function Navigation() {
                               <ul className="space-y-4 list-none md:space-y-0 lg:ml-auto items-center md:inline-flex justify-center text-center md:text-left my-4">
                                  {links.map(({ href, title }) => (
                                     <li key={title}>
-                                       <AnimatedLink href={href} title={title} />
+                                       <AnimatedLink
+                                          href={href}
+                                          title={title}
+                                          isVisible={visibleSection === href}
+                                       />
                                     </li>
                                  ))}
                                  <li className='text-easyWhite hover:text-blue-300 pt-4'>

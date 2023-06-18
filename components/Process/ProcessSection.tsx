@@ -1,4 +1,9 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import ProcessStep from './ProcessStep'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useNavigationContext } from '@/contexts/NavigationContext'
 
 const steps = [
    {
@@ -49,11 +54,22 @@ const steps = [
 ]
 
 export default function ProcessSection() {
+   const ref = useRef<HTMLDivElement | null>(null)
+   const entry = useIntersectionObserver(ref, {})
+   const isVisible = !!entry?.isIntersecting
+   const { setVisibleSection } = useNavigationContext()
+
+   useEffect(() => {
+      if (isVisible) {
+         setVisibleSection('#process')
+      }
+   }, [isVisible, setVisibleSection])
+
    return (
       <div className='space-y-2 px-6 my-24'>
 
          <div className='flex flex-col items-center'>
-            <div className='flex-col'>
+            <div ref={ref} className='flex-col'>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
                   to the process

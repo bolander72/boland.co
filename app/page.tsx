@@ -3,6 +3,11 @@ import HeroSection from '@/components/Hero/HeroSection'
 import MethodSection from '@/components/Method/MethodSection'
 import ProcessSection from '@/components/Process/ProcessSection'
 
+export const metadata = {
+  title: 'Boland Co - An indie web studio',
+  description: 'The subscription web studio.',
+}
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12 my-20">
