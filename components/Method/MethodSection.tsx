@@ -78,13 +78,11 @@ export default function MethodSection() {
                      </div>
                   </div>
                   <div className="flex items-start justify-end lg:order-first">
-                     <ul>
-                        <Testimonial
-                           quote="Mira’s teaching style is second to none. Everything was easy to follow every step of the way."
-                           name="John Doe"
-                           title="CEO, Acme"
-                        />
-                     </ul>
+                     <Testimonial
+                        quote="Mira’s teaching style is second to none. Everything was easy to follow every step of the way."
+                        name="John Doe"
+                        title="CEO, Acme"
+                     />
                   </div>
                </div>
             </div>

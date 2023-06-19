@@ -66,7 +66,6 @@ function AnimatedLink({ href, title, isVisible }: { href: string, title: string,
 export default function Navigation() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
    const { visibleSection } = useNavigationContext()
-   console.log(visibleSection)
 
    return (
       <div className="fixed top-5 inset-x-0 z-50 aos-init aos-animate" data-aos="fade-down" data-aos-duration="1500">

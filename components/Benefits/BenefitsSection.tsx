@@ -124,7 +124,7 @@ export default function BenefitsSection() {
                   {benefits.map((item) => (
                      <div key={item.name} className="relative pl-9">
                         <dt className="font-semibold text-easyBlack">
-                           <item.icon className={classNames(item.color, "h-12 w-12 mb-2 text-easyBlack")} aria-hidden="true" />
+                           <item.icon className={classNames(item.color, "h-12 w-12 mb-2")} aria-hidden="true" />
                            <span className="text-xl">{item.name}</span>
                         </dt>
                         <dd className="mt-2 text-lg">{item.description}</dd>

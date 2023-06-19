@@ -19,9 +19,9 @@ const LogoMarquee = () => {
       <div className="relative flex w-screen bg-[#111111] py-6 sm:py-8 border-t border-t-easyWhite" id='method'>
          <Marquee autoFill speed={60} className="flex items-center">
             {logos.map((logo) => (
-               <div className="mx-6" key={logo}>
+               <div className="mx-6 my-2" key={logo}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={logo} alt="" className='max-w-24 h-6 sm:h-9 lg:h-12' />
+                  <img src={logo} alt="" className='max-w-24 h-9 lg:h-12' />
                </div>
             ))}
          </Marquee>

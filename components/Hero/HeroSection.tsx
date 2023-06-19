@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import { useNavigationContext } from "@/contexts/NavigationContext";
 import Link from "next/link";
+import ProjectMarquee from "./ProjectMarquee";
 
 export default function HeroSection() {
    const ref = useRef<HTMLDivElement | null>(null)
@@ -69,6 +70,17 @@ export default function HeroSection() {
          <section className="mt-12 text-center">
             <div className="items-center">
                <div className="mt-20 lg:mt-28">
+                  <div className="flex justify-center text-2xl font-semibold text-easyWhite bg-red-600 rounded-2xl w-48 p-2 mx-6 hadow-xl hover:shadow-2xl shadow-red-600/10 hover:shadow-red-600/20">
+                     <span className="animate-pulse">LIVE</span>
+                     <span className="text-easyWhite text-sm flex items-center ml-2">projects</span>
+                  </div>
+                  <ProjectMarquee />
+               </div>
+            </div>
+         </section>
+         <section className="mt-12 text-center">
+            <div className="items-center">
+               <div className="mt-12 lg:mt-16">
                   <LogoMarquee />
                </div>
             </div>
