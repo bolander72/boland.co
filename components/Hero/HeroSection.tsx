@@ -2,8 +2,9 @@
 
 import LogoMarquee from "./LogoMarquee";
 import { useEffect, useRef } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useIntersectionObserver } from "usehooks-ts";
 import { useNavigationContext } from "@/contexts/NavigationContext";
+import Link from "next/link";
 
 export default function HeroSection() {
    const ref = useRef<HTMLDivElement | null>(null)
@@ -29,7 +30,7 @@ export default function HeroSection() {
    }, [isVisible, setVisibleSection])
 
    return (
-      <div className='space-y-2 h-screen pt-48'>
+      <div className='space-y-2 pt-48'>
          <div className='flex flex-col items-center'>
             <div ref={ref} className='flex-col'>
                <h1 className='text-5xl sm:text-6xl md:text-7xl text-easyWhite font-bold'>A web studio</h1>
@@ -54,11 +55,19 @@ export default function HeroSection() {
             <div className='pt-0 text-md sm:text-xl text-blue-300'>Perfect for fixed timelines and budgets</div>
          </div>
 
-         <div className='text-sm pt-6 text-easyWhite text-center'>
+         <div className='text-sm pt-6 text-easyWhite text-center flex flex-col justify-center items-center'>
+            <div className="mb-8">
+               <Link
+                  href="#pricing"
+                  className="rounded-2xl text-lg bg-amazonYellow px-16 py-4 font-semibold text-easyBlack flex justify-center transition duration-200 shadow-xl hover:shadow-2xl shadow-amazonYellow/10 hover:shadow-amazonYellow/20"
+               >
+                  View Plans
+               </Link>
+            </div>
             <span>Better results, <span className="italic">guaranteed</span>.</span>
          </div>
          <section className="mt-12 text-center">
-            <div className="items-center absolute bottom-0 left-0">
+            <div className="items-center">
                <div className="mt-20 lg:mt-28">
                   <LogoMarquee />
                </div>

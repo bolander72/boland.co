@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 import Testimonial from '../Testimonial'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useIntersectionObserver, useWindowSize } from 'usehooks-ts'
 import { useNavigationContext } from '@/contexts/NavigationContext'
 
 const methods = [
@@ -31,8 +31,6 @@ export default function MethodSection() {
    useEffect(() => {
       if (isVisible) {
          setVisibleSection('#method')
-      } else if ((entry?.intersectionRatio && entry?.intersectionRatio  > 0)) {
-         setVisibleSection('')
       }
    }, [entry?.intersectionRatio, isVisible, setVisibleSection])
 

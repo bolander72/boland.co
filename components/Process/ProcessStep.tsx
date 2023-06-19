@@ -1,6 +1,6 @@
 'use client'
 
-import { TbCheckbox, TbMailOpened, TbLayout, TbLamp2, TbBoxAlignBottomLeft, TbChevronUp, TbChevronDown } from 'react-icons/tb';
+import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3, TbCircleNumber4, TbCircleNumber5, TbChevronUp, TbChevronDown, TbArrowForwardUp, TbArrowForward, TbArrowUp, TbArrowRotaryRight, TbArrowMoveUp, TbArrowRotaryStraight } from 'react-icons/tb';
 import classNames from "classnames";
 import { useState } from "react";
 
@@ -11,25 +11,45 @@ interface Props {
 }
 
 const stepIcons = {
-   1: <TbCheckbox className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   2: <TbMailOpened className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   3: <TbLayout className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   4: <TbLamp2 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   5: <TbBoxAlignBottomLeft className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   1: <TbCircleNumber1 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   2: <TbCircleNumber2 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   3: <TbCircleNumber3 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   4: <TbCircleNumber4 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   5: <TbCircleNumber5 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
 }
 
 export default function ProcessStep({ name, description, step }: Props) {
-   const [open, setOpen] = useState(step === 1)
+   const [open, setOpen] = useState(false)
 
    return (
       <div key={name}>
          <div className="flex items-center text-sm font-semibold leading-6 text-easyBlack">
 
-            <span className={classNames('pr-3', open && 'animate-slowBounce')}>
-               {/* @ts-ignore */}
-               {stepIcons[step]}
-            </span>
-            <span className='text-xl'>{name}</span>
+            <div className='inline-flex'>
+               {step === 3 && (
+                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-5" aria-hidden="true" />
+               )}
+               {step === 4 && (
+                  <span className="h-6 w-6 text-easyBlack inline-flex transform mr-5" aria-hidden="true" />
+               )}
+               {step === 5 && (
+                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform -rotate-90 mr-5" aria-hidden="true" />
+               )}
+               <span className={classNames('pr-3', open && 'animate-pulse')}>
+                  {/* @ts-ignore */}
+                  {stepIcons[step]}
+               </span>
+               <span className='text-xl'>{name}</span>
+               {step === 3 && (
+                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-1 rotate-90 ml-3" aria-hidden="true" />
+               )}
+               {step === 4 && (
+                  <span className="h-6 w-6 text-easyBlack inline-flex transform ml-6" aria-hidden="true" />
+               )}
+               {step === 5 && (
+                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform rotate-180 ml-10" aria-hidden="true" />
+               )}
+            </div>
 
             <div
                className="h-px bg-easyBlack/10 mx-8 w-full translate-x-0"

@@ -94,7 +94,7 @@ export default function Navigation() {
                               <Link
                                  href="#"
                                  target="_blank"
-                                 className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
+                                 className="rounded-2xl bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
                               >
                                  Login
                               </Link>
@@ -136,7 +136,7 @@ export default function Navigation() {
                                     <Link
                                        href="#"
                                        target="_blank"
-                                       className="rounded-lg bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
+                                       className="rounded-2xl bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-easyWhite shadow-sm hover:bg-black/20"
                                     >
                                        Login
                                     </Link>

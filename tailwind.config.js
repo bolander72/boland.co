@@ -23,6 +23,7 @@ module.exports = {
         paleGreen: '#A6A999',
         neonGreen: '#208320',
 
+        amazonYellow: '#FFD813',
         paleYellow: '#D9BE7F',
         creamsicle: '#BE9C6F',
 

@@ -21,7 +21,7 @@ const LogoMarquee = () => {
             {logos.map((logo) => (
                <div className="mx-6" key={logo}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={logo} alt="hy-vee" className='max-w-24 h-6 sm:h-9' />
+                  <img src={logo} alt="hy-vee" className='max-w-24 h-6 sm:h-9 lg:h-12' />
                </div>
             ))}
          </Marquee>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import ProcessStep from './ProcessStep'
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useIntersectionObserver } from 'usehooks-ts'
 import { useNavigationContext } from '@/contexts/NavigationContext'
 
 const steps = [
@@ -66,10 +66,9 @@ export default function ProcessSection() {
    }, [isVisible, setVisibleSection])
 
    return (
-      <div className='space-y-2 px-6 my-24'>
-
+      <div ref={ref} className='space-y-2 px-6 my-24'>
          <div className='flex flex-col items-center'>
-            <div ref={ref} className='flex-col'>
+            <div className='flex-col'>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
                   to the process
@@ -78,7 +77,7 @@ export default function ProcessSection() {
          </div>
 
          <div className='tracking-normal text-left'>
-            <div className='pt-10 px-10 text-xl sm:text-2xl text-easyBlack'>
+            <div className='pt-10 px-6 text-xl sm:text-2xl text-easyBlack'>
                The typical process? Bloated with misaligned incentives. We&apos;ve reduced the model to its core, and made it easy to manage.
             </div>
          </div>
