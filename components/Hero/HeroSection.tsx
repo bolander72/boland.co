@@ -70,7 +70,7 @@ export default function HeroSection() {
          <section className="mt-12 text-center">
             <div className="items-center">
                <div className="mt-20 lg:mt-28">
-                  <div className="flex justify-center text-2xl font-semibold text-easyWhite bg-red-600 rounded-2xl w-48 p-2 mx-6 hadow-xl hover:shadow-2xl shadow-red-600/10 hover:shadow-red-600/20">
+                  <div className="flex justify-center text-sm font-semibold text-easyWhite bg-red-600 rounded-2xl w-36 p-2 mx-6 hadow-xl hover:shadow-2xl shadow-red-600/10 hover:shadow-red-600/20">
                      <span className="animate-pulse">LIVE</span>
                      <span className="text-easyWhite text-sm flex items-center ml-2">projects</span>
                   </div>

@@ -66,7 +66,7 @@ export default function ProcessSection() {
    }, [isVisible, setVisibleSection])
 
    return (
-      <div ref={ref} className='space-y-2 px-6 my-24'>
+      <div ref={ref} className='space-y-2 px-6 mt-24'>
          <div className='flex flex-col items-center'>
             <div className='flex-col'>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>A new <span className="bg-gradient-to-r bg-clip-text bg-300% text-transparent from-yellow-400 to-neonGreen via-green-600 animate-gradient-x font-extrabold">twist</span></h1>
@@ -82,7 +82,7 @@ export default function ProcessSection() {
             </div>
          </div>
 
-         <div className="py-20 ">
+         <div className="py-24 sm:py-32">
             <div className="space-y-12">
                {steps.map((item) => (
                   <ProcessStep key={item.name} {...item} />

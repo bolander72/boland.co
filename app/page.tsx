@@ -12,30 +12,41 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-12">
-      <div className='bg-darkGray'>
+      <div className='bg-darkGray' style={{ backgroundImage: `url("/backgrounds/topography-dark.svg")` }}>
         <HeroSection />
       </div>
       <div
-        className='bg-gradient-to-b from-easyWhite from-10% via-easyWhite via-80% to-emerald-50 to-90% flex flex-col justify-center items-center w-screen'
+        className='flex flex-col justify-center items-center w-screen bg-easyWhite'
+        style={{ backgroundImage: `url("/backgrounds/signal.svg")` }}
       >
         <div className="max-w-3xl">
           <MethodSection />
         </div>
-        <Divider strokeClass='stroke-emerald-900/10' id='process' />
+        <div className="bg-easyWhite">
+          <Divider strokeClass='stroke-easyBlack/5' id='process' />
+        </div>
       </div>
       <div
-        className='bg-gradient-to-b from-emerald-50 from-10% via-easyWhite via-20% to-blue-50 to-900%  flex flex-col justify-center items-center w-screen'>
+        className='flex flex-col justify-center items-center w-screen bg-easyWhite'
+        style={{ backgroundImage: `url("/backgrounds/signal.svg")` }}
+      >
         <div className="max-w-3xl">
           <ProcessSection />
         </div>
-        <Divider strokeClass='stroke-blue-900/10' />
+        <div className="bg-easyWhite">
+          <Divider strokeClass='stroke-green-900/10' />
+        </div>
       </div>
       <div
-        className='bg-gradient-to-b from-emerald-50 from-10% via-easyWhite via-20% to-easyWhite to-90%  flex flex-col justify-center items-center w-screen'>
+        className='flex flex-col justify-center items-center w-screen bg-easyWhite'
+        style={{ backgroundImage: `url("/backgrounds/signal.svg")` }}
+      >
         <div className="max-w-3xl">
           <BenefitsSection />
         </div>
-        <Divider strokeClass='stroke-blue-900/10' />
+        <div style={{ backgroundColor: "#FFFDFA" }}>
+          <Divider strokeClass='stroke-easyBlack/5' id='process' />
+        </div>
       </div>
     </main>
   )

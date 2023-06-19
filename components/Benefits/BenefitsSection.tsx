@@ -106,7 +106,7 @@ export default function BenefitsSection() {
             <div ref={ref} className='flex-col'>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>Membership</h1>
                <h1 className='text-5xl md:text-6xl text-easyBlack font-bold'>
-                  benefits & perks
+                  benefits <span className="text-blue-300">+</span> perks
                </h1>
             </div>
          </div>

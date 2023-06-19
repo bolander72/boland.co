@@ -12,10 +12,10 @@ interface Props {
 
 const stepIcons = {
    1: <TbCircleNumber1 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   2: <TbCircleNumber2 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   3: <TbCircleNumber3 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   4: <TbCircleNumber4 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
-   5: <TbCircleNumber5 className="h-6 w-6 text-easyBlack block" aria-hidden="true" />,
+   2: <TbCircleNumber2 className="h-6 w-6 text-blue-600 block" aria-hidden="true" />,
+   3: <TbCircleNumber3 className="h-6 w-6 text-yellow-400 block" aria-hidden="true" />,
+   4: <TbCircleNumber4 className="h-6 w-6 text-green-500 block" aria-hidden="true" />,
+   5: <TbCircleNumber5 className="h-6 w-6 text-orange-500 block" aria-hidden="true" />,
 }
 
 export default function ProcessStep({ name, description, step }: Props) {
@@ -26,7 +26,7 @@ export default function ProcessStep({ name, description, step }: Props) {
          <div className="flex items-center text-sm font-semibold leading-6 text-easyBlack">
 
             <div className='inline-flex'>
-               {step === 3 && (
+               {/* {step === 3 && (
                   <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-5" aria-hidden="true" />
                )}
                {step === 4 && (
@@ -34,13 +34,13 @@ export default function ProcessStep({ name, description, step }: Props) {
                )}
                {step === 5 && (
                   <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform -rotate-90 mr-5" aria-hidden="true" />
-               )}
-               <span className={classNames('pr-3', open && 'animate-pulse')}>
+               )} */}
+               <span className={classNames('pr-3', open && '')}>
                   {/* @ts-ignore */}
                   {stepIcons[step]}
                </span>
                <span className='text-xl'>{name}</span>
-               {step === 3 && (
+               {/* {step === 3 && (
                   <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-1 rotate-90 ml-3" aria-hidden="true" />
                )}
                {step === 4 && (
@@ -48,7 +48,7 @@ export default function ProcessStep({ name, description, step }: Props) {
                )}
                {step === 5 && (
                   <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform rotate-180 ml-10" aria-hidden="true" />
-               )}
+               )} */}
             </div>
 
             <div

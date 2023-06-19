@@ -53,7 +53,7 @@ export default function MethodSection() {
 
          <div className='flex flex-col items-center'>
             <div className='tracking-normal text-left'>
-               <div className='pt-10 px-10 text-wrap text-xl sm:text-2xl text-easyBlack'>
+               <div className='pt-10 px-6 text-wrap text-xl sm:text-2xl text-easyBlack'>
                   We replace unreliable freelancers and expensive agencies with a flat monthly fee, building products you&apos;re going to love.
                </div>
                {/* <div className='text-lg sm:text-2xl text-easyBlack'>No more dreaded "syncs".</div> */}
