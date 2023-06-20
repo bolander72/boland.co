@@ -19,36 +19,18 @@ const stepIcons = {
 }
 
 export default function ProcessStep({ name, description, step }: Props) {
-   const [open, setOpen] = useState(false)
+   const [open, setOpen] = useState(true)
 
    return (
       <div key={name}>
          <div className="flex items-center text-sm font-semibold leading-6 text-easyBlack">
 
             <div className='inline-flex'>
-               {/* {step === 3 && (
-                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-5" aria-hidden="true" />
-               )}
-               {step === 4 && (
-                  <span className="h-6 w-6 text-easyBlack inline-flex transform mr-5" aria-hidden="true" />
-               )}
-               {step === 5 && (
-                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform -rotate-90 mr-5" aria-hidden="true" />
-               )} */}
                <span className={classNames('pr-3', open && '')}>
                   {/* @ts-ignore */}
                   {stepIcons[step]}
                </span>
                <span className='text-xl'>{name}</span>
-               {/* {step === 3 && (
-                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform mr-1 rotate-90 ml-3" aria-hidden="true" />
-               )}
-               {step === 4 && (
-                  <span className="h-6 w-6 text-easyBlack inline-flex transform ml-6" aria-hidden="true" />
-               )}
-               {step === 5 && (
-                  <TbArrowRotaryRight className="h-6 w-6 text-green-500 inline-flex transform rotate-180 ml-10" aria-hidden="true" />
-               )} */}
             </div>
 
             <div
@@ -59,12 +41,12 @@ export default function ProcessStep({ name, description, step }: Props) {
             <div>
                {!open ? (
                   <TbChevronUp
-                     className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
+                     className="h-6 w-6 text-easyBlack transform rotate-180 duration-500 animate-in cursor-pointer" aria-hidden="true"
                      onClick={() => setOpen(true)}
                   />
                ) : (
-                  <TbChevronDown
-                     className="h-6 w-6 text-easyBlack transform rotate-180 duration-200 animate-in cursor-pointer" aria-hidden="true"
+                  <TbChevronUp
+                     className="h-6 w-6 text-easyBlack transform -rotate-30 duration-500 animate-in cursor-pointer" aria-hidden="true"
                      onClick={() => setOpen(false)}
                   />
                )}

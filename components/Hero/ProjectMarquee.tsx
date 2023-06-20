@@ -6,7 +6,7 @@ export default function ProjectMarquee() {
    const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
    return (
-      <div className="relative w-screen py-6 sm:py-8 cursor-pointer" id='method'>
+      <div className="relative w-screen py-6 sm:py-8 cursor-pointer">
          <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-5">
             {[
                "/mockups/mainline.svg",

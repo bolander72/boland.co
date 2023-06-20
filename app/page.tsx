@@ -2,6 +2,7 @@ import BenefitsSection from '@/components/Benefits/BenefitsSection'
 import Divider from '@/components/Divider'
 import HeroSection from '@/components/Hero/HeroSection'
 import MethodSection from '@/components/Method/MethodSection'
+import PricingSection from '@/components/Pricing/PricingSection'
 import ProcessSection from '@/components/Process/ProcessSection'
 
 export const metadata = {
@@ -34,7 +35,7 @@ export default function Home() {
           <ProcessSection />
         </div>
         <div className="bg-easyWhite">
-          <Divider strokeClass='stroke-green-900/10' />
+          <Divider strokeClass='stroke-easyBlack/5' id='benefits' />
         </div>
       </div>
       <div
@@ -44,8 +45,19 @@ export default function Home() {
         <div className="max-w-3xl">
           <BenefitsSection />
         </div>
-        <div style={{ backgroundColor: "#FFFDFA" }}>
-          <Divider strokeClass='stroke-easyBlack/5' id='process' />
+        <div className="bg-easyWhite">
+          <Divider strokeClass='stroke-easyBlack/5' id='pricing' />
+        </div>
+      </div>
+      <div
+        className='flex flex-col justify-center items-center w-screen bg-easyWhite'
+        style={{ backgroundImage: `url("/backgrounds/signal.svg")` }}
+      >
+        <div className="max-w-5xl">
+          <PricingSection />
+        </div>
+        <div className="bg-easyWhite">
+          <Divider strokeClass='stroke-easyBlack/5' id='faqs' />
         </div>
       </div>
     </main>

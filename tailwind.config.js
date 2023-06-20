@@ -24,11 +24,19 @@ module.exports = {
         neonGreen: '#208320',
 
         amazonYellow: '#FFD813',
+        amazonOrange: '#FFA41C',
         paleYellow: '#D9BE7F',
         creamsicle: '#BE9C6F',
 
         salmon: '#987779',
         palePurple: '#46404B'
+      },
+      transitionDuration: {
+        '6000': '6000ms',
+        '7000': '7000ms',
+        '8000': '8000ms',
+        '9000': '9000ms',
+        '10000': '10000ms',
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',

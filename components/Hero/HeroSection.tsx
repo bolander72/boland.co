@@ -58,12 +58,12 @@ export default function HeroSection() {
 
          <div className='text-sm pt-6 text-easyWhite text-center flex flex-col justify-center items-center'>
             <div className="mb-8">
-               <Link
+               <a
                   href="#pricing"
                   className="rounded-2xl text-lg bg-amazonYellow px-16 py-4 font-semibold text-easyBlack flex justify-center transition duration-200 shadow-xl hover:shadow-2xl shadow-amazonYellow/10 hover:shadow-amazonYellow/20"
                >
                   View Plans
-               </Link>
+               </a>
             </div>
             <span>Better results, <span className="italic">guaranteed</span>.</span>
          </div>

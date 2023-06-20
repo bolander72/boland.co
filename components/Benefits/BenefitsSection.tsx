@@ -26,7 +26,7 @@ const benefits = [
          <ul>
             <li>- DRY, extensible code</li>
             <li>- Reusable components</li>
-            <li>- Custom theming / brands</li>
+            <li>- Custom themes / branding</li>
          </ul>
       ),
       icon: TbBrain,
