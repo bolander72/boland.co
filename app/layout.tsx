@@ -1,12 +1,55 @@
 'use client'
 
-import Navigation from '@/components/Navigation/Navigation'
 import './globals.css'
-import { Inter } from 'next/font/google'
-import classNames from 'classnames'
-import { NavigationContextProvider } from '@/contexts/NavigationContext'
 
-const inter = Inter({ subsets: ['latin'] })
+import classNames from 'classnames'
+import localFont from 'next/font/local'
+
+const montreal = localFont({
+  variable: '--font-montreal',
+  src: [
+    {
+      path: '../public/fonts/NeueMontreal-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-LightItalic.otf',
+      weight: '300',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-MediumItalic.otf',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NeueMontreal-BoldItalic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+})
 
 export default function RootLayout({
   children,
@@ -15,11 +58,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={classNames(inter.className, 'bg-darkGray')}>
-        <NavigationContextProvider>
-          <Navigation />
+      <body className={classNames(montreal.className, 'bg-easyWhite font-sans uppercase')}>
           {children}
-        </NavigationContextProvider>
         </body>
     </html>
   )

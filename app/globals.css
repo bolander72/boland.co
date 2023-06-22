@@ -1,24 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-   .transform-letter-te7 {
-      transform: translateZ(25px);
-      transform-origin: 50% 50% 25px;
-   }
-
-   .transform-behind-te7 {
-      transform: rotateX(-90deg);
-   }
-
-   .transform-in-te7 {
-      transform: rotateX(0deg);
-      transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-   }
-
-   .transform-out-te7 {
-      transform: rotateX(90deg);
-      transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-   }
-}

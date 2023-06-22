@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montreal)'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,36 +18,22 @@ module.exports = {
       colors: {
         easyWhite: '#FFFDFA',
         easyBlack: '#111111',
-
         lightGray: '#44515E',
         darkGray: '#1C1B22',
-
         lightGreen: '#B4B296',
         paleGreen: '#A6A999',
         neonGreen: '#208320',
-
         amazonYellow: '#FFD813',
         amazonOrange: '#FFA41C',
         paleYellow: '#D9BE7F',
         creamsicle: '#BE9C6F',
-
         salmon: '#987779',
         palePurple: '#46404B'
-      },
-      transitionDuration: {
-        '6000': '6000ms',
-        '7000': '7000ms',
-        '8000': '8000ms',
-        '9000': '9000ms',
-        '10000': '10000ms',
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-y': 'gradient-y 15s ease infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
-        marquee: 'marquee 25s linear infinite',
-        marquee2: 'marquee2 25s linear infinite',
-        slowBounce: 'bounce 2s ease infinite'
       },
       keyframes: {
         'gradient-y': {
@@ -80,7 +69,5 @@ module.exports = {
       }
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-  ],
+  plugins: [],
 }
