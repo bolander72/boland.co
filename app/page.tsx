@@ -1,5 +1,5 @@
 import Intro from '@/components/Intro'
-import Marquee from '@/components/Marquee'
+import Marquee from '@/components/Marquee/Marquee'
 
 export const metadata = {
   title: 'Boland Co.',
