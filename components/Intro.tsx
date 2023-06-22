@@ -11,12 +11,10 @@ export default function Intro() {
          </h1>
          <h1 className="font-sans text-7xl hidden md:block px-1">indie web studio</h1>
 
-         <div className='flex flex-col text-3xl mt-36 px-2'>
-            <div>Web works</div>
-            <div>Within reach</div>
+         <div className='flex flex-col text-3xl mt-36'>
             <div className="md:hidden">
-               <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
-               <div>Indie web studio</div>
+               <div className="px-2">Indie web studio</div>
+               <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
             </div>
          </div>
 
