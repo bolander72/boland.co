@@ -1,5 +1,6 @@
 import Intro from '@/components/Intro'
-import Marquee from '@/components/Marquee/Marquee'
+import Marquee from '@/components/marquee/marquee'
+import Pricing from '@/components/pricing/Pricing'
 
 export const metadata = {
   title: 'Boland Co.',
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="w-screen">
         <Intro />
         <Marquee />
+        <Pricing />
     </main>
   )
 }

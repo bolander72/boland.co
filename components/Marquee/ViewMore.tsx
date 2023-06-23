@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { TbArrowUpRight } from "react-icons/tb";
-import Badge from "../ui/Badge";
+import Badge from "../ui/badge";
 import { useState } from "react";
 
 export default function ViewMore() {
@@ -25,8 +25,43 @@ export default function ViewMore() {
 
          {show ? (
             <>
-               <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FFF202] via-[#FFF202] to-[#CCC200] border-b hover:opacity-95">
-                  <div className="text-sm leading-6 text-easyBlack flex">
+               <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#1966FF] via-[#1966FF] to-[#004BE0] border-b hover:opacity-95">
+                  <div className="text-sm leading-6 text-easyWhite flex">
+                     <Link
+                        target="_blank"
+                        href="https://the.com/"
+                        className="flex flex-row hover:underline"
+                     >
+                        <strong className="font-medium">The.com</strong>
+                        <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
+                     </Link>
+                     <span className="ml-2 text-sm flex items-center lowercase">the.com</span>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">no-code</Badge>
+                  </div>
+                  <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;22</div>
+               </div>
+
+               <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#8D1D40] via-[#8D1D40] to-[#66152E] border-b hover:opacity-95">
+                  <div className="text-sm leading-6 text-easyWhite flex">
+                     <Link
+                        target="_blank"
+                        href="https://asu.edu"
+                        className="flex flex-row hover:underline"
+                     >
+                        <strong className="font-medium">
+                           <span className="md:hidden">ASU</span>
+                           <span className="hidden md:block">Arizona State University</span>
+                        </strong>
+                        <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
+                     </Link>
+                     <span className="ml-2 text-sm flex items-center lowercase">asu.edu</span>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">e-learning</Badge>
+                  </div>
+                  <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;22</div>
+               </div>
+
+               <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#232427] via-[#232427] to-[#0A0A0B] border-b hover:opacity-95">
+                  <div className="text-sm leading-6 text-easyWhite flex">
                      <Link
                         target="_blank"
                         href="https://blockearner.com.au"
@@ -36,7 +71,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">blockearner.com.au</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyBlack border-easyBlack lowercase font-normal">web3</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">web3</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;21</div>
                </div>
@@ -52,13 +87,13 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">hy-vee.com</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyWhite lowercase font-normal">e-commerce</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite lowercase font-normal">e-commerce</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;21</div>
                </div>
 
                <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FAB303] via-[#FAB303] to-[#CA9102] border-b hover:opacity-95">
-                  <div className="text-sm leading-6 text-easyBlack flex">
+                  <div className="text-sm leading-6 text-easyWhite flex">
                      <Link
                         target="_blank"
                         href="https://www.gofastpath.com/"
@@ -68,7 +103,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">gofastpath.com</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyBlack border-easyBlack lowercase font-normal">saas</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">saas</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;19</div>
                </div>
@@ -84,7 +119,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">corteva.com</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyWhite border-easyWhite lowercase font-normal">agtech</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">agtech</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;19</div>
                </div>
@@ -100,7 +135,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">capgemini.com</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyWhite border-easyWhite lowercase font-normal">SAAS</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">SAAS</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;19</div>
                </div>
@@ -116,7 +151,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">swissep.org</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyWhite border-easyWhite lowercase font-normal">ngo</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">ngo</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;17</div>
                </div>
@@ -135,7 +170,7 @@ export default function ViewMore() {
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                      </Link>
                      <span className="ml-2 text-sm flex items-center lowercase">thenewdigitalschool.com</span>
-                     <Badge variant="outline" className="ml-4 text-sm flex items-center text-easyWhite border-easyWhite lowercase font-normal">e-learning</Badge>
+                     <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite border-easyWhite lowercase font-normal">e-learning</Badge>
                   </div>
                   <div className="justify-end text-easyWhite/50 hidden md:flex">&apos;17</div>
                </div>

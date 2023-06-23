@@ -1,8 +1,7 @@
 'use client'
 
 import './globals.css'
-
-import classNames from 'classnames'
+import { cn } from "@/lib/utils";
 import localFont from 'next/font/local'
 
 const montreal = localFont({
@@ -58,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={classNames(montreal.className, 'bg-easyWhite font-sans uppercase')}>
+      <body className={cn(montreal.className, 'bg-easyWhite font-sans uppercase')}>
           {children}
         </body>
     </html>
