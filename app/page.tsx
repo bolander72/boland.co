@@ -4,7 +4,7 @@ import Pricing from '@/components/pricing/pricing'
 
 export const metadata = {
   title: 'Boland Co.',
-  description: 'an indie web studio',
+  description: 'an indie web studio.',
 }
 
 export default function Home() {
