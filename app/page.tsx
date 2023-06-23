@@ -1,6 +1,6 @@
-import Intro from '@/components/Intro'
+import Intro from '@/components/intro'
 import Marquee from '@/components/marquee/marquee'
-import Pricing from '@/components/pricing/Pricing'
+import Pricing from '@/components/pricing/pricing'
 
 export const metadata = {
   title: 'Boland Co.',
