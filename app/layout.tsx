@@ -1,8 +1,10 @@
 'use client'
 
+import localFont from 'next/font/local'
+import { Analytics } from '@vercel/analytics/react';
+
 import './globals.css'
 import { cn } from "@/lib/utils";
-import localFont from 'next/font/local'
 
 const montreal = localFont({
   variable: '--font-montreal',
@@ -58,8 +60,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(montreal.className, 'bg-easyWhite font-sans uppercase')}>
-          {children}
-        </body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
