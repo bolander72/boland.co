@@ -6,7 +6,7 @@ import ViewMore from "./viewmore";
 export default function Marquee() {
    return (
       <section className='flex flex-col items-stretch my-12'>
-         <div className="px-2 text-lg mb-2">Recent Contributions</div>
+         <div className="px-2 text-2xl mb-2">Recent Contributions</div>
 
          {/* https://coolors.co/ 3 shades darker */}
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FD49A0] via-[#FD49A0] to-[#FD0D81] border-b hover:opacity-95">
@@ -14,7 +14,7 @@ export default function Marquee() {
                <Link
                   target="_blank"
                   href="https://sexy.ai"
-                  className="flex flex-row hover:underline"
+                  className="flex flex-row underline"
                >
                   <strong className="font-medium">Sexy AI</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -31,7 +31,7 @@ export default function Marquee() {
                <Link
                   target="_blank"
                   href="https://getmainline.io"
-                  className="flex flex-row hover:underline">
+                  className="flex flex-row underline">
                   <strong className="font-medium">Mainline</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                </Link>
@@ -46,7 +46,7 @@ export default function Marquee() {
                <Link
                   target="_blank"
                   href="https://tronic.app/"
-                  className="flex flex-row hover:underline"
+                  className="flex flex-row underline"
                >
                   <strong className="font-medium">Tronic</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -62,7 +62,7 @@ export default function Marquee() {
                <Link
                   target="_blank"
                   href="https://smartlockerusa.com/"
-                  className="flex flex-row hover:underline"
+                  className="flex flex-row underline"
                >
                   <strong className="font-medium">Smartlocker</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -78,7 +78,7 @@ export default function Marquee() {
                <Link
                   target="_blank"
                   href="https://ae.studio/"
-                  className="flex flex-row hover:underline"
+                  className="flex flex-row underline"
                >
                   <strong className="font-medium">AE Studio</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -89,7 +89,7 @@ export default function Marquee() {
             <div className="justify-end text-easyWhite/50 hidden md:flex">Q4 &apos;22</div>
          </div>
 
-         <ViewMore />
+         {/* <ViewMore /> */}
 
       </section>
    )

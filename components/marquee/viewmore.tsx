@@ -30,7 +30,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://the.com/"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">The.com</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -46,7 +46,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://asu.edu"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">
                            <span className="md:hidden">ASU</span>
@@ -65,7 +65,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://blockearner.com.au"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Blockearner</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -81,7 +81,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://hy-vee.com"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Hy-Vee</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -97,7 +97,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://www.gofastpath.com/"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Fastpath</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -113,7 +113,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://corteva.com/"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Corteva</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -129,7 +129,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://capgemini.com"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Capgemini</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -145,7 +145,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://swissep.org"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">Swiss EP</strong>
                         <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
@@ -161,7 +161,7 @@ export default function ViewMore() {
                      <Link
                         target="_blank"
                         href="https://thenewdigitalschool.com/"
-                        className="flex flex-row hover:underline"
+                        className="flex flex-row underline"
                      >
                         <strong className="font-medium">
                            <span className="md:hidden">TNDS</span>

@@ -18,17 +18,17 @@ export default function Intro() {
             </div>
          </div>
 
-         <div className='flex flex-col text-xl my-4 px-2'>
+         <div className='flex flex-col text-2xl my-4 px-2'>
             <Link
                target="_blank"
-               href="https://cal.com/bolandco/intro"
-               className="flex flex-row w-max hover:underline cursor-pointer"
+               href="https://calendly.com/bolandco/intro"
+               className="flex flex-row w-max underline cursor-pointer"
             >
                Book intro call <TbArrowUpRight className="ml-px" />
             </Link>
             <Link
                href="mailto:hello@boland.co?subject=Boland%20Co.%20Inquiry"
-               className="flex flex-row w-max hover:underline cursor-pointer"
+               className="flex flex-row w-max underline cursor-pointer"
             >
                Send email <TbArrowUpRight className="ml-px" />
             </Link>
