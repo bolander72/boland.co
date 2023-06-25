@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css'
 import { cn } from "@/lib/utils";
+import Footer from '@/components/footer/footer';
 
 const montreal = localFont({
   variable: '--font-montreal',
@@ -61,6 +62,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(montreal.className, 'bg-easyWhite font-sans uppercase')}>
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

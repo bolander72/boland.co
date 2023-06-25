@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { TbArrowUpRight } from "react-icons/tb";
 import Badge from "../ui/badge";
-import ViewMore from "./viewmore";
 
 export default function Marquee() {
    return (
@@ -10,7 +9,7 @@ export default function Marquee() {
 
          {/* https://coolors.co/ 3 shades darker */}
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FD49A0] via-[#FD49A0] to-[#FD0D81] border-b hover:opacity-95">
-            <div className="text-sm leading-6 text-easyWhite flex">
+            <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
                   href="https://sexy.ai"
@@ -27,7 +26,7 @@ export default function Marquee() {
          </div>
 
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#6A85FA] via-[#6A85FA] to-[#395CF9] border-b hover:opacity-95">
-            <div className="text-sm leading-6 text-easyWhite flex">
+            <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
                   href="https://getmainline.io"
@@ -42,7 +41,7 @@ export default function Marquee() {
          </div>
 
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#369999] via-[#369999] to-[#2A7979] border-b hover:opacity-95">
-            <div className="text-sm leading-6 text-easyWhite flex">
+            <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
                   href="https://tronic.app/"
@@ -58,7 +57,7 @@ export default function Marquee() {
          </div>
 
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#8BA242] via-[#8BA242] to-[#708235] border-b hover:opacity-95">
-            <div className="text-sm leading-6 text-easyWhite flex">
+            <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
                   href="https://smartlockerusa.com/"
@@ -74,7 +73,7 @@ export default function Marquee() {
          </div>
 
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FA9556] via-[#FA9556] to-[#F87625] border-b hover:opacity-95">
-            <div className="text-sm leading-6 text-easyWhite flex">
+            <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
                   href="https://ae.studio/"
