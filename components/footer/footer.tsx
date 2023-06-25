@@ -40,8 +40,8 @@ const navigation = {
 
 export default function Footer() {
    return (
-      <footer className="bg-easyWhite">
-         <div className="mx-auto max-w-7xl overflow-hidden px-6 py-6">
+      <footer className="mt-36">
+         <div className="mx-auto overflow-hidden px-6 py-6">
             {/* <nav className="-mb-6 columns-1 flex flex-col justify-center items-center text-center" aria-label="Footer">
                {navigation.main.map((item) => (
                   <div key={item.name} className="pb-6">
