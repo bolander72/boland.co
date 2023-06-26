@@ -74,6 +74,9 @@ export default function Footer() {
                <Link href="/terms" className="text-sm leading-6 text-easyBlack underline">
                   Terms of Use
                </Link>
+               <Link href="/contract" className="text-sm leading-6 text-easyBlack underline">
+                  Client Contract
+               </Link>
             </div>
          </div>
       </footer>
