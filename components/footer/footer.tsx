@@ -67,6 +67,14 @@ export default function Footer() {
                <Image src="/icons/illinois.svg" alt="IL" width={30} height={30} />
                All rights reserved.
             </p>
+            <div className="flex justify-center normal-case space-x-4">
+               <Link href="/privacy" className="text-sm leading-6 text-easyBlack underline">
+                  Privacy Policy
+               </Link>
+               <Link href="/terms" className="text-sm leading-6 text-easyBlack underline">
+                  Terms of Use
+               </Link>
+            </div>
          </div>
       </footer>
    )

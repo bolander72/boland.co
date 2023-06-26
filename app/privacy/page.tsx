@@ -1,6 +1,6 @@
 export default function Privacy() {
    return (
-      <div className="bg-easyWhite px-2 pt-16">
+      <div className="bg-easyWhite px-2 pt-6">
          <div className="mx-auto max-w-3xl text-base leading-7 text-easyBlack normal-case">
             <p className="text-base font-semibold leading-7 text-easyBlack uppercase">Boland Co.</p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-easyBlack sm:text-4xl uppercase">Privacy Policy</h1>
