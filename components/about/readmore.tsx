@@ -24,7 +24,7 @@ export default function ReadMore({ people }: Props) {
                   setActive(true)
                }
             }}
-            className="flex flex-col items-start justify-between pt-4 cursor-pointer"
+            className="flex flex-col items-start pt-4 cursor-pointer"
          >
 
             <div className={cn("text-lg leading-6 text-easyBlack flex", active && "mb-2")}>
