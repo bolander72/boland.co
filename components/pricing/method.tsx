@@ -37,7 +37,7 @@ export default function Method({ method, idx }: Props) {
             <div className={cn("text-lg leading-6 text-easyBlack flex", active && "mb-2")}>
                <strong className="font-medium uppercase underline">{method.name}</strong>
                <span className="ml-px">
-                  <TbPlus />
+                  {active ? <TbMinus /> : <TbPlus />}
                </span>
             </div>
          </button>
