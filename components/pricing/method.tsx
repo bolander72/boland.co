@@ -34,8 +34,8 @@ export default function Method({ method, idx }: Props) {
             className={cn("flex flex-col items-start justify-between px-6 py-4 cursor-pointer", idx === 0 && "border-t", !active && "border-b", active && "border-b-0")}
          >
 
-            <div className={cn("text-lg leading-6 text-easyBlack flex", active && "mb-2")}>
-               <strong className="font-medium uppercase underline">{method.name}</strong>
+            <div className={cn("text-lg leading-6 text-easyBlack flex", active && "")}>
+               <strong className="font-normal uppercase underline">{method.name}</strong>
                <span className="ml-px">
                   {active ? <TbMinus /> : <TbPlus />}
                </span>
@@ -44,16 +44,16 @@ export default function Method({ method, idx }: Props) {
 
          {active && (
             <div className="border-b px-6 pb-4">
-               <div className="text-lg leading-6 text-easyBlack flex">
+               {/* <div className="text-lg leading-6 text-easyBlack flex">
                   <strong className="font-medium normal-case">{method.price}</strong>
-               </div>
+               </div> */}
 
                <div className="text-lg leading-6 text-easyBlack text-left mt-2">
                   <div className="font-normal normal-case">{method.description}</div>
                </div>
 
                <div className="text-md leading-6 my-2 text-easyBlack block">
-                  <div className="font-medium text-left text-lg max-w-lg">
+                  <div className="font-normal text-left text-lg max-w-lg">
                      <p className="uppercase">Benefits</p>
                      {method.pros.map((pro) => (
                         <div key={pro} className="flex items-center text-lg">
@@ -67,7 +67,7 @@ export default function Method({ method, idx }: Props) {
                </div>
 
                <div className="text-md leading-7 my-2 text-easyBlack block">
-                  <div className="font-medium text-left text-lg max-w-lg">
+                  <div className="font-normal text-left text-lg max-w-lg">
                      <p className="uppercase">Considerations</p>
                      {method.cons.map((con) => (
                         <div key={con} className="flex items-center text-lg">

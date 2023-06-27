@@ -2,13 +2,13 @@ export default function Terms() {
    return (
       <div className="bg-easyWhite px-2 pt-6">
          <div className="mx-auto max-w-3xl text-base leading-7 text-easyBlack normal-case">
-            <p className="text-base font-semibold leading-7 text-easyBlack uppercase">Boland Co.</p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-easyBlack sm:text-4xl uppercase">Terms of Use</h1>
+            <p className="text-base font-normal leading-7 text-easyBlack uppercase">Boland Co.</p>
+            <h1 className="mt-2 text-3xl font-normal tracking-tight text-easyBlack sm:text-4xl uppercase">Terms of Use</h1>
             <p className="mt-6 text-xl leading-7">
                Before using our website or engaging with our services, please read and understand our Terms of Use. By accessing our website or using our services, you agree to comply with these terms. If you do not agree with any part of these terms, please refrain from using our website or services.
             </p>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">1) Use of Our Website</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">1) Use of Our Website</h2>
                <p className="mt-6">
                   Intellectual Property: The content on our website, including text, graphics, logos, images, and software, is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works of any content without our prior written consent.
                </p>
@@ -20,7 +20,7 @@ export default function Terms() {
                </p>
             </div>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">2) Service Agreement</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">2) Service Agreement</h2>
                <p className="mt-6">
                   Client Services: If you engage our services, we will enter into a separate agreement outlining the specific services to be provided, timelines, fees, and other relevant details. This agreement will govern our professional relationship and the obligations of both parties.
                </p>
@@ -35,7 +35,7 @@ export default function Terms() {
                </p>
             </div>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">3) Limitation of Liability</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">3) Limitation of Liability</h2>
                <p className="mt-6">
                   Website Content: While we strive to provide accurate and up-to-date information on our website, we make no warranties or representations regarding the accuracy, completeness, or reliability of any content. You acknowledge that any reliance on such content is at your own risk.
                </p>
@@ -47,19 +47,19 @@ export default function Terms() {
                </p>
             </div>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">4) Termination</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">4) Termination</h2>
                <p className="mt-6">
                   We reserve the right to terminate your access to our website or services at any time, for any reason, without prior notice. Upon termination, any provisions of these terms that should reasonably survive termination will remain in effect.
                </p>
             </div>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">5) Governing Law</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">5) Governing Law</h2>
                <p className="mt-6">
                   These terms will be governed by and construed in accordance with the laws of the United States of America and the state of Illinois. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts located in the United States of America and the state of Illinois.
                </p>
             </div>
             <div className="mt-10 max-w-2xl text-lg">
-               <h2 className="mt-16 text-2xl font-bold tracking-tight text-easyBlack">6) Changes to These Terms</h2>
+               <h2 className="mt-16 text-2xl font-normal tracking-tight text-easyBlack">6) Changes to These Terms</h2>
                <p className="mt-6">
                   We may update these Terms of Use from time to time, and any changes will be effective immediately upon posting on our website. It is your responsibility to review these terms periodically for any updates.
                </p>
@@ -67,8 +67,8 @@ export default function Terms() {
                   If you have any questions or concerns about these terms, please contact us.
                </p>
             </div>
-            <div className="mt-10 max-w-2xl">
-               <div className="mt-24 text-lg">
+            <div className="mt-16 max-w-2xl border-t">
+               <div className="mt-6 text-lg">
                   Last updated on June 25th, 2023
                </div>
             </div>
