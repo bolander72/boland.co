@@ -10,7 +10,25 @@ export const metadata = {
   authors: [{ name: 'Michael Boland', url: 'https://boland.co' }],
   creator: 'Michael Boland',
   openGraph: {
-    images: '/og.jpg',
+    title: 'Boland Co.',
+    description: 'an indie web studio.',
+    url: 'https://boland.co',
+    siteName: 'Boland Co.',
+    images: [
+      {
+        url: 'https://boland.co/og.jpg',
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: 'https://boland.co/og-alt.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Boland Co.',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   robots: {
     index: false,
