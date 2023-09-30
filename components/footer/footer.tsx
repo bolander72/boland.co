@@ -30,11 +30,11 @@ const navigation = {
          href: 'https://calendly.com/bolandco/intro',
          icon: TbCalendar
       },
-      {
-         name: 'Dead Cereal',
-         href: 'https://deadcereal.co',
-         icon: TbRss
-      }
+      // {
+      //    name: 'Dead Cereal',
+      //    href: 'https://deadcereal.co',
+      //    icon: TbRss
+      // }
    ],
 }
 
