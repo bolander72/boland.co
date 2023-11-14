@@ -6,25 +6,22 @@ export default function Marquee() {
    return (
       <section className='flex flex-col items-stretch my-12'>
          <div className="px-2 text-2xl mb-2">Recent Contributions</div>
-
          {/* https://coolors.co/ 3 shades darker */}
-         {/* <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#FD49A0] via-[#FD49A0] to-[#FD0D81] border-b hover:opacity-95">
+         <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#525252] via-[#525252] to-[#333333] border-b hover:opacity-95">
             <div className="text-md leading-6 text-easyWhite flex">
                <Link
                   target="_blank"
-                  href="https://sexy.ai"
+                  href="https://aimg.io"
                   className="flex flex-row underline"
                >
-                  <strong className="font-medium">Sexy AI</strong>
+                  <strong className="font-normal">AIMG</strong>
                   <span aria-hidden="true" className="ml-px"><TbArrowUpRight /></span>
                </Link>
-               <span className="ml-2 text-sm flex items-center lowercase">sexy.ai</span>
-               <span className="ml-2 text-sm flex items-center uppercase">(NSFW)</span>
+               <span className="ml-2 text-sm flex items-center lowercase">AIMG.IO</span>
                <Badge variant="outline" className="ml-4 text-sm flex items-center !text-easyWhite lowercase font-normal">AI</Badge>
             </div>
-            <div className="justify-end text-easyWhite/50 hidden md:flex">Q2 &apos;23</div>
-         </div> */}
-
+            <div className="justify-end text-easyWhite/50 hidden md:flex">Q3 &apos;23</div>
+         </div>
          <div className="flex items-start justify-between px-6 py-3 bg-gradient-to-r from-[#6A85FA] via-[#6A85FA] to-[#395CF9] border-b hover:opacity-95">
             <div className="text-md leading-6 text-easyWhite flex">
                <Link
