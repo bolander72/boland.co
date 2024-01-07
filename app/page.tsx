@@ -5,14 +5,14 @@ import Pricing from '@/components/pricing/pricing'
 
 export const metadata = {
   title: 'Boland Co.',
-  description: 'an indie web studio.',
+  description: 'an indie consultancy.',
   metadataBase: new URL('https://boland.co'),
-  keywords: ['Next.js', 'Web studio', 'Web Agency', 'Vercel', 'Tailwind CSS', 'shadcn-ui', 'DAAS', 'Development-as-a-service', 'bitcoin', 'lightning', 'web3', 'ai'],
+  keywords: ['indie conultancy', 'indie', 'consultancy', 'consulting', 'business', '', 'agency', 'tech', 'freelance'],
   authors: [{ name: 'Michael Boland', url: 'https://boland.co' }],
   creator: 'Michael Boland',
   openGraph: {
     title: 'Boland Co.',
-    description: 'an indie web studio.',
+    description: 'an indie consultancy.',
     url: 'https://boland.co',
     siteName: 'Boland Co.',
     images: [
