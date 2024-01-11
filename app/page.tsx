@@ -2,6 +2,7 @@ import About from '@/components/about/about'
 import Intro from '@/components/intro'
 import Marquee from '@/components/marquee/marquee'
 import Pricing from '@/components/pricing/pricing'
+import { Splash } from '@/components/splash/splash'
 
 export const metadata = {
   title: 'Boland Co.',
@@ -48,11 +49,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="w-screen space-y-24">
-      <Intro />
-      <Marquee />
-      <Pricing />
-      <About />
+    <main className="">
+      <Splash />
     </main>
   )
 }

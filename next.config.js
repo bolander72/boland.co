@@ -9,6 +9,14 @@ const nextConfig = {
          },
       ],
    },
+   headers: () => {
+      return [
+         {
+            source: '/.well-known/nostr.json',
+            headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }]
+         }
+      ]
+   }
 }
 
 module.exports = nextConfig
