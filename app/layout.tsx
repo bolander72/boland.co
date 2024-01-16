@@ -59,7 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(montreal.className, 'bg-easyWhite font-sans mx-auto px-2 max-w-2xl flex flex-col justify-center items-center my-24')}>
+      <body className={cn(montreal.className, 'bg-easyWhite font-sans mx-auto px-4 max-w-2xl flex flex-col justify-center items-center my-24')}>
         {children}
         <Analytics />
       </body>
