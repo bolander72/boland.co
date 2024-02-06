@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import './globals.css'
 import { cn } from "@/lib/utils";
+import { Nav } from '@/components/nav';
 
 const montreal = localFont({
   variable: '--font-montreal',
@@ -59,8 +60,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(montreal.className, 'bg-easyWhite font-sans mx-auto px-4 max-w-2xl flex flex-col justify-center items-center my-24')}>
-        {children}
+      <body className={cn(montreal.className, 'bg-easyWhite font-sans mx-auto my-12 px-4 max-w-2xl')}>
+        <Nav />
+        <div className='flex flex-col justify-center items-center'>
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
