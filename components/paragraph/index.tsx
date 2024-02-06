@@ -1,12 +1,10 @@
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 interface Props {
-   className?: string
-   children: React.ReactNode
+  className?: string
+  children: React.ReactNode
 }
 
 export function Paragraph({ className, children }: Props) {
-   return (
-      <p className={cn(className, 'text-xl leading-8')}>{children}</p>
-   )
+  return <p className={cn(className, 'text-xl leading-8')}>{children}</p>
 }

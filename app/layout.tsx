@@ -1,11 +1,11 @@
 'use client'
 
 import localFont from 'next/font/local'
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'
 
 import './globals.css'
-import { cn } from "@/lib/utils";
-import { Nav } from '@/components/nav';
+import { cn } from '@/lib/utils'
+import { Nav } from '@/components/nav'
 
 const montreal = localFont({
   variable: '--font-montreal',
@@ -13,56 +13,61 @@ const montreal = localFont({
     {
       path: '../public/fonts/NeueMontreal-Light.otf',
       weight: '300',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/NeueMontreal-LightItalic.otf',
       weight: '300',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/NeueMontreal-Regular.otf',
       weight: '400',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/NeueMontreal-Italic.otf',
       weight: '400',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/NeueMontreal-Medium.otf',
       weight: '500',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/NeueMontreal-MediumItalic.otf',
       weight: '500',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/NeueMontreal-Bold.otf',
       weight: '700',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/NeueMontreal-BoldItalic.otf',
       weight: '700',
-      style: 'italic',
-    },
-  ],
+      style: 'italic'
+    }
+  ]
 })
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={cn(montreal.className, 'bg-easyWhite font-sans mx-auto my-12 px-4 max-w-2xl')}>
+    <html lang='en'>
+      <body
+        className={cn(
+          montreal.className,
+          'mx-auto my-12 max-w-2xl bg-easyWhite px-4 font-sans'
+        )}
+      >
         <Nav />
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col items-center justify-center'>
           {children}
         </div>
         <Analytics />
@@ -70,4 +75,3 @@ export default function RootLayout({
     </html>
   )
 }
-
