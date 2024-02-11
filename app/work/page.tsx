@@ -1,5 +1,6 @@
 import sharedMetadata from '@/metadata'
 import { Title } from '@/components/title'
+import { Separator } from '@/components/ui/separator'
 
 export const metadata = {
   ...sharedMetadata
@@ -11,15 +12,15 @@ export default function Work() {
       <section className='space-y-6'>
         <Title className='text-3xl'>Work</Title>
         <div className='flex items-center justify-between text-xl leading-8'>
-          I like to make cool stuff with good people and have fun doing it. Even
-          better if it does some good for the world. The goal is to try not to
-          suck: as a person, as a teammate, and as a maker. Do that, and the
-          rest will follow.
+          I like to make cool stuff with good people and have fun doing it; even&nbsp;
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          better if it does some good for the world. Here's a summary of my work so far.
         </div>
+        <Separator />
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              Mainline Alpha <sup>🇺🇸</sup>
+              Mainline Alpha
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Founding Engineer
@@ -35,7 +36,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              AIMG <sup>🇺🇸</sup>
+              AIMG
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Lead Product Engineer
@@ -51,7 +52,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              SmartLocker <sup>🇺🇸</sup>
+              SmartLocker
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Co-Founder
@@ -74,7 +75,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              AE Studio <sup>🇺🇸</sup>
+              AE Studio
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Technical Product Manager
@@ -90,7 +91,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              the.com <sup>🇺🇸</sup>
+              the.com
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Senior Software Engineer
@@ -106,7 +107,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              BlockEarner <sup>🇦🇺</sup>
+              BlockEarner
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Senior Software Engineer
@@ -122,7 +123,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              Hy-Vee <sup>🇺🇸</sup>
+              Hy-Vee
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
@@ -138,7 +139,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              mogul.gg <sup>🇦🇺</sup>
+              mogul.gg
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
@@ -154,7 +155,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              Fastpath <sup>🇺🇸</sup>
+              Fastpath
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
@@ -170,7 +171,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              Corteva <sup>🇺🇸</sup>
+              Corteva
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
@@ -186,7 +187,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              Swiss EP <sup>🇲🇰</sup>
+              Swiss EP
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Entrepreneur in Residence
@@ -202,7 +203,7 @@ export default function Work() {
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
-              New Digital School <sup>🇵🇹</sup>
+              New Digital School
             </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Researcher in Residence
