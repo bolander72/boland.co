@@ -6,6 +6,8 @@ export const metadata = {
   ...sharedMetadata
 }
 
+// TODO: use /slug-${id} for post titles
+
 export default function Blog() {
   return (
     <main className='w-full'>
