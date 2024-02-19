@@ -2,6 +2,7 @@ import sharedMetadata from '@/metadata'
 import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 import { Separator } from '@/components/ui/separator'
+import { Subtitle } from '@/components/subtitle'
 
 export const metadata = {
   ...sharedMetadata
@@ -18,7 +19,7 @@ export default function Reading() {
           work.
         </div>
         <Separator />
-        <h2 className='text-2xl'>2024</h2>
+        <Subtitle>2024</Subtitle>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
             <div>
@@ -32,6 +33,22 @@ export default function Reading() {
           <div className='flex space-x-4'>
             <div className='hidden text-muted-foreground sm:flex'>
               Laura Lotti, Sam Hart, Toby Shorin
+            </div>
+          </div>
+        </div>
+        <div className='flex items-center justify-between text-xl leading-8'>
+          <div className='flex-col sm:flex-row'>
+            <div>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
+              Hourly Billing is Nuts
+            </div>
+            <div className='flex text-lg text-muted-foreground sm:hidden'>
+              Jonathan Stark
+            </div>
+          </div>
+          <div className='flex space-x-4'>
+            <div className='hidden text-muted-foreground sm:flex'>
+              Jonathan Stark
             </div>
           </div>
         </div>
