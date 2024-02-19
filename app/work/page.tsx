@@ -10,18 +10,18 @@ export default function Work() {
   return (
     <main className='w-full'>
       <section className='space-y-6'>
-        <Title className='text-3xl'>Work</Title>
+        <Title className='text-3xl'>Work XP</Title>
         <div className='flex items-center justify-between text-xl leading-8'>
-          I like to make cool stuff with good people and have fun doing it; even&nbsp;
+          I like to make cool stuff with good people and have fun doing it;
+          even&nbsp;
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          better if it does some good for the world. Here's a summary of my work so far.
+          better if it does some good for the world. Here's a summary of my work
+          so far.
         </div>
         <Separator />
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              Mainline Alpha
-            </div>
+            <div>Mainline Alpha</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Founding Engineer
             </div>
@@ -35,9 +35,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              AIMG
-            </div>
+            <div>AIMG</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Lead Product Engineer
             </div>
@@ -51,9 +49,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              SmartLocker
-            </div>
+            <div>SmartLocker</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Co-Founder
             </div>
@@ -74,9 +70,7 @@ export default function Work() {
             </div> */}
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              AE Studio
-            </div>
+            <div>AE Studio</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Technical Product Manager
             </div>
@@ -90,9 +84,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              the.com
-            </div>
+            <div>the.com</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Senior Software Engineer
             </div>
@@ -106,9 +98,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              BlockEarner
-            </div>
+            <div>BlockEarner</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Senior Software Engineer
             </div>
@@ -122,9 +112,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              Hy-Vee
-            </div>
+            <div>Hy-Vee</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
             </div>
@@ -138,9 +126,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              mogul.gg
-            </div>
+            <div>mogul.gg</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
             </div>
@@ -154,9 +140,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              Fastpath
-            </div>
+            <div>Fastpath</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
             </div>
@@ -170,9 +154,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              Corteva
-            </div>
+            <div>Corteva</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Software Engineer
             </div>
@@ -186,9 +168,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              Swiss EP
-            </div>
+            <div>Swiss EP</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Entrepreneur in Residence
             </div>
@@ -202,9 +182,7 @@ export default function Work() {
         </div>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
-            <div>
-              New Digital School
-            </div>
+            <div>New Digital School</div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               Researcher in Residence
             </div>
