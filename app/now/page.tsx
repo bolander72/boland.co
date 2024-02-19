@@ -15,7 +15,7 @@ export default function Now() {
         <Title className='text-3xl'>/now</Title>
         <div className='flex items-center justify-between text-xl leading-8'>
           What I'm focused on at this point in my life - an exercise to share
-          with you a little bit more about me and my endeavors inspired by Derek
+          with you a little bit more about me and my endeavors, inspired by Derek
           Sivers' "now".
         </div>
         <Separator />
