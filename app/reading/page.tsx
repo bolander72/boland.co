@@ -22,6 +22,19 @@ export default function Reading() {
         <Subtitle>2024</Subtitle>
         <div className='flex items-center justify-between text-xl leading-8'>
           <div className='flex-col sm:flex-row'>
+            <div>The State of the Culture, 2024</div>
+            <div className='flex text-lg text-muted-foreground sm:hidden'>
+              Ted Gioia
+            </div>
+          </div>
+          <div className='flex space-x-4'>
+            <div className='hidden text-muted-foreground sm:flex'>
+              Ted Gioia
+            </div>
+          </div>
+        </div>
+        <div className='flex items-center justify-between text-xl leading-8'>
+          <div className='flex-col sm:flex-row'>
             <div>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Crypto's Three-Body Problem
