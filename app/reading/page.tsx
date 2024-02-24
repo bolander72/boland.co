@@ -1,8 +1,8 @@
 import sharedMetadata from '@/metadata'
-import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 import { Separator } from '@/components/ui/separator'
 import { Subtitle } from '@/components/subtitle'
+import { readings } from './index'
 
 export const metadata = {
   ...sharedMetadata
@@ -19,91 +19,29 @@ export default function Reading() {
           work.
         </div>
         <Separator />
-        <Subtitle>2024</Subtitle>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>On Scope Creep & ZIRP Lessons</div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Michael Dempsey
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Michael Dempsey
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>The State of the Culture, 2024</div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Ted Gioia
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Ted Gioia
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
-              Crypto's Three-Body Problem
-            </div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Laura Lotti, Sam Hart, Toby Shorin
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Laura Lotti, Sam Hart, Toby Shorin
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
-              Hourly Billing is Nuts
-            </div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Jonathan Stark
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Jonathan Stark
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>The Art of Gig, Volume 2: Superstructures</div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Venkatesh Rao
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Venkatesh Rao
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center justify-between text-xl leading-8'>
-          <div className='flex-col sm:flex-row'>
-            <div>The Art of Gig, Volume 1: Foundations</div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              Venkatesh Rao
-            </div>
-          </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>
-              Venkatesh Rao
-            </div>
-          </div>
-        </div>
+        {readings.map(({ year, items }) => (
+          <>
+            <Subtitle>{year}</Subtitle>
+            {items.map(({ title, authors }) => (
+              <div
+                className='flex items-center justify-between text-xl leading-8'
+                key={title}
+              >
+                <div className='flex-col sm:flex-row'>
+                  <div>{title}</div>
+                  <div className='flex text-lg text-muted-foreground sm:hidden'>
+                    {authors.join(', ')}
+                  </div>
+                </div>
+                <div className='flex space-x-4'>
+                  <div className='hidden text-muted-foreground sm:flex'>
+                    {authors.join(', ')}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        ))}
       </section>
     </main>
   )
