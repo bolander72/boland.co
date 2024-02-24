@@ -12,7 +12,7 @@ export default function Reading() {
   return (
     <main className='w-full'>
       <section className='space-y-6'>
-        <Title className='text-3xl'>Good Reads</Title>
+        <Title className='text-3xl'>Reading</Title>
         <div className='flex items-center justify-between text-xl leading-8'>
           This is a non-exhaustive list of books, articles, and essays that have
           shaped how I think as well as my perspective and approach to life and

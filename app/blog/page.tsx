@@ -12,7 +12,7 @@ export default function Blog() {
   return (
     <main className='w-full'>
       <section className='space-y-6'>
-        <Title className='text-3xl'>Latest Writing</Title>
+        <Title className='text-3xl'>Blog</Title>
       </section>
     </main>
   )

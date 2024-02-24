@@ -10,7 +10,7 @@ export default function Consulting() {
   return (
     <main className='w-full'>
       <section className='space-y-6'>
-        <Title className='text-3xl'>Consulting Practice</Title>
+        <Title className='text-3xl'>Consulting</Title>
       </section>
     </main>
   )

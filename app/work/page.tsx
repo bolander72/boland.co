@@ -10,7 +10,7 @@ export default function Work() {
   return (
     <main className='w-full'>
       <section className='space-y-6'>
-        <Title className='text-3xl'>Work XP</Title>
+        <Title className='text-3xl'>Work</Title>
         <div className='flex items-center justify-between text-xl leading-8'>
           I like to make cool stuff with good people and have fun doing it;
           even&nbsp;
