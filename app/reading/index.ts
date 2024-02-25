@@ -3,6 +3,10 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'Apps as Expressions of Style',
+        authors: ['Valerie Tetu']
+      },
+      {
         title: 'Great Products Have Great Premises',
         authors: ['Anu Atluru', 'Bharat Kilaru']
       },
