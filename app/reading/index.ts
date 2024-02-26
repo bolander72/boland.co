@@ -5,6 +5,7 @@ export const readings = [
       {
         title: 'A Forty-Year Career',
         authors: ['Will Larson']
+      },
       {
         title: 'Bitcoin Has a Scaling Issue',
         authors: ['George203']
