@@ -3,6 +3,9 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'A Forty-Year Career',
+        authors: ['Will Larson']
+      {
         title: 'Bitcoin Has a Scaling Issue',
         authors: ['George203']
       },
