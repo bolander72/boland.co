@@ -3,6 +3,10 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: "We're Alive, Pablo is Dead",
+        authors: ['Elisabeth Nicula']
+      },
+      {
         title: 'A Forty-Year Career',
         authors: ['Will Larson']
       },
