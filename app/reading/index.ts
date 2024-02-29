@@ -3,6 +3,10 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'Ordinal Theory Handbook',
+        authors: ['Casey Rodarmor']
+      },
+      {
         title: "We're Alive, Pablo is Dead",
         authors: ['Elisabeth Nicula']
       },
