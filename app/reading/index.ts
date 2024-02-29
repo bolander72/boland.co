@@ -3,6 +3,10 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'Runes',
+        authors: ['Casey Rodarmor']
+      },
+      {
         title: 'Ordinal Theory Handbook',
         authors: ['Casey Rodarmor']
       },
