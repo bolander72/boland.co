@@ -34,7 +34,7 @@ export default function Home() {
         <Paragraph>
           As a product strategist, I work with founders and companies to turn
           ideas into products. This includes things like research and analysis,
-          product discovery and design, defining engingeering processes, brand
+          product discovery and design, defining engineering processes, brand
           strategy, and more.
         </Paragraph>
         <Paragraph>
