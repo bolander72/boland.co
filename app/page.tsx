@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <section className='space-y-6'>
         <Title className='text-3xl'>Hello, I'm Michael.</Title>
         <Paragraph>
@@ -32,17 +32,17 @@ export default function Home() {
           page.
         </Paragraph>
         <Paragraph>
-          As a product strategist, I work with founders and companies to turn
-          ideas into products. This includes things like research and analysis,
-          product discovery and design, defining engineering processes, brand
-          strategy, and more.
+          As a product strategist, I work with founders and teams to turn ideas
+          into products. This includes things like research and analysis,
+          narrative strategy, discovery and design, defining engineering
+          processes, and more.
         </Paragraph>
         <Paragraph>
           In my consulting practice, I partner with companies to empower
           leaders, cultivate more efficient and effective practices, and
           increase autonomy and freedom for teams. A more holistic explanation
           can be found{' '}
-          <Link href='/work' className='text-blue-600 underline'>
+          <Link href='/consulting' className='text-blue-600 underline'>
             here
           </Link>
           .
@@ -67,6 +67,6 @@ export default function Home() {
           <Paragraph>hello [at] boland [dot] co.</Paragraph>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

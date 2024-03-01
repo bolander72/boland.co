@@ -10,10 +10,8 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <main className='w-full'>
-      <section className='space-y-6'>
-        <Title className='text-3xl'>Blog</Title>
-      </section>
-    </main>
+    <section className='w-full space-y-6'>
+      <Title className='text-3xl'>Blog</Title>
+    </section>
   )
 }

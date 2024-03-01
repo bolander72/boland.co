@@ -66,9 +66,9 @@ export default function RootLayout({
         )}
       >
         <Nav />
-        <div className='flex flex-col items-center justify-center'>
+        <main className='flex flex-col items-center justify-center'>
           {children}
-        </div>
+        </main>
       </body>
     </html>
   )
