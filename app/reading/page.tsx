@@ -3,6 +3,7 @@ import { Title } from '@/components/title'
 import { Separator } from '@/components/ui/separator'
 import { Subtitle } from '@/components/subtitle'
 import { readings } from './index'
+import { Paragraph } from '@/components/paragraph'
 
 export const metadata = {
   ...sharedMetadata
@@ -13,11 +14,11 @@ export default function Reading() {
     <main className='w-full'>
       <section className='space-y-6'>
         <Title className='text-3xl'>Reading</Title>
-        <div className='flex items-center justify-between text-xl leading-8'>
+        <Paragraph>
           This is a non-exhaustive list of books, articles, and essays that have
           shaped how I think as well as my perspective and approach to life and
           work.
-        </div>
+        </Paragraph>
         <Separator />
         {readings.map(({ year, items }) => (
           <>
