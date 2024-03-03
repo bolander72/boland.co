@@ -14,7 +14,7 @@ const links = [
   // { href: '/blog', name: 'blog' },
   { href: '/reading', name: 'reading' },
   { href: '/now', name: 'now' },
-  { href: '/links', name: 'links' },
+  { href: '/links', name: 'links' }
 ]
 
 export function Nav() {
@@ -29,8 +29,12 @@ export function Nav() {
     <div className='mx-auto max-w-lg px-4'>
       <nav className='mb-12 hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
         <div className='space-x-6'>
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className='text-xl text-blue-600 underline'>
+          {links.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className='text-xl text-blue-600 underline'
+            >
               {link.name}
             </Link>
           ))}
@@ -78,8 +82,13 @@ export function Nav() {
         <SheetContent side='left' className='w-auto px-12 py-9'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-500 underline'>
-              {links.map((link) => (
-                <MobileLink key={link.href} href={link.href} onOpenChange={setOpen} className='text-xl text-blue-600 underline'>
+              {links.map(link => (
+                <MobileLink
+                  key={link.href}
+                  href={link.href}
+                  onOpenChange={setOpen}
+                  className='text-xl text-blue-600 underline'
+                >
                   {link.name}
                 </MobileLink>
               ))}

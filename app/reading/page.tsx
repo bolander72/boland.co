@@ -23,26 +23,16 @@ export default function Reading() {
         <>
           <Subtitle>{year}</Subtitle>
           {items.map(({ title, authors, link }) => (
-            <div
-              className='flex items-center justify-between text-xl leading-8'
-              key={title}
-            >
-              <div>
-                {title}
-                {link && (
-                  <Link href={link}>
-                    <ArrowUpRight className='inline-block h-[18px] text-blue-600' />
-                  </Link>
-                )}
-                <div className='flex text-lg text-muted-foreground'>
-                  {authors.join(', ')}
-                </div>
+            <div className='text-xl' key={title}>
+              {title}
+              {link && (
+                <Link href={link}>
+                  <ArrowUpRight className='inline-block h-[18px] text-blue-600' />
+                </Link>
+              )}
+              <div className='flex text-lg text-muted-foreground'>
+                {authors.join(', ')}
               </div>
-              {/* <div className='flex space-x-4'>
-                <div className='hidden text-lg text-muted-foreground sm:block truncate text-ellipsis w-36 text-right'>
-                  {authors.join(', ')}
-                </div>
-              </div> */}
             </div>
           ))}
         </>
