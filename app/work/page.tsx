@@ -24,15 +24,13 @@ export default function Work() {
           className='flex items-center justify-between text-xl leading-8'
           key={name}
         >
-          <div className='flex-col sm:flex-row'>
-            <div className='flex'>
-              {name}{' '}
+          <div>
+              {name}
               {link && (
                 <Link href={link}>
-                  <ArrowUpRight className='ml-0 h-4 text-blue-600' />
+                  <ArrowUpRight className='ml-0 h-4 text-blue-600 inline-block' />
                 </Link>
               )}
-            </div>
             <div className='flex text-lg text-muted-foreground'>{role}</div>
           </div>
           <div className='flex space-x-4 text-lg'>

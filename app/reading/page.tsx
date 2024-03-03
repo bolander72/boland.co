@@ -27,15 +27,13 @@ export default function Reading() {
               className='flex items-center justify-between text-xl leading-8'
               key={title}
             >
-              <div className='flex-col sm:flex-row'>
-                <div className='flex'>
-                  {title}{' '}
+              <div>
+                  {title}
                   {link && (
                     <Link href={link}>
-                      <ArrowUpRight className='ml-0 h-4 text-blue-600' />
+                      <ArrowUpRight className='h-[18px] text-blue-600 inline-block' />
                     </Link>
                   )}
-                </div>
                 <div className='flex text-lg text-muted-foreground'>
                   {authors.join(', ')}
                 </div>
