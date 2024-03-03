@@ -58,12 +58,12 @@ export const readings = [
         link: 'https://jonathanstark.com/hbin/'
       },
       {
-        title: 'The Art of Gig, Volume 2: Superstructures',
+        title: 'The Art of Gig, Vol. 2: Superstructures',
         authors: ['Venkatesh Rao'],
         link: 'https://artofgig.com/'
       },
       {
-        title: 'The Art of Gig, Volume 1: Foundations',
+        title: 'The Art of Gig, Vol. 1: Foundations',
         authors: ['Venkatesh Rao'],
         link: 'https://artofgig.com/'
       }
