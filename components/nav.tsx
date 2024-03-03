@@ -8,6 +8,15 @@ import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
+const links = [
+  { href: '/', name: 'home' },
+  { href: '/work', name: 'work' },
+  { href: '/blog', name: 'blog' },
+  { href: '/reading', name: 'reading' },
+  { href: '/now', name: 'now' },
+  { href: '/links', name: 'links' },
+]
+
 export function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -20,26 +29,11 @@ export function Nav() {
     <div className='mx-auto max-w-lg px-4'>
       <nav className='mb-12 hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
         <div className='space-x-6'>
-          <Link href='/' className='text-xl text-blue-600 underline'>
-            home
-          </Link>
-          <Link href='/work' className='text-xl text-blue-600 underline'>
-            work
-          </Link>
-          <Link href='/blog' className='text-xl text-blue-600 underline'>
-            blog
-          </Link>
-        </div>
-        <div className='space-x-6 '>
-          <Link href='/reading' className='text-xl text-blue-600 underline'>
-            reading
-          </Link>
-          <Link href='/now' className='text-xl text-blue-600 underline'>
-            now
-          </Link>
-          <Link href='/links' className='text-xl text-blue-600 underline'>
-            links
-          </Link>
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} className='text-xl text-blue-600 underline'>
+              {link.name}
+            </Link>
+          ))}
         </div>
       </nav>
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
@@ -84,24 +78,11 @@ export function Nav() {
         <SheetContent side='left' className='w-auto px-12 py-9'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-500 underline'>
-              <MobileLink href='/' onOpenChange={setOpen}>
-                home
-              </MobileLink>
-              <MobileLink href='/work' onOpenChange={setOpen}>
-                work
-              </MobileLink>
-              <MobileLink href='/blog' onOpenChange={setOpen}>
-                blog
-              </MobileLink>
-              <MobileLink href='/reading' onOpenChange={setOpen}>
-                reading
-              </MobileLink>
-              <MobileLink href='/now' onOpenChange={setOpen}>
-                now
-              </MobileLink>
-              <MobileLink href='/links' onOpenChange={setOpen}>
-                links
-              </MobileLink>
+              {links.map((link) => (
+                <MobileLink key={link.href} href={link.href} onOpenChange={setOpen} className='text-xl text-blue-600 underline'>
+                  {link.name}
+                </MobileLink>
+              ))}
             </div>
           </ScrollArea>
         </SheetContent>
