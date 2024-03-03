@@ -36,15 +36,15 @@ export default function Reading() {
                     </Link>
                   )}
                 </div>
-                <div className='flex text-lg text-muted-foreground sm:hidden'>
+                <div className='flex text-lg text-muted-foreground'>
                   {authors.join(', ')}
                 </div>
               </div>
-              <div className='flex space-x-4'>
-                <div className='hidden text-muted-foreground sm:flex'>
+              {/* <div className='flex space-x-4'>
+                <div className='hidden text-lg text-muted-foreground sm:block truncate text-ellipsis w-36 text-right'>
                   {authors.join(', ')}
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </>

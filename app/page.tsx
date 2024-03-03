@@ -13,13 +13,11 @@ export default function Home() {
     <div>
       <section className='space-y-6'>
         <Title className='text-3xl'>Hello, I'm Michael.</Title>
+        <Paragraph>I'm an programmer and consultant.</Paragraph>
         <Paragraph>
-          I'm a frontend developer and independent consultant.
-        </Paragraph>
-        <Paragraph>
-          As a developer, I build applications across web and mobile, do
-          contract work for various clients, and build startups and side
-          projects. To view more, please head to my{' '}
+          I build applications across web and mobile, do contract work for
+          various clients, and build startups and side projects. For more,
+          please head to my{' '}
           <Link href='/work' className='text-blue-600 underline'>
             work
           </Link>{' '}
@@ -27,9 +25,9 @@ export default function Home() {
         </Paragraph>
         <Paragraph>
           In my consulting practice, I partner with startup founders and teams.
-          I do my best work providing narrative and product strategy, helping
-          define engineering processes, and advising organizational design
-          strategy.
+          I do my best work when providing narrative and product strategy,
+          helping define engineering processes, and advising organizational
+          design.
         </Paragraph>
       </section>
       <section className='mt-6 space-y-6'>

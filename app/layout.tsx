@@ -62,7 +62,7 @@ export default function RootLayout({
       <body
         className={cn(
           montreal.className,
-          'mx-auto my-12 max-w-2xl px-4 font-sans'
+          'mx-auto my-12 max-w-lg text-pretty px-4 font-sans'
         )}
       >
         <Nav />

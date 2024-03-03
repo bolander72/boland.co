@@ -69,6 +69,6 @@ export const gigs = [
     name: 'New Digital School',
     role: 'Researcher in Residence',
     timespan: '2016 - 2017',
-    link: 'https://thenewdigitalschool.com/'
+    link: ''
   }
 ]

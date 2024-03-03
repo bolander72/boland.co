@@ -13,6 +13,9 @@ export default function Links() {
         <Link href='https://x.com/bolander72/'>
           <Button className='w-36'>X</Button>
         </Link>
+        <Link href='https://github.com/bolander72/'>
+          <Button className='w-36'>GitHub</Button>
+        </Link>
         <Link href='https://linkedin.com/in/bolander72/'>
           <Button className='w-36'>LinkedIn</Button>
         </Link>

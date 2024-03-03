@@ -33,12 +33,10 @@ export default function Work() {
                 </Link>
               )}
             </div>
-            <div className='flex text-lg text-muted-foreground sm:hidden'>
-              {role}
-            </div>
+            <div className='flex text-lg text-muted-foreground'>{role}</div>
           </div>
-          <div className='flex space-x-4'>
-            <div className='hidden text-muted-foreground sm:flex'>{role}</div>
+          <div className='flex space-x-4 text-lg'>
+            {/* <div className='hidden text-lg text-muted-foreground sm:flex'>{role}</div> */}
             <div>{timespan}</div>
           </div>
         </div>

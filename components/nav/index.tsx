@@ -31,14 +31,17 @@ export function Nav() {
           reading
         </Link>
         <Link href='/now' className='text-xl text-blue-600 underline'>
-          /now
+          now
         </Link>
-      </div>
-      <div className='space-x-6 '>
         <Link href='/links' className='text-xl text-blue-600 underline'>
           links
         </Link>
       </div>
+      {/* <div className='space-x-6 '>
+        <Link href='/links' className='text-xl text-blue-600 underline'>
+          links
+        </Link>
+      </div> */}
     </nav>
   )
 }
