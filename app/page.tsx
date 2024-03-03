@@ -14,18 +14,12 @@ export default function Home() {
       <section className='space-y-6'>
         <Title className='text-3xl'>Hello, I'm Michael.</Title>
         <Paragraph>
-          I'm a frontend developer, product strategist, and independent
-          consultant. I also write a{' '}
-          <Link href='/blog' className='text-blue-600 underline'>
-            blog
-          </Link>
-          , which has existed in scribbles, physical notes, and journals for
-          years (and digitally since 2023).
+          I'm a frontend developer and independent consultant.
         </Paragraph>
         <Paragraph>
           As a developer, I build applications across web and mobile, do
           contract work for various clients, and build startups and side
-          projects. To see more projects, please head to my{' '}
+          projects. To view more, please head to my{' '}
           <Link href='/work' className='text-blue-600 underline'>
             work
           </Link>{' '}
@@ -34,7 +28,7 @@ export default function Home() {
         <Paragraph>
           In my consulting practice, I partner with startup founders and teams.
           I do my best work providing narrative and product strategy, helping
-          define engineering structures, and advising organizational design
+          define engineering processes, and advising organizational design
           strategy.
         </Paragraph>
       </section>
