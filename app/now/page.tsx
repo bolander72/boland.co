@@ -13,7 +13,7 @@ export const metadata = {
 export default function Now() {
   return (
     <section className='w-full space-y-6'>
-      <Title>now</Title>
+      <Title>Now</Title>
       <Paragraph>
         What I'm focused on at this point in my life - an exercise to share with
         you a little bit more about me and my endeavors, inspired by Derek
