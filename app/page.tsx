@@ -36,7 +36,7 @@ export default function Home() {
           <Paragraph>
             Book a time{' '}
             <Link
-              href='https://cal.com/boland/chat'
+              href='https://cal.com/bolander72/chat'
               className='text-blue-600 underline'
             >
               here
