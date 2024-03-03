@@ -1,8 +1,8 @@
 import sharedMetadata from '@/metadata'
 import { Title } from '@/components/title'
-import { Separator } from '@/components/ui/separator'
 import { gigs } from './index'
-import { Paragraph } from '@/components/paragraph'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export const metadata = {
   ...sharedMetadata
@@ -12,21 +12,27 @@ export default function Work() {
   return (
     <section className='w-full space-y-6'>
       <Title className='text-3xl'>Work</Title>
-      <Paragraph>
+      {/* <Paragraph>
         I like to make cool stuff with good people and have fun doing it;
         even&nbsp;
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
         better if it does some good for the world. Here's a summary of my work
         so far.
       </Paragraph>
-      <Separator />
-      {gigs.map(({ name, role, timespan }) => (
+      <Separator /> */}
+      {gigs.map(({ name, role, timespan, link }) => (
         <div
           className='flex items-center justify-between text-xl leading-8'
           key={name}
         >
           <div className='flex-col sm:flex-row'>
-            <div>{name}</div>
+            <div className='flex'>
+              {name}{' '}
+              {link && (
+                <Link href={link}>
+                  <ArrowUpRight className='ml-0 h-4 text-blue-600' />
+                </Link>
+              )}
+            </div>
             <div className='flex text-lg text-muted-foreground sm:hidden'>
               {role}
             </div>

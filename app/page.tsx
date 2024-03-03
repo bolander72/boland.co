@@ -25,27 +25,17 @@ export default function Home() {
         <Paragraph>
           As a developer, I build applications across web and mobile, do
           contract work for various clients, and build startups and side
-          projects. To see more, please head to my{' '}
+          projects. To see more projects, please head to my{' '}
           <Link href='/work' className='text-blue-600 underline'>
             work
           </Link>{' '}
           page.
         </Paragraph>
         <Paragraph>
-          As a product strategist, I work with founders and teams to turn ideas
-          into products. This includes things like research and analysis,
-          narrative strategy, discovery and design, defining engineering
-          processes, and more.
-        </Paragraph>
-        <Paragraph>
-          In my consulting practice, I partner with companies to empower
-          leaders, cultivate more efficient and effective practices, and
-          increase autonomy and freedom for teams. A more holistic explanation
-          can be found{' '}
-          <Link href='/consulting' className='text-blue-600 underline'>
-            here
-          </Link>
-          .
+          In my consulting practice, I partner with startup founders and teams.
+          I do my best work providing narrative and product strategy, helping
+          define engineering structures, and advising organizational design
+          strategy.
         </Paragraph>
       </section>
       <section className='mt-6 space-y-6'>

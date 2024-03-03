@@ -4,6 +4,7 @@ import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 import { Separator } from '@/components/ui/separator'
 import { Subtitle } from '@/components/subtitle'
+import Link from 'next/link'
 
 export const metadata = {
   ...sharedMetadata
@@ -16,7 +17,14 @@ export default function Now() {
       <Paragraph>
         What I'm focused on at this point in my life - an exercise to share with
         you a little bit more about me and my endeavors, inspired by Derek
-        Sivers' "now".
+        Sivers' "now". You can view my official page{' '}
+        <Link
+          href='https://nownownow.com/p/Ggbn'
+          className='text-blue-600 underline'
+        >
+          here
+        </Link>
+        .
       </Paragraph>
       <Paragraph>
         Updated February 19th, 2024 on a brisk, sunny day in the Ozarks.
