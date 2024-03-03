@@ -59,16 +59,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body
-        className={cn(
-          montreal.className,
-          'mx-auto my-12 max-w-lg text-pretty px-4 font-sans'
-        )}
-      >
+      <body className={cn(montreal.className, 'my-12 text-pretty font-sans')}>
         <Nav />
-        <main className='flex flex-col items-center justify-center'>
-          {children}
-        </main>
+        <main className='mx-auto max-w-lg px-4'>{children}</main>
       </body>
     </html>
   )

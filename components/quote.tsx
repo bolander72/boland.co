@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
-import { Separator } from '../ui/separator'
-import { Paragraph } from '../paragraph'
+import { Separator } from './ui/separator'
+import { Paragraph } from './paragraph'
 
 interface Props {
   children: ReactNode
