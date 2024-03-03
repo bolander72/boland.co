@@ -25,12 +25,12 @@ export default function Work() {
           key={name}
         >
           <div>
-              {name}
-              {link && (
-                <Link href={link}>
-                  <ArrowUpRight className='ml-0 h-4 text-blue-600 inline-block' />
-                </Link>
-              )}
+            {name}
+            {link && (
+              <Link href={link}>
+                <ArrowUpRight className='ml-0 inline-block h-4 text-blue-600' />
+              </Link>
+            )}
             <div className='flex text-lg text-muted-foreground'>{role}</div>
           </div>
           <div className='flex space-x-4 text-lg'>

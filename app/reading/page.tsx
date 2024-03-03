@@ -28,12 +28,12 @@ export default function Reading() {
               key={title}
             >
               <div>
-                  {title}
-                  {link && (
-                    <Link href={link}>
-                      <ArrowUpRight className='h-[18px] text-blue-600 inline-block' />
-                    </Link>
-                  )}
+                {title}
+                {link && (
+                  <Link href={link}>
+                    <ArrowUpRight className='inline-block h-[18px] text-blue-600' />
+                  </Link>
+                )}
                 <div className='flex text-lg text-muted-foreground'>
                   {authors.join(', ')}
                 </div>
