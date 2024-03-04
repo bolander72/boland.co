@@ -1,10 +1,11 @@
 const metadata = {
   title: 'Michael Boland',
-  description: 'Developer, strategist, and consultant.',
+  description: 'Programmer and consultant.',
   metadataBase: new URL('https://boland.co'),
   keywords: [
     'indie consultancy',
     'indie',
+    'consultant',
     'consultancy',
     'consulting',
     'business',
@@ -14,13 +15,17 @@ const metadata = {
     'frontend',
     'developer',
     'strategy',
-    'strategist'
+    'strategist',
+    'programmer',
+    'programming',
+    'blog',
+    'blogging',
   ],
   authors: [{ name: 'Michael Boland', url: 'https://boland.co' }],
   creator: 'Michael Boland',
   openGraph: {
     title: 'Michael Boland',
-    description: 'Developer, strategist, and consultant.',
+    description: 'Programmer and consultant.',
     url: 'https://boland.co',
     siteName: 'Boland Co.',
     images: [

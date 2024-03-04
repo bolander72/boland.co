@@ -1,13 +1,8 @@
-import sharedMetadata from '@/metadata'
 import { Title } from '@/components/title'
 import { gigs } from './index'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Subtitle } from '@/components/subtitle'
-
-export const metadata = {
-  ...sharedMetadata
-}
 
 export default function Work() {
   return (

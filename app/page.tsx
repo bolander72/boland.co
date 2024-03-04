@@ -4,10 +4,6 @@ import sharedMetadata from '@/metadata'
 import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 
-export const metadata = {
-  ...sharedMetadata
-}
-
 export default function Home() {
   return (
     <div>

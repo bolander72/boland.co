@@ -1,10 +1,5 @@
-import sharedMetadata from '@/metadata'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-
-export const metadata = {
-  ...sharedMetadata
-}
 
 export default function Links() {
   return (

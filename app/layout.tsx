@@ -1,10 +1,9 @@
-'use client'
-
 import localFont from 'next/font/local'
 
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { Nav } from '@/components/nav'
+import sharedMetadata from '@/metadata'
 
 const montreal = localFont({
   variable: '--font-montreal',
@@ -51,6 +50,10 @@ const montreal = localFont({
     }
   ]
 })
+
+export const metadata = {
+  ...sharedMetadata
+}
 
 export default function RootLayout({
   children

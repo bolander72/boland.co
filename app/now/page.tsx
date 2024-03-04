@@ -1,14 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import sharedMetadata from '@/metadata'
 import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 import { Separator } from '@/components/ui/separator'
 import { Subtitle } from '@/components/subtitle'
 import Link from 'next/link'
-
-export const metadata = {
-  ...sharedMetadata
-}
 
 export default function Now() {
   return (

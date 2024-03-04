@@ -1,13 +1,8 @@
-import sharedMetadata from '@/metadata'
 import { Title } from '@/components/title'
 import { Subtitle } from '@/components/subtitle'
 import { readings } from './index'
 import { ArrowUpRight, Link2 } from 'lucide-react'
 import Link from 'next/link'
-
-export const metadata = {
-  ...sharedMetadata
-}
 
 export default function Reading() {
   return (
