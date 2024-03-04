@@ -60,17 +60,17 @@ export const readings = [
       {
         title: 'Hourly Billing is Nuts',
         authors: ['Jonathan Stark'],
-        link: 'https://jonathanstark.com/hbin/'
+        link: ''
       },
       {
         title: 'The Art of Gig, Vol. 2: Superstructures',
         authors: ['Venkatesh Rao'],
-        link: 'https://artofgig.com/'
+        link: ''
       },
       {
         title: 'The Art of Gig, Vol. 1: Foundations',
         authors: ['Venkatesh Rao'],
-        link: 'https://artofgig.com/'
+        link: ''
       }
     ]
   }
