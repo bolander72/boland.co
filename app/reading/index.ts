@@ -3,6 +3,11 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'Just Enough Design',
+        authors: ['Taku Satoh'],
+        link: ''
+      },
+      {
         title: 'Runes',
         authors: ['Casey Rodarmor'],
         link: 'https://rodarmor.com/blog/runes/'
