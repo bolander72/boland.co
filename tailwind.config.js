@@ -16,9 +16,6 @@ module.exports = {
       }
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-montreal)']
-      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

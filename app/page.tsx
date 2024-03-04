@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
-import sharedMetadata from '@/metadata'
 import { Paragraph } from '@/components/paragraph'
 import { Title } from '@/components/title'
 
