@@ -3,6 +3,11 @@ export const readings = [
     year: 2024,
     items: [
       {
+        title: 'The Two Reacts',
+        authors: ['Dan Abramov'],
+        link: 'https://overreacted.io/the-two-reacts/'
+      },
+      {
         title: 'Just Enough Design',
         authors: ['Taku Satoh'],
         link: ''
