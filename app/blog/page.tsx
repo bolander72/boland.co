@@ -1,4 +1,5 @@
 import { Title } from '@/components/title'
+import { posts } from '@/.velite'
 
 // TODO: use /slug-${id} for post titles
 

@@ -1,0 +1,11 @@
+- name: Design
+  slug: design
+
+- name: Programming
+  slug: programming
+
+- name: Art
+  slug: art
+
+- name: Bitcoin
+  slug: bitcoin

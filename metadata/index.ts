@@ -19,7 +19,7 @@ const metadata = {
     'programmer',
     'programming',
     'blog',
-    'blogging',
+    'blogging'
   ],
   authors: [{ name: 'Michael Boland', url: 'https://boland.co' }],
   creator: 'Michael Boland',
