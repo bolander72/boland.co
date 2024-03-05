@@ -3,6 +3,12 @@ import { Subtitle } from '@/components/subtitle'
 import data from './index.json'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import sharedMetadata from '@/metadata'
+
+export const metadata = {
+  ...sharedMetadata,
+  title: 'reading | Michael Boland',
+}
 
 export default function Reading() {
   return (

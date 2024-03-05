@@ -1,5 +1,11 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import sharedMetadata from '@/metadata'
+
+export const metadata = {
+  ...sharedMetadata,
+  title: 'links | Michael Boland',
+}
 
 export default function Links() {
   return (

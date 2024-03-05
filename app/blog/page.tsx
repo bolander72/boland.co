@@ -6,7 +6,7 @@ import { posts } from '@/.velite'
 export default function Blog() {
   return (
     <section className='w-full space-y-6'>
-      <Title className='text-3xl'>Blog</Title>
+      <Title>Blog</Title>
     </section>
   )
 }

@@ -3,6 +3,12 @@ import data from './index.json'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Subtitle } from '@/components/subtitle'
+import sharedMetadata from '@/metadata'
+
+export const metadata = {
+  ...sharedMetadata,
+  title: 'work | Michael Boland',
+}
 
 export default function Work() {
   return (

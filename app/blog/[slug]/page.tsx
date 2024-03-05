@@ -3,6 +3,8 @@ import { posts } from '@/.velite'
 
 import type { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
+import { Title } from '@/components/title'
+import sharedMetadata from '@/metadata'
 
 interface PostProps {
   params: {
@@ -16,8 +18,13 @@ function getPostBySlug(slug: string) {
 
 export function generateMetadata({ params }: PostProps): Metadata {
   const post = getPostBySlug(params.slug)
-  if (post == null) return {}
-  return { title: post.title, description: post.description }
+
+  if (post == null) return {
+    ...sharedMetadata as Metadata,
+    title: 'not found | Michael Boland',
+  }
+
+  return { ...sharedMetadata as Metadata, title: `${post.title} | Michael Boland`, description: post.description }
 }
 
 export function generateStaticParams(): PostProps['params'][] {
@@ -33,7 +40,7 @@ export default function PostPage({ params }: PostProps) {
 
   return (
     <article className='space-y-6'>
-      <h1 className='text-3xl'>{post.title}</h1>
+      <Title className='text-3xl'>{post.title}</Title>
       {post.description && (
         <p className='text-lg text-muted-foreground'>{post.description}</p>
       )}

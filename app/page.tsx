@@ -1,49 +1,32 @@
-/* eslint-disable react/no-unescaped-entities */
-import Link from 'next/link'
-import { Paragraph } from '@/components/paragraph'
+import { MDXContent } from '@/components/mdx-content'
+import { pages } from '@/.velite'
 import { Title } from '@/components/title'
+import sharedMetadata from '@/metadata'
 
-export default function Home() {
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
+export const metadata = {
+  ...sharedMetadata,
+  title: 'home | Michael Boland',
+}
+
+export function generateStaticParams(): Props['params'][] {
+  return pages.map(() => ({ slug: '/' }))
+}
+
+export default function PagePage() {
+  const page = pages.find(page => page.slug === 'home')
+
   return (
-    <div>
-      <section className='space-y-6'>
-        <Title className='text-3xl'>Hello, I'm Michael.</Title>
-        <Paragraph>I'm an programmer and consultant.</Paragraph>
-        <Paragraph>
-          I build applications across web and mobile, do contract work for
-          various clients, and build startups and side projects. For more,
-          please head to my{' '}
-          <Link href='/work' className='text-blue-600 underline'>
-            work
-          </Link>{' '}
-          page.
-        </Paragraph>
-        <Paragraph>
-          In my consulting practice, I partner with startup founders and teams.
-          I do my best work when providing narrative and product strategy,
-          helping define engineering processes, and advising organizational
-          design.
-        </Paragraph>
-      </section>
-      <section className='mt-6 space-y-6'>
-        <div>
-          <Paragraph>Want to chat?</Paragraph>
-          <Paragraph>
-            Book a time{' '}
-            <Link
-              href='https://cal.com/bolander72/chat'
-              className='text-blue-600 underline'
-            >
-              here
-            </Link>
-            .
-          </Paragraph>
-        </div>
-        <div>
-          <Paragraph>Send an email:</Paragraph>
-          <Paragraph>hello [at] boland [dot] co.</Paragraph>
-        </div>
-      </section>
-    </div>
+    <article className='space-y-6'>
+      <Title>{page.title}</Title>
+      <div className='prose space-y-6 dark:prose-invert prose-headings:font-normal prose-headings:text-primary prose-h1:text-3xl prose-h2:text-2xl prose-p:text-xl prose-p:leading-8 prose-p:text-primary prose-a:font-normal prose-a:text-blue-600 prose-a:underline prose-blockquote:border-l-[1px] prose-blockquote:border-slate-200 prose-blockquote:text-xl prose-blockquote:font-normal prose-blockquote:dark:border-slate-800'>
+        <MDXContent code={page.body} />
+      </div>
+    </article>
   )
 }
