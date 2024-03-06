@@ -7,7 +7,7 @@ import sharedMetadata from '@/metadata'
 
 export const metadata = {
   ...sharedMetadata,
-  title: 'work | Michael Boland',
+  title: 'work | Michael Boland'
 }
 
 export default function Work() {
