@@ -34,7 +34,7 @@ export default function Links() {
         </Link>
         <Link
           href='/'
-          className='flex justify-center pt-4 text-xl text-blue-600 underline'
+          className='flex justify-center pt-4 text-xl text-blue-600 underline dark:text-blue-500'
         >
           boland.co
         </Link>

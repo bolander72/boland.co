@@ -20,7 +20,7 @@ export default function Work() {
           {name}
           {link && (
             <Link href={link}>
-              <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600' />
+              <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600 dark:text-blue-500' />
             </Link>
           )}
           <div className='flex text-lg text-muted-foreground'>{role}</div>
@@ -34,7 +34,7 @@ export default function Work() {
             {name}
             {link && (
               <Link href={link}>
-                <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600' />
+                <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600 dark:text-blue-500' />
               </Link>
             )}
             <div className='flex text-lg text-muted-foreground'>{role}</div>

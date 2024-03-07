@@ -7,6 +7,7 @@ import { Button } from './ui/button'
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
+import { ModeToggle } from './mode-toggle'
 
 const links = [
   { href: '/', name: 'home' },
@@ -33,11 +34,12 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className='text-xl text-blue-600 underline'
+              className='text-xl text-blue-600 underline dark:text-blue-500'
             >
               {link.name}
             </Link>
           ))}
+          <ModeToggle />
         </div>
       </nav>
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
@@ -81,17 +83,20 @@ export function Nav() {
         </SheetTrigger>
         <SheetContent side='left' className='w-auto px-12 py-9'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
-            <div className='flex flex-col space-y-6 text-xl text-blue-500 underline'>
+            <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
               {links.map(link => (
                 <MobileLink
                   key={link.href}
                   href={link.href}
                   onOpenChange={setOpen}
-                  className='text-xl text-blue-600 underline'
+                  className='text-xl underline'
                 >
                   {link.name}
                 </MobileLink>
               ))}
+            </div>
+            <div className='mt-6'>
+              <ModeToggle />
             </div>
           </ScrollArea>
         </SheetContent>

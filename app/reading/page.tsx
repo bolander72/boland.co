@@ -22,7 +22,7 @@ export default function Reading() {
               {title}
               {link && (
                 <Link href={link}>
-                  <ArrowUpRight className='inline-block h-[18px] text-blue-600' />
+                  <ArrowUpRight className='inline-block h-[18px] text-blue-600 dark:text-blue-500' />
                 </Link>
               )}
               <div className='flex text-lg text-muted-foreground'>
