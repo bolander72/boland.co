@@ -46,7 +46,7 @@ export function Nav() {
         <SheetTrigger asChild className='mb-9'>
           <Button
             variant='link'
-            className='-mx-4 flex text-base sm:hidden'
+            className='-mx-4 flex text-base sm:hidden focus-visible:ring-0'
             size='default'
           >
             <svg
