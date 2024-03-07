@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "The Case for Neo-Precisionism",
+        "authors": ["Grant Yun"],
+        "link": "https://medium.com/@grantyun2/the-case-for-neo-precisionism-743b5ca4cdb4/"
+      },
+      {
         "title": "The Two Reacts",
         "authors": ["Dan Abramov"],
         "link": "https://overreacted.io/the-two-reacts/"
