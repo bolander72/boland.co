@@ -45,7 +45,7 @@ export function Nav() {
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
         <SheetTrigger asChild className='mb-9'>
           <Button
-            variant='ghost'
+            variant='link'
             className='-mx-4 flex text-base sm:hidden'
             size='default'
           >
@@ -81,7 +81,7 @@ export function Nav() {
             <span className='sr-only'>Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side='left' className='w-auto px-12 py-9'>
+        <SheetContent side='left' className='w-40 flex justify-center py-9'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
               {links.map(link => (
