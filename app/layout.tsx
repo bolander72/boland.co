@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty bg-[url('/images/noise.svg')] font-sans`}
+        className={`my-12 text-pretty bg-[url('/images/noise.png')] dark:bg-[url('/images/noise-dark.png')] font-sans`}
       >
         <Providers
           attribute='class'
