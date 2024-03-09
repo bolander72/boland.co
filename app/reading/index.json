@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "Re-move",
+        "authors": ["Nahee Kim"],
+        "link": "https://summerofprotocols.com/research/re-move/"
+      },
+      {
         "title": "The Case for Neo-Precisionism",
         "authors": ["Grant Yun"],
         "link": "https://medium.com/@grantyun2/the-case-for-neo-precisionism-743b5ca4cdb4/"
