@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "How to Do Nothing",
+        "authors": ["Jenny Odell"],
+        "link": ""
+      },
+      {
         "title": "Re-move",
         "authors": ["Nahee Kim"],
         "link": "https://summerofprotocols.com/research/re-move/"
