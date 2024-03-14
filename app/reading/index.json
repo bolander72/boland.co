@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "Developers are on Edge",
+        "authors: ["David Heinemeier Hansson"],
+        "link": "https://world.hey.com/dhh/developers-are-on-edge-4dfcf9c1/"
+      },
+      {
         "title": "How to Do Nothing",
         "authors": ["Jenny Odell"],
         "link": ""
