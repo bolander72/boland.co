@@ -2,7 +2,14 @@
   "years": {
     "2024": [
       {
-        "title": "Developers are on Edge",
+        "title": "This Is a Media Business, It Just May Not Be Yours",
+        "authors": [
+          "Dark Star"
+        ],
+        "link": "https://darkstar.mirror.xyz/3j8CK38uxHl4MDUyzVjj0AkpBYDYwyX3xZMjMKmMqos/"
+      },
+      {
+        "title": "Developers Are on Edge",
         "authors": ["David Heinemeier Hansson"],
         "link": "https://world.hey.com/dhh/developers-are-on-edge-4dfcf9c1/"
       },
@@ -42,7 +49,7 @@
         "link": "https://docs.ordinals.com/"
       },
       {
-        "title": "We're Alive, Pablo is Dead",
+        "title": "We're Alive, Pablo Is Dead",
         "authors": ["Elisabeth Nicula"],
         "link": "https://momus.ca/were-alive-pablo-is-dead/"
       },
@@ -82,7 +89,7 @@
         "link": "https://otherinter.net/research/three-body-problem/"
       },
       {
-        "title": "Hourly Billing is Nuts",
+        "title": "Hourly Billing Is Nuts",
         "authors": ["Jonathan Stark"],
         "link": ""
       },
