@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 import { ModeToggle } from './mode-toggle'
 
 const links = [
-  { href: '/', name: 'home' },
+  { href: '/', name: 'about' },
   { href: '/work', name: 'work' },
   // { href: '/blog', name: 'blog' },
   { href: '/reading', name: 'reading' },

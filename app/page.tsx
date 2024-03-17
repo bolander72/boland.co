@@ -19,7 +19,7 @@ export function generateStaticParams(): Props['params'][] {
 }
 
 export default function PagePage() {
-  const page = pages.find(page => page.slug === 'home')
+  const page = pages.find(page => page.slug === 'about')
 
   return (
     <article className='space-y-6'>

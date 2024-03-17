@@ -33,7 +33,10 @@ export default function Links() {
           <Button className='w-36'>Cosmos</Button>
         </Link>
         <div className='pt-4'>
-          <Link href='/' className='flex justify-center text-xl text-blue-600 underline dark:text-blue-500'>
+          <Link
+            href='/'
+            className='flex justify-center text-xl text-blue-600 underline dark:text-blue-500'
+          >
             boland.co
           </Link>
         </div>
