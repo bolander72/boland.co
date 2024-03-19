@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "The Spectre of MEV on Bitcoin",
+        "authors": ["Walt Smith"],
+        "link": "https://cyber.fund/content/the-spectre-of-mev-on-bitcoin/"
+      },
+      {
         "title": "A Few Words on Testing",
         "authors": ["Thorsten Ball"],
         "link": "https://registerspill.thorstenball.com/p/a-few-words-on-testing/"
