@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "BIP Land",
+        "authors": ["Tyler Whittle (Dr. DAO)"],
+        "link": "https://www.quantumcats.xyz/bip-land/"
+      },
+      {
         "title": "The Spectre of MEV on Bitcoin",
         "authors": ["Walt Smith"],
         "link": "https://cyber.fund/content/the-spectre-of-mev-on-bitcoin/"
