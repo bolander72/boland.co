@@ -11,7 +11,7 @@ type Props = {
 
 export const metadata = {
   ...sharedMetadata,
-  title: 'home | Michael Boland'
+  title: 'about | Michael Boland'
 }
 
 export function generateStaticParams(): Props['params'][] {
