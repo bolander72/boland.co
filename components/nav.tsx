@@ -29,32 +29,34 @@ export function Nav() {
   return (
     <div className='mx-auto max-w-lg px-4'>
       <nav className='mb-12 hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
-        <div className='space-x-6'>
-          {links.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className='text-xl text-blue-600 underline dark:text-blue-500'
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className='flex w-full justify-between'>
+          <div className='space-x-6 '>
+            {links.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className='text-xl text-blue-600 underline dark:text-blue-500'
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
           <ModeToggle />
         </div>
       </nav>
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
         <SheetTrigger asChild className='mb-9'>
           <Button
-            variant='link'
-            className='-mx-4 flex text-base focus-visible:ring-0 sm:hidden'
-            size='default'
+            variant='outline'
+            className='flex text-base focus-visible:ring-0 sm:hidden'
+            size='sm'
           >
             <svg
               strokeWidth='1.5'
               viewBox='0 0 24 24'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
-              className='h-7 w-7'
+              className='h-6 w-6'
             >
               <path
                 d='M3 5H11'
