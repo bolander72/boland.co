@@ -81,7 +81,10 @@ export function Nav() {
             <span className='sr-only'>Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side='left' className='flex w-40 justify-center py-9'>
+        <SheetContent
+          side='left'
+          className='flex w-40 justify-center py-9 dark:bg-background'
+        >
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
               {links.map(link => (

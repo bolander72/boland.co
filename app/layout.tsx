@@ -1,8 +1,8 @@
 import './globals.css'
+
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
-import { ThemeProvider } from 'next-themes'
 
 export const metadata = {
   ...sharedMetadata
