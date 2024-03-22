@@ -27,9 +27,9 @@ export function Nav() {
   }
 
   return (
-    <div className='mx-auto max-w-lg px-4 mb-12'>
+    <div className='mx-auto mb-12 max-w-lg px-4'>
       <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
-        <div className='flex w-full justify-between items-center'>
+        <div className='flex w-full items-center justify-between'>
           <div className='space-x-6'>
             {links.map(link => (
               <Link
