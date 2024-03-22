@@ -27,10 +27,10 @@ export function Nav() {
   }
 
   return (
-    <div className='mx-auto max-w-lg px-4'>
-      <nav className='mb-12 hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
+    <div className='mx-auto max-w-lg px-4 mb-12'>
+      <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
         <div className='flex w-full justify-between items-center'>
-          <div className='space-x-6 '>
+          <div className='space-x-6'>
             {links.map(link => (
               <Link
                 key={link.href}
@@ -45,7 +45,7 @@ export function Nav() {
         </div>
       </nav>
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
-        <SheetTrigger asChild className='mb-9'>
+        <SheetTrigger asChild className=''>
           <Button
             variant='outline'
             className='flex text-base focus-visible:ring-0 sm:hidden'
