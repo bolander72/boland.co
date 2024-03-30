@@ -85,10 +85,7 @@ export function Nav() {
             <span className='sr-only'>Toggle Menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent
-          side='left'
-          className='w-auto py-9 dark:bg-background'
-        >
+        <SheetContent side='left' className='w-auto py-9 dark:bg-background'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
               {links.map(link => (
@@ -96,13 +93,13 @@ export function Nav() {
                   key={link.href}
                   href={link.href}
                   onOpenChange={setOpen}
-                  className='text-xl underline mx-4'
+                  className='mx-4 text-xl underline'
                 >
                   {link.name}
                 </MobileLink>
               ))}
             </div>
-            <div className='mt-6 mx-4'>
+            <div className='mx-4 mt-6'>
               <ModeToggle />
             </div>
           </ScrollArea>
