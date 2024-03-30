@@ -87,7 +87,7 @@ export function Nav() {
         </SheetTrigger>
         <SheetContent
           side='left'
-          className='flex w-48 justify-center py-9 dark:bg-background'
+          className='w-auto py-9 dark:bg-background px-12'
         >
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
