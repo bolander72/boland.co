@@ -28,6 +28,7 @@ export function Nav() {
 
   return (
     <div className='mx-auto mb-12 max-w-lg px-4'>
+      {/* Desktop */}
       <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
         <div className='flex w-full items-center justify-between'>
           <div className='space-x-6'>
@@ -44,6 +45,7 @@ export function Nav() {
           <ModeToggle />
         </div>
       </nav>
+      {/* Mobile */}
       <Sheet open={open} onOpenChange={setOpen} modal={true}>
         <SheetTrigger asChild className=''>
           <Button
@@ -85,7 +87,7 @@ export function Nav() {
         </SheetTrigger>
         <SheetContent
           side='left'
-          className='flex w-40 justify-center py-9 dark:bg-background'
+          className='flex w-48 justify-center py-9 dark:bg-background'
         >
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
