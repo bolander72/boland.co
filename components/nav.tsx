@@ -87,7 +87,7 @@ export function Nav() {
         </SheetTrigger>
         <SheetContent
           side='left'
-          className='w-auto py-9 dark:bg-background px-12'
+          className='w-auto py-9 dark:bg-background'
         >
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
             <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
@@ -96,13 +96,13 @@ export function Nav() {
                   key={link.href}
                   href={link.href}
                   onOpenChange={setOpen}
-                  className='text-xl underline'
+                  className='text-xl underline mx-4'
                 >
                   {link.name}
                 </MobileLink>
               ))}
             </div>
-            <div className='mt-6'>
+            <div className='mt-6 mx-4'>
               <ModeToggle />
             </div>
           </ScrollArea>
