@@ -119,7 +119,16 @@ export default defineConfig({
           excerpt: s.excerpt(),
           content: s.markdown()
         })
-        .transform(data => ({ ...data, permalink: `/blog/${data.slug}` }))
+        .transform(data => {
+          const year = new Date(data.date).getFullYear()
+          const month = ('0' + (new Date(data.date).getMonth() + 1)).slice(-2)
+          const date = ('0' + new Date(data.date).getDate()).slice(-2)
+
+          return {
+            ...data,
+            permalink: `/blog/${year}/${month}/${date}/${data.slug}`
+          }
+        })
     }
   },
   markdown: {

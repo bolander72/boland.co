@@ -13,7 +13,7 @@ export const metadata = {
 export default function Reading() {
   return (
     <section className='w-full space-y-6'>
-      <Title className='text-3xl'>Reading</Title>
+      <Title>Reading</Title>
       {Object.entries(data.years).map(([year, items]) => (
         <>
           <Subtitle>{year}</Subtitle>
@@ -21,7 +21,7 @@ export default function Reading() {
             <div className='text-xl' key={title}>
               {title}
               {link && (
-                <Link href={link}>
+                <Link href={link} target='_blank' referrerPolicy='no-referrer'>
                   <ArrowUpRight className='inline-block h-[18px] text-blue-600 dark:text-blue-500' />
                 </Link>
               )}

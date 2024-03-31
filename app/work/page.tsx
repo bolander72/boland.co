@@ -19,7 +19,7 @@ export default function Work() {
         <div key={name} className='text-xl'>
           {name}
           {link && (
-            <Link href={link}>
+            <Link href={link} target='_blank' referrerPolicy='no-referrer'>
               <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600 dark:text-blue-500' />
             </Link>
           )}
@@ -33,7 +33,7 @@ export default function Work() {
           <div key={name} className='text-xl'>
             {name}
             {link && (
-              <Link href={link}>
+              <Link href={link} target='_blank' referrerPolicy='no-referrer'>
                 <ArrowUpRight className='ml-0 inline-block h-[18px] text-blue-600 dark:text-blue-500' />
               </Link>
             )}

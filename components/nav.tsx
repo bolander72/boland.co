@@ -12,7 +12,7 @@ import { ModeToggle } from './mode-toggle'
 const links = [
   { href: '/', name: 'about' },
   { href: '/work', name: 'work' },
-  // { href: '/blog', name: 'blog' },
+  { href: '/blog', name: 'blog' },
   { href: '/reading', name: 'reading' },
   { href: '/now', name: 'now' },
   { href: '/links', name: 'links' }
@@ -31,7 +31,7 @@ export function Nav() {
       {/* Desktop */}
       <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
         <div className='flex w-full items-center justify-between'>
-          <div className='space-x-6'>
+          <div className='space-x-3.5'>
             {links.map(link => (
               <Link
                 key={link.href}
@@ -87,7 +87,7 @@ export function Nav() {
         </SheetTrigger>
         <SheetContent side='left' className='w-auto py-9 dark:bg-background'>
           <ScrollArea className='my-4 h-[calc(100vh-8rem)]'>
-            <div className='flex flex-col space-y-6 text-xl text-blue-600 underline dark:text-blue-500'>
+            <div className='flex flex-col space-y-6 text-xl text-blue-600 dark:text-blue-500'>
               {links.map(link => (
                 <MobileLink
                   key={link.href}
