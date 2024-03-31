@@ -11,11 +11,11 @@ import { ModeToggle } from './mode-toggle'
 
 const links = [
   { href: '/', name: 'about' },
-  { href: '/work', name: 'work' },
-  { href: '/blog', name: 'blog' },
+  // { href: '/work', name: 'work' },
   { href: '/reading', name: 'reading' },
-  { href: '/now', name: 'now' },
-  { href: '/links', name: 'links' }
+  { href: '/blog', name: 'blog' }
+  // { href: '/now', name: 'now' },
+  // { href: '/links', name: 'links' }
 ]
 
 export function Nav() {
@@ -29,7 +29,8 @@ export function Nav() {
   return (
     <div className='mx-auto mb-12 max-w-lg px-4'>
       {/* Desktop */}
-      <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'>
+      {/* <nav className='hidden flex-col space-y-4 sm:flex sm:flex-row sm:space-x-6 sm:space-y-0'> */}
+      <nav className='flex flex-row space-x-6 space-y-0'>
         <div className='flex w-full items-center justify-between'>
           <div className='space-x-3.5'>
             {links.map(link => (
@@ -50,7 +51,7 @@ export function Nav() {
         <SheetTrigger asChild className=''>
           <Button
             variant='outline'
-            className='flex text-base focus-visible:ring-0 sm:hidden'
+            className='hidden text-base focus-visible:ring-0'
             size='sm'
           >
             <svg

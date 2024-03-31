@@ -1,14 +1,6 @@
 import { Title } from '@/components/title'
 import { Post, posts } from '@/.velite'
 import Link from 'next/link'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
 import { Link2 } from 'lucide-react'
 
 interface MappedPosts {
@@ -70,31 +62,17 @@ export default function Blog() {
             })
 
             return (
-              <Link key={permalink} href={permalink} className=''>
-                <Card className='border-none shadow-none'>
-                  <CardHeader className='mx-0 p-0'>
-                    <div>
-                      <CardTitle className='text-xl font-normal'>
-                        {title}
-                        <Link2 className='ml-px inline-block h-[18px] text-blue-600 dark:text-blue-500' />
-                      </CardTitle>
-                      <CardDescription className='text-lg'>
-                        {formattedDate}
-                      </CardDescription>
-                      {/* <CardDescription className='text-lg'>{excerpt}</CardDescription> */}
-                    </div>
-                  </CardHeader>
-                  {/* <CardContent>
-                        <div dangerouslySetInnerHTML={{ __html: content }} />
-                      </CardContent> */}
-                  {tags.length > 0 && (
-                    <CardFooter>
-                      <div className='flex text-lg text-muted-foreground'>
-                        {tags.join(', ')}
-                      </div>
-                    </CardFooter>
-                  )}
-                </Card>
+              <Link key={permalink} href={permalink}>
+                <div className='text-xl' key={title}>
+                  {title}
+                  <Link2 className='ml-px inline-block h-[18px] text-blue-600 dark:text-blue-500' />
+                  <div className='text-lg text-muted-foreground'>
+                    {formattedDate}
+                  </div>
+                  <div className='flex text-lg text-muted-foreground'>
+                    {tags.join(', ')}
+                  </div>
+                </div>
               </Link>
             )
           }
