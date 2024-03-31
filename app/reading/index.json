@@ -2,6 +2,11 @@
   "years": {
     "2024": [
       {
+        "title": "xz/liblzma: Bash-stage Obfuscation Explained",
+        "authors": ["Gynvael Coldwind"],
+        "link": "https://gynvael.coldwind.pl/?id=782"
+      },
+      {
         "title": "All It Takes Is All You Got",
         "authors": ["Balaji Srinivasan"],
         "link": "https://balajis.com/p/all-it-takes-is-all-you-got/"

@@ -28,8 +28,6 @@ const mappedPosts = (): MappedPosts => {
       postsByYearAndMonth[year][readableMonth] = []
     }
 
-    console.log(post)
-
     postsByYearAndMonth[year][readableMonth].push({
       ...post
     })
