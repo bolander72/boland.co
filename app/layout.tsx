@@ -1,5 +1,6 @@
 import './globals.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
@@ -27,6 +28,7 @@ export default function RootLayout({
             <main className='mx-auto max-w-lg px-4'>{children}</main>
           </>
         </Providers>
+        <Analytics />
       </body>
     </html>
   )
