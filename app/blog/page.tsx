@@ -2,6 +2,12 @@ import { Title } from '@/components/title'
 import { Post, posts } from '@/.velite'
 import Link from 'next/link'
 import { Link2 } from 'lucide-react'
+import sharedMetadata from '@/metadata'
+
+export const metadata = {
+  ...sharedMetadata,
+  title: 'blog | Michael Boland'
+}
 
 interface MappedPosts {
   years: {
