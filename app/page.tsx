@@ -1,9 +1,11 @@
 import { MDXContent } from '@/components/mdx-content'
-import { pages } from '@/.velite'
+import { Post as PostType, pages, posts } from '@/.velite'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import Link from 'next/link'
+import { Subtitle } from '@/components/subtitle'
+import Post from '@/components/post'
 
 export const metadata = {
   ...sharedMetadata,
@@ -18,7 +20,7 @@ export default function Page() {
       <Title>
         Hello, I&apos;m{' '}
         <Link
-          className='text-blue-600 underline dark:text-blue-500'
+          className='text-blue-600 dark:text-blue-500'
           href='https://x.com/bolander72'
         >
           Michael
@@ -28,6 +30,14 @@ export default function Page() {
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
+      <section className='space-y-4'>
+        <Subtitle>Latest</Subtitle>
+        <ul className='space-y-4'>
+          {posts.map((post: PostType) => (
+            <Post key={post.permalink} post={post} />
+          ))}
+        </ul>
+      </section>
     </article>
   )
 }

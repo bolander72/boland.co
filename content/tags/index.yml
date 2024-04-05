@@ -1,11 +1,11 @@
-- name: Design
-  slug: design
+- name: bitcoin
+  slug: /tags/bitcoin
 
-- name: Programming
-  slug: programming
+- name: programming
+  slug: /tags/programming
 
-- name: Art
-  slug: art
+- name: art
+  slug: /tags/art
 
-- name: Bitcoin
-  slug: bitcoin
+- name: money
+  slug: /tags/money

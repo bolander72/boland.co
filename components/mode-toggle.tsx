@@ -13,7 +13,7 @@ export function ModeToggle() {
       size='sm'
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <Circle className='h-[1.2rem] w-[1.2rem] text-yellow-600' />
+      <Circle className='h-[1.2rem] w-[1.2rem] text-primary' />
       <span className='sr-only'>Toggle theme</span>
     </Button>
   )

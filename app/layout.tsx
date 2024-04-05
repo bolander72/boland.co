@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='my-12 text-pretty font-sans tracking-wide'>
+      <body className='my-12 text-pretty font-sans text-xl leading-8 tracking-wide'>
         <Providers
           attribute='class'
           defaultTheme='system'

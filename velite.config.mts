@@ -172,7 +172,7 @@ export default defineConfig({
     tags.forEach(i => {
       i.count.posts = posts.filter(j => j.tags.includes(i.name)).length
       i.count.total = i.count.posts
-      i.permalink = `/${i.slug}`
+      i.permalink = `/tags/${i.slug}`
     })
 
     // return false to prevent velite from writing data to disk
