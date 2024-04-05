@@ -1,8 +1,7 @@
-import { Post as PostType, Tag, posts } from '@/.velite'
+import { Post as PostType, Tag as TagType, posts } from '@/.velite'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Post from '@/components/post'
-import { getTagColorClasses } from '@/lib/tags'
 import { cn } from '@/lib/utils'
 import {
   Breadcrumb,
@@ -12,6 +11,7 @@ import {
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 import Link from 'next/link'
+import Tag from '@/components/tag'
 
 export const metadata = {
   ...sharedMetadata,
@@ -30,7 +30,10 @@ export default function Page({ params }: Props) {
   const filteredPostsWithRearrangedTags = filteredPosts.map(post => {
     return {
       ...post,
-      tags: [params.tag, ...post.tags.filter((tag: Tag) => tag !== params.tag)]
+      tags: [
+        params.tag,
+        ...post.tags.filter((tag: TagType) => tag !== params.tag)
+      ]
     }
   })
 
@@ -51,10 +54,7 @@ export default function Page({ params }: Props) {
               <BreadcrumbSeparator />
               <BreadcrumbItem className='text-2xl text-primary'>
                 <BreadcrumbPage>
-                  <span className='text-muted-foreground'>#</span>
-                  <span className={cn(getTagColorClasses(params.tag))}>
-                    {params.tag}
-                  </span>
+                  <Tag tag={params.tag} />
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -64,7 +64,9 @@ export default function Page({ params }: Props) {
       <section className='space-y-4'>
         <ul className='space-y-4'>
           {filteredPostsWithRearrangedTags.map((post: PostType) => (
-            <Post key={post.permalink} post={post} />
+            <Link key={post.permalink} href={post.permalink}>
+              <Post post={post} />
+            </Link>
           ))}
         </ul>
       </section>

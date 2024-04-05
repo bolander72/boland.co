@@ -34,7 +34,9 @@ export default function Page() {
         <Subtitle>Latest</Subtitle>
         <ul className='space-y-4'>
           {posts.map((post: PostType) => (
-            <Post key={post.permalink} post={post} />
+            <Link key={post.permalink} href={post.permalink}>
+              <Post post={post} />
+            </Link>
           ))}
         </ul>
       </section>

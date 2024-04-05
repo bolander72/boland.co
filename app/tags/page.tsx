@@ -1,9 +1,8 @@
-import { Tag, tags } from '@/.velite'
+import { Tag as TagType, tags } from '@/.velite'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
-import { getTagColorClasses } from '@/lib/tags'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import Tag from '@/components/tag'
 
 export const metadata = {
   ...sharedMetadata,
@@ -20,12 +19,9 @@ export default function Page() {
       </section>
       <section className='space-y-4'>
         <ul className='flex flex-col space-y-4'>
-          {alphabeticalTags.map((tag: Tag) => (
+          {alphabeticalTags.map((tag: TagType) => (
             <Link key={tag.name} href={tag.permalink}>
-              <span className='text-muted-foreground'>#</span>
-              <span className={cn(getTagColorClasses(tag.name))}>
-                {tag.name}
-              </span>
+              <Tag tag={tag.name} />
             </Link>
           ))}
         </ul>
