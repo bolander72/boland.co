@@ -3,8 +3,6 @@ import { pages } from '@/.velite'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
-import { Github, Linkedin, Twitter } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 type Props = {
@@ -15,51 +13,31 @@ type Props = {
 
 export const metadata = {
   ...sharedMetadata,
-  title: 'about | Michael Boland'
+  title: `Michael's Page`
 }
 
 export function generateStaticParams(): Props['params'][] {
   return pages.map(() => ({ slug: '/' }))
 }
 
-const socials = [
-  {
-    icon: Github,
-    href: 'https://github.com/bolander72'
-  },
-  {
-    icon: Linkedin,
-    href: 'https://linkedin.com/in/bolander72'
-  },
-  {
-    icon: Twitter,
-    href: 'https://twitter.com/bolander72'
-  }
-]
-
-export default function PagePage() {
-  const page = pages.find(page => page.slug === 'about')
+export default function Page() {
+  const page = pages.find(page => page.slug === 'home')
 
   return (
     <article className='space-y-6'>
-      <Title>{page.title}</Title>
+      <Title>
+        Hello, I&apos;m{' '}
+        <Link
+          className='text-blue-600 underline dark:text-blue-500'
+          href='https://x.com/bolander72'
+        >
+          Michael
+        </Link>
+        .
+      </Title>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <div className='flex'>
-        {socials.map(({ icon: Icon, href }) => (
-          <Link
-            key={href}
-            href={href}
-            target='_blank'
-            referrerPolicy='no-referrer'
-          >
-            <Button variant='ghost' size='icon'>
-              <Icon />
-            </Button>
-          </Link>
-        ))}
-      </div>
     </article>
   )
 }
