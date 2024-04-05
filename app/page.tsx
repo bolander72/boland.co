@@ -5,19 +5,9 @@ import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import Link from 'next/link'
 
-type Props = {
-  params: {
-    slug: string
-  }
-}
-
 export const metadata = {
   ...sharedMetadata,
   title: `Michael's Page`
-}
-
-export function generateStaticParams(): Props['params'][] {
-  return pages.map(() => ({ slug: '/' }))
 }
 
 export default function Page() {
