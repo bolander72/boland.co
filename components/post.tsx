@@ -1,7 +1,7 @@
-import { Post, Tag as TagType } from '@/.velite'
+import { Post as PostType, Tag as TagType } from '@/.velite'
 import Tag from '@/components/tag'
 
-export default function Post({ post }: { post: Post }) {
+export default function Post({ post }: { post: PostType }) {
   const { title, tags, permalink, date } = post
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -11,9 +11,9 @@ export default function Post({ post }: { post: Post }) {
   })
 
   return (
-    <li
+    <div
       key={permalink}
-      className='rounded-lg border p-4 transition-all sm:hover:shadow-lg sm:hover:shadow-primary/[.0375]'
+      className='my-4 rounded-lg border p-4 transition-all sm:hover:shadow-lg sm:hover:shadow-primary/[.0375]'
     >
       <div className='text-xl'>
         <div className='flex items-center justify-between'>
@@ -31,6 +31,6 @@ export default function Post({ post }: { post: Post }) {
           <Tag key={tag} tag={tag} />
         ))}
       </div>
-    </li>
+    </div>
   )
 }

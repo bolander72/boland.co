@@ -100,7 +100,7 @@ export default defineConfig({
     },
     posts: {
       name: 'Post',
-      pattern: 'posts/**/*.md',
+      pattern: 'posts/**/*.mdx',
       schema: s
         .object({
           title: s.string().max(99),
@@ -117,7 +117,7 @@ export default defineConfig({
           meta: meta,
           metadata: s.metadata(),
           excerpt: s.excerpt(),
-          content: s.markdown()
+          content: s.mdx()
         })
         .transform(data => {
           const year = new Date(data.date).getFullYear()

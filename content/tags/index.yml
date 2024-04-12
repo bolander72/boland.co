@@ -9,3 +9,9 @@
 
 - name: money
   slug: /tags/money
+
+- name: work
+  slug: /tags/work
+
+- name: tech
+  slug: /tags/tech

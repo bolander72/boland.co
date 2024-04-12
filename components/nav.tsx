@@ -6,7 +6,7 @@ export function Nav() {
     <div className='mx-auto mb-12 max-w-lg px-4'>
       <nav className='flex flex-row space-x-6 space-y-0'>
         <div className='flex w-full items-center justify-between'>
-          <Link href='/' className='text-lg font-base'>
+          <Link href='/' className='font-base text-lg'>
             boland.co
           </Link>
           <ModeToggle />

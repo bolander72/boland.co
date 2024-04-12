@@ -46,7 +46,7 @@ export default function Page({ params }: Props) {
               <BreadcrumbItem className='text-2xl'>
                 <Link
                   href='/tags'
-                  className='text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500'
+                  className='text-blue-600 underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500'
                 >
                   Tags
                 </Link>

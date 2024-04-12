@@ -8,8 +8,9 @@ import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import Tag from '@/components/tag'
 import Link from 'next/link'
+import { MDXContent } from '@/components/mdx-content'
 
-interface PostProps {
+interface Props {
   params: {
     slug: string
   }
@@ -19,7 +20,7 @@ function getPostBySlug(slug: string) {
   return posts.find(post => post.slug === slug)
 }
 
-export function generateMetadata({ params }: PostProps): Metadata {
+export function generateMetadata({ params }: Props): Metadata {
   const post = getPostBySlug(params.slug)
 
   if (post == null)
@@ -35,13 +36,13 @@ export function generateMetadata({ params }: PostProps): Metadata {
   }
 }
 
-export function generateStaticParams(): PostProps['params'][] {
+export function generateStaticParams(): Props['params'][] {
   return posts.map(post => ({
     slug: post.slug
   }))
 }
 
-export default function PostPage({ params }: PostProps) {
+export default function PostPage({ params }: Props) {
   const post = getPostBySlug(params.slug)
 
   if (post == null) notFound()
@@ -60,10 +61,16 @@ export default function PostPage({ params }: PostProps) {
             </Link>
           ))}
         </div>
+        <div className='text-sm text-muted-foreground'>
+          <span className='text-primary'>{post.metadata.readingTime} min</span>{' '}
+          | reading time
+        </div>
       </div>
       {post.cover && <img src={post.cover} alt={post.title} />}
       <Separator />
-      <Prose post={post} />
+      <Prose>
+        <MDXContent code={post.content} />
+      </Prose>
     </article>
   )
 }

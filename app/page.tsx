@@ -15,12 +15,14 @@ export const metadata = {
 export default function Page() {
   const page = pages.find(page => page.slug === 'home')
 
+  const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
+
   return (
     <article className='space-y-6'>
       <Title>
         Hello, I&apos;m{' '}
         <Link
-          className='text-blue-600 dark:text-blue-500'
+          className='text-blue-600 underline dark:text-blue-500'
           href='https://x.com/bolander72'
         >
           Michael
@@ -32,13 +34,13 @@ export default function Page() {
       </Prose>
       <section className='space-y-4'>
         <Subtitle>Latest</Subtitle>
-        <ul className='space-y-4'>
-          {posts.map((post: PostType) => (
+        <div>
+          {sortedPosts.map((post: PostType) => (
             <Link key={post.permalink} href={post.permalink}>
               <Post post={post} />
             </Link>
           ))}
-        </ul>
+        </div>
       </section>
     </article>
   )
