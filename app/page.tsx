@@ -35,7 +35,7 @@ export default function Page() {
       <section className='space-y-4'>
         <Subtitle>Latest</Subtitle>
         <div>
-          {sortedPosts.map((post: PostType) => (
+          {sortedPosts.filter((post) => post.slug !== 'career-larping').map((post: PostType) => (
             <Link key={post.permalink} href={post.permalink}>
               <Post post={post} />
             </Link>
