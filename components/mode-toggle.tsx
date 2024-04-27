@@ -9,8 +9,8 @@ export function ModeToggle() {
 
   return (
     <Button
-      variant='ghost'
-      size='sm'
+      variant='outline'
+      size='icon'
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Circle className='h-[1.2rem] w-[1.2rem] text-primary' />

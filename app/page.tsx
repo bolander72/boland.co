@@ -1,47 +1,55 @@
 import { MDXContent } from '@/components/mdx-content'
-import { Post as PostType, pages, posts } from '@/.velite'
+import { pages } from '@/.velite'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import Link from 'next/link'
-import { Subtitle } from '@/components/subtitle'
-import Post from '@/components/post'
+import { Github, Linkedin, Twitter } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   ...sharedMetadata,
   title: `Michael's Page`
 }
 
+const socialLinks = [
+  {
+    title: 'GitHub',
+    href: 'https://github.com/bolander72',
+    icon: <Github size={22} />
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/bolander72',
+    icon: <Linkedin size={22} />
+  },
+  {
+    title: 'Twitter',
+    href: 'https://twitter.com/bolander72',
+    icon: <Twitter size={22} />
+  }
+]
+
 export default function Page() {
   const page = pages.find(page => page.slug === 'home')
 
-  const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
-
   return (
     <article className='space-y-6'>
-      <Title>
-        Hello, I&apos;m{' '}
-        <Link
-          className='text-blue-600 underline dark:text-blue-500'
-          href='https://x.com/bolander72'
-        >
-          Michael
-        </Link>
-        .
-      </Title>
+      <div>
+        <Title>Hello, I&apos;m Michael.</Title>
+      </div>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <section className='space-y-4'>
-        <Subtitle>Latest</Subtitle>
-        <div>
-          {sortedPosts.filter((post) => !post.draft).map((post: PostType) => (
-            <Link key={post.permalink} href={post.permalink}>
-              <Post post={post} />
-            </Link>
-          ))}
-        </div>
-      </section>
+      <div className='flex space-x-3'>
+        {socialLinks.map(link => (
+          <Link key={link.href} href={link.href} target='_blank'>
+            <Button size='icon' variant='outline'>
+              {link.icon}
+            </Button>
+          </Link>
+        ))}
+      </div>
     </article>
   )
 }

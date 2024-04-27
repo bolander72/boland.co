@@ -63,11 +63,13 @@ export default function Page({ params }: Props) {
       </section>
       <section className='space-y-4'>
         <ul className='space-y-4'>
-          {filteredPostsWithRearrangedTags.filter((post) => !post.draft).map((post: PostType) => (
-            <Link key={post.permalink} href={post.permalink}>
-              <Post post={post} />
-            </Link>
-          ))}
+          {filteredPostsWithRearrangedTags
+            .filter(post => !post.draft)
+            .map((post: PostType) => (
+              <Link key={post.permalink} href={post.permalink}>
+                <Post post={post} />
+              </Link>
+            ))}
         </ul>
       </section>
     </article>
