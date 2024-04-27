@@ -11,7 +11,7 @@ export function Nav() {
               href='/'
               className='font-base text-lg text-blue-600 underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500'
             >
-              home
+              about
             </Link>
             <Link
               href='/blog'
