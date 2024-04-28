@@ -6,8 +6,7 @@ import Post from '@/components/post'
 import { Subtitle } from '@/components/subtitle'
 
 export const metadata = {
-  ...sharedMetadata,
-  title: 'blog | Michael Boland'
+  ...sharedMetadata
 }
 
 export default function Page() {

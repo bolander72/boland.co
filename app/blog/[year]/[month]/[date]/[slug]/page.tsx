@@ -9,6 +9,7 @@ import Prose from '@/components/prose'
 import Tag from '@/components/tag'
 import Link from 'next/link'
 import { MDXContent } from '@/components/mdx-content'
+import { Button } from '@/components/ui/button'
 
 interface Props {
   params: {
@@ -57,7 +58,9 @@ export default function PostPage({ params }: Props) {
         <div className='flex space-x-2 text-lg'>
           {post.tags.map((tag: TagType) => (
             <Link key={tag} href={`/tags/${tag}`}>
-              <Tag key={tag} tag={tag} />
+              <Button variant='outline' size='sm' className='text-sm'>
+                <Tag key={tag} tag={tag} />
+              </Button>
             </Link>
           ))}
         </div>

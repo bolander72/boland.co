@@ -1,6 +1,6 @@
 const metadata = {
-  title: 'Michael Boland',
-  description: 'Programmer and consultant.',
+  title: `Michael's Site`,
+  description: 'Programmer, designer, and consultant.',
   metadataBase: new URL('https://boland.co'),
   keywords: [
     'indie consultancy',
@@ -19,13 +19,15 @@ const metadata = {
     'programmer',
     'programming',
     'blog',
-    'blogging'
+    'blogging',
+    'design',
+    'designer'
   ],
   authors: [{ name: 'Michael Boland', url: 'https://boland.co' }],
   creator: 'Michael Boland',
   openGraph: {
     title: 'Michael Boland',
-    description: 'Programmer and consultant.',
+    description: 'Programmer, designer, and consultant.',
     url: 'https://boland.co',
     siteName: 'Boland Co.',
     images: [

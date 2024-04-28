@@ -14,8 +14,7 @@ import Link from 'next/link'
 import Tag from '@/components/tag'
 
 export const metadata = {
-  ...sharedMetadata,
-  title: `Michael's Page`
+  ...sharedMetadata
 }
 
 interface Props {
