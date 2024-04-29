@@ -2,6 +2,7 @@ import { Title } from '@/components/title'
 import { posts } from '@/.velite'
 import Link from 'next/link'
 import Post from '@/components/post'
+import { notFound } from 'next/navigation'
 
 interface Props {
   params: {
@@ -12,6 +13,10 @@ interface Props {
 export default function Page({ params }: Props) {
   const filteredPosts = posts.filter(post => post.date.startsWith(params.year))
   const sortedPosts = filteredPosts.sort((a, b) => a.date.localeCompare(b.date))
+
+  if (sortedPosts.length === 0) {
+    return notFound()
+  }
 
   return (
     <section className='w-full space-y-6'>
