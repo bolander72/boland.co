@@ -1,6 +1,11 @@
 import { Post as PostType } from '@/.velite'
 
-export default function Post({ post }: { post: PostType }) {
+interface Props {
+  post: PostType
+  showDate?: boolean
+}
+
+export default function Post({ post, showDate = true }: Props) {
   const { title, description, date } = post
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -13,11 +18,13 @@ export default function Post({ post }: { post: PostType }) {
     <div className='flex w-full items-start justify-between text-xl'>
       <div>
         <div>{title}</div>
-        <div className='text-base text-muted-foreground'>{description}</div>
+        <div className='text-base text-primary/85'>{description}</div>
       </div>
-      <div className='mt-1 text-sm text-muted-foreground sm:block'>
-        {formattedDate}
-      </div>
+      {showDate && (
+        <div className='mt-1 text-sm text-primary/85 sm:block'>
+          {formattedDate}
+        </div>
+      )}
     </div>
   )
 }

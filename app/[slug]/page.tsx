@@ -21,13 +21,11 @@ export function generateMetadata({ params }: Props): Metadata {
 
   if (page == null)
     return {
-      ...(sharedMetadata as Metadata),
-      title: 'not found | Michael Boland'
+      ...(sharedMetadata as Metadata)
     }
 
   return {
-    ...(sharedMetadata as Metadata),
-    title: `${params.slug.toLowerCase()} | Michael Boland`
+    ...(sharedMetadata as Metadata)
   }
 }
 

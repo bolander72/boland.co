@@ -23,13 +23,12 @@ export function generateMetadata({ params }: Props): Metadata {
 
   if (post == null)
     return {
-      ...(sharedMetadata as Metadata),
-      title: 'not found | Michael Boland'
+      ...(sharedMetadata as Metadata)
     }
 
   return {
     ...(sharedMetadata as Metadata),
-    title: `${post.title} | Michael Boland`,
+    title: post.title,
     description: post.description
   }
 }
@@ -51,9 +50,7 @@ export default function PostPage({ params }: Props) {
         <div>
           <Title>{post.title}</Title>
           {post.description && (
-            <p className='-mt-1 text-lg text-muted-foreground'>
-              {post.description}
-            </p>
+            <p className='text-lg text-primary/85'>{post.description}</p>
           )}
         </div>
         <div className='flex items-center text-sm'>
