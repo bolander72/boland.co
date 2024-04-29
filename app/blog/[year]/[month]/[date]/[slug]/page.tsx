@@ -1,15 +1,12 @@
 import { notFound } from 'next/navigation'
-import { posts, Tag as TagType } from '@/.velite'
+import { posts } from '@/.velite'
 
 import type { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
-import Tag from '@/components/tag'
-import Link from 'next/link'
 import { MDXContent } from '@/components/mdx-content'
-import { Button } from '@/components/ui/button'
 
 interface Props {
   params: {
@@ -51,22 +48,19 @@ export default function PostPage({ params }: Props) {
   return (
     <article className='space-y-6'>
       <div className='space-y-2'>
-        <Title>{post.title}</Title>
-        {post.description && (
-          <p className='text-lg text-muted-foreground'>{post.description}</p>
-        )}
-        <div className='flex space-x-2 text-lg'>
-          {post.tags.map((tag: TagType) => (
-            <Link key={tag} href={`/tags/${tag}`}>
-              <Button variant='outline' size='sm' className='text-sm'>
-                <Tag key={tag} tag={tag} />
-              </Button>
-            </Link>
-          ))}
+        <div>
+          <Title>{post.title}</Title>
+          {post.description && (
+            <p className='-mt-1 text-lg text-muted-foreground'>
+              {post.description}
+            </p>
+          )}
         </div>
-        <div className='text-sm text-muted-foreground'>
-          <span className='text-primary'>{post.metadata.readingTime} min</span>{' '}
-          | reading time
+        <div className='flex items-center text-sm'>
+          <span className='text-primary'>
+            {' '}
+            ~ {post.metadata.readingTime} min
+          </span>
         </div>
       </div>
       {post.cover && <img src={post.cover} alt={post.title} />}

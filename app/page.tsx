@@ -28,9 +28,9 @@ const socialLinks = [
   },
   {
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/bolander72',
+    href: 'https://linkedin.com/in/bolander72',
     icon: Linkedin,
-    iconColorClass: 'text-blue-600 dark:text-blue-500'
+    iconColorClass: 'text-sky-600 dark:text-sky-500'
   },
   {
     title: 'Twitter',

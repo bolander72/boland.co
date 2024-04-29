@@ -1,9 +1,8 @@
 import { Title } from '@/components/title'
-import { posts } from '@/.velite'
+import { Post as PostType, posts } from '@/.velite'
 import Link from 'next/link'
 import sharedMetadata from '@/metadata'
 import Post from '@/components/post'
-import { Subtitle } from '@/components/subtitle'
 
 export const metadata = {
   ...sharedMetadata
@@ -15,24 +14,13 @@ export default function Page() {
   return (
     <section className='w-full space-y-6'>
       <Title>Blog</Title>
-      <Subtitle>Latest</Subtitle>
-      <div>
-        {sortedPosts
-          .filter(post => !post.draft)
-          .map(post => (
-            <Link key={post.permalink} href={post.permalink}>
-              <Post post={post} />
-            </Link>
-          ))}
-      </div>
-      <Subtitle>All</Subtitle>
-      <div>
-        {sortedPosts.map(post => (
-          <Link key={post.permalink} href={post.permalink}>
+      {sortedPosts.map(post => (
+        <div key={post.permalink}>
+          <Link href={post.permalink}>
             <Post post={post} />
           </Link>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   )
 }
