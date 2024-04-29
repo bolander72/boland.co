@@ -10,7 +10,7 @@ export default function Post({ post }: { post: PostType }) {
   })
 
   return (
-    <div className='flex w-full items-start justify-between border-s border-blue-600 pl-4 text-xl dark:border-blue-500'>
+    <div className='flex w-full items-start justify-between text-xl'>
       <div>
         <div>{title}</div>
         <div className='text-base text-muted-foreground'>{description}</div>
