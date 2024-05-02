@@ -19,7 +19,7 @@ export default function Page({ params }: Props) {
   const sortedPosts = filteredPosts.sort((a, b) => a.date.localeCompare(b.date))
 
   if (sortedPosts.length === 0) {
-    return notFound()
+    notFound()
   }
 
   const date = sortedPosts[0].date

@@ -11,17 +11,24 @@ import { MDXContent } from '@/components/mdx-content'
 interface Props {
   params: {
     slug: string
+    year: string
+    month: string
+    date: string
   }
 }
 
-function getPostBySlug(slug: string) {
-  return posts.find(post => post.slug === slug)
+function getPostBySlug(params: Props['params']) {
+  return posts.find(
+    post =>
+      post.slug === params.slug &&
+      post.date.startsWith(`${params.year}-${params.month}-${params.date}`)
+  )
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const post = getPostBySlug(params.slug)
+  const post = getPostBySlug(params)
 
-  if (post == null)
+  if (!post)
     return {
       ...(sharedMetadata as Metadata)
     }
@@ -33,16 +40,18 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export function generateStaticParams(): Props['params'][] {
+export function generateStaticParams(): Partial<Props['params']>[] {
   return posts.map(post => ({
     slug: post.slug
   }))
 }
 
 export default function PostPage({ params }: Props) {
-  const post = getPostBySlug(params.slug)
+  const post = getPostBySlug(params)
 
-  if (post == null) notFound()
+  if (!post) {
+    notFound()
+  }
 
   return (
     <article className='space-y-6'>

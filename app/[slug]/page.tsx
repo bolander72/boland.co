@@ -36,7 +36,7 @@ export function generateStaticParams(): Props['params'][] {
 export default function PagePage({ params }: Props) {
   const page = getPageBySlug(params.slug)
 
-  if (page == null) {
+  if (!page) {
     notFound()
   }
 
