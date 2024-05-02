@@ -53,7 +53,7 @@ const socialLinks = [
   },
   {
     title: 'Nostr',
-    href: 'https://primal.net/p/npub1ge93aqdp0rjewv2tq7f7u5d5mv4p78w2d74539fsjvr042cwcntsqxgusd',
+    href: 'https://njump.me/npub1ge93aqdp0rjewv2tq7f7u5d5mv4p78w2d74539fsjvr042cwcntsqxgusd',
     icon: Nostr,
     iconClass: 'h-[33px] w-[33px]'
   }
