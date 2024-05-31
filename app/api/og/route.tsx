@@ -2,6 +2,8 @@ import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 import { createCanvas } from '@napi-rs/canvas';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
    const { searchParams } = req.nextUrl;
    const postTitle = searchParams.get('title');
