@@ -9,6 +9,9 @@ const nextConfig = {
       }
     ]
   },
+  experimental: {
+    serverComponentsExternalPackages: ['@napi-rs/canvas']
+  },
   headers: () => {
     return [
       {
