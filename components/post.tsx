@@ -1,4 +1,5 @@
 import { Post as PostType } from '@/.velite'
+import Prose from './prose'
 
 interface Props {
   post: PostType
@@ -15,13 +16,15 @@ export default function Post({ post, showDate = true }: Props) {
   })
 
   return (
-    <div className='flex w-full items-start justify-between text-xl'>
+    <div className='flex flex-col-reverse sm:flex-row w-full items-start justify-between text-xl'>
       <div>
         <div>{title}</div>
-        <div className='text-base text-primary/85'>{description}</div>
+        <Prose>
+          <div className='text-base'>{description}</div>
+        </Prose>
       </div>
       {showDate && (
-        <div className='mt-1 text-sm text-primary/85 sm:block'>
+        <div className='mt-1 text-sm sm:block mb-2 sm:mb-0 border-b'>
           {formattedDate}
         </div>
       )}

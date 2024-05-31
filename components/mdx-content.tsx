@@ -1,4 +1,5 @@
 import * as runtime from 'react/jsx-runtime'
+import CustomLink from './mdx/CustomLink'
 
 interface MdxProps {
   code: string
@@ -12,5 +13,5 @@ const useMDXComponent = (code: string) => {
 
 export function MDXContent({ code, components }: MdxProps) {
   const Component = useMDXComponent(code)
-  return <Component components={{ ...components }} />
+  return <Component components={{ ...components, a: CustomLink }} />
 }

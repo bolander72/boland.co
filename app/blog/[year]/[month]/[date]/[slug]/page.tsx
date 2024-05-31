@@ -59,7 +59,9 @@ export default function PostPage({ params }: Props) {
         <div>
           <Title>{post.title}</Title>
           {post.description && (
-            <p className='text-lg text-primary/85'>{post.description}</p>
+            <Prose>
+              <p className='text-lg'>{post.description}</p>
+            </Prose>
           )}
         </div>
         <div className='flex items-center text-sm'>
