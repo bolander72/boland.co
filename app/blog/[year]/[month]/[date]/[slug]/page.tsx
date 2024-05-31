@@ -7,7 +7,6 @@ import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import { MDXContent } from '@/components/mdx-content'
-import BlogImage from '@/components/mdx/BlogImage'
 
 interface Props {
   params: {
@@ -26,8 +25,9 @@ function getPostBySlug(params: Props['params']) {
   )
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params)
+  const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
 
   if (!post)
     return {
@@ -37,7 +37,25 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     ...(sharedMetadata as Metadata),
     title: post.title,
-    description: post.description
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      url: `https://boland.co/blog/${params.year}/${params.month}/${params.date}/${params.slug}`,
+      images: [
+        {
+          url: ogImage.toString()
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [ogImage]
+    }
   }
 }
 
