@@ -190,7 +190,7 @@ export async function GET(req: NextRequest) {
             }}
           >
             <img
-              src='https://localhost:3000/favicon-white.png'
+              src='https://boland.co/favicon-white.png'
               alt='Boland Co.'
               width={150}
               height={150}
@@ -238,22 +238,24 @@ export async function GET(req: NextRequest) {
               marginRight: 190,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <img
-              src='https://localhost:3000/profile/profile.jpg'
+              src='https://boland.co/profile/profile.jpg'
               alt='Michael Boland'
               width={150}
               height={150}
               style={{ borderRadius: '100%' }}
             />
-            <div style={{
-              marginLeft: 50,
-              marginRight: 190,
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
+            <div
+              style={{
+                marginLeft: 50,
+                marginRight: 190,
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
               <div
                 style={{
                   display: 'flex',
