@@ -5,7 +5,9 @@ import sharedMetadata from '@/metadata'
 import Post from '@/components/post'
 
 export const metadata = {
-  ...sharedMetadata
+  ...sharedMetadata,
+  title: 'Blog',
+  description: 'Thoughts, stories, and ideas.'
 }
 
 export default function Page() {

@@ -1,5 +1,6 @@
 import * as runtime from 'react/jsx-runtime'
 import CustomLink from './mdx/CustomLink'
+import BlogImage from './mdx/BlogImage'
 
 interface MdxProps {
   code: string
@@ -13,5 +14,5 @@ const useMDXComponent = (code: string) => {
 
 export function MDXContent({ code, components }: MdxProps) {
   const Component = useMDXComponent(code)
-  return <Component components={{ ...components, a: CustomLink }} />
+  return <Component components={{ ...components, a: CustomLink, BlogImage }} />
 }

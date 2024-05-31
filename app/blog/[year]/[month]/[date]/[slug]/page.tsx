@@ -7,6 +7,7 @@ import { Title } from '@/components/title'
 import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import { MDXContent } from '@/components/mdx-content'
+import BlogImage from '@/components/mdx/BlogImage'
 
 interface Props {
   params: {
@@ -58,11 +59,7 @@ export default function PostPage({ params }: Props) {
       <div className='space-y-2'>
         <div>
           <Title>{post.title}</Title>
-          {post.description && (
-            <Prose>
-              <p className='text-lg'>{post.description}</p>
-            </Prose>
-          )}
+          {post.description && <p className='text-xl'>{post.description}</p>}
         </div>
         <div className='flex items-center text-sm'>
           <span className='text-primary'>

@@ -7,9 +7,7 @@ export default function Error() {
   return (
     <section className='w-full space-y-6'>
       <Title>Error</Title>
-      <Prose>
-        <p>Something went wrong.</p>
-      </Prose>
+      <p>Something went wrong.</p>
     </section>
   )
 }

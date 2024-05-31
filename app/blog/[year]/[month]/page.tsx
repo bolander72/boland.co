@@ -32,8 +32,7 @@ export default function Page({ params }: Props) {
 
   return (
     <section className='w-full space-y-6'>
-      <Title>Blog</Title>
-      <Title>{formattedDateWords}</Title>
+      <Title>Blog :: {formattedDateWords}</Title>
       {sortedPosts.map(post => (
         <div key={post.permalink}>
           <Link href={post.permalink}>
