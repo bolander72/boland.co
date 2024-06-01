@@ -29,35 +29,42 @@ const metadata = {
     title: 'Michael Boland',
     description: 'Programmer, designer, and consultant.',
     url: 'https://boland.co',
-    siteName: 'Boland Co.',
+    siteName: 'Michael Boland',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
-        url: 'https://boland.co/og.jpg',
-        width: 1200,
-        height: 630
-      },
-      {
-        url: 'https://boland.co/og-alt.jpg',
+        url: 'https://boland.co/og',
         width: 1200,
         height: 630,
-        alt: 'Boland Co.'
+        alt: 'Michael Boland'
+      },
+      {
+        url: 'https://boland.co/og',
+        width: 1200,
+        height: 630,
+        alt: 'Michael Boland'
       }
-    ],
-    locale: 'en_US',
-    type: 'website'
+    ]
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
-      follow: false,
-      noimageindex: true,
+      follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1
     }
+  },
+  twitter: {
+    title: 'Lee Robinson',
+    card: 'summary_large_image',
+    creator: '@bolander72',
+    image: 'https://boland.co/og'
   }
 }
 
