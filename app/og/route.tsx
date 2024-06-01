@@ -6,17 +6,11 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDescription = searchParams.get('description')
-  // const font = fetch(
-  //    new URL('../../public/fonts/kaisei-tokumin-bold.ttf', import.meta.url)
-  // ).then((res) => res.arrayBuffer());
-  // const fontData = await font;
 
-  // Utility function to generate a random integer between min and max (inclusive)
   function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
-  // Utility function to generate a random color in rgba format
   function getRandomColor(): string {
     const r = getRandomInt(0, 255)
     const g = getRandomInt(0, 255)
@@ -25,7 +19,6 @@ export async function GET(req: NextRequest) {
     return `rgba(${r},${g},${b},${a})`
   }
 
-  // Function to add noise to a specified region of the canvas
   function addNoiseToRegion(
     ctx: CanvasRenderingContext2D,
     x: number,
@@ -67,28 +60,22 @@ export async function GET(req: NextRequest) {
     ctx.fill()
   }
 
-  // Function to create an abstract noisy gradient background
   function createAbstractNoisyGradientBackground(
     width: number,
     height: number,
     outputPath?: string
   ) {
     const canvas = createCanvas(width, height)
-    // Add canvas background
     const ctx = canvas.getContext('2d')
     ctx.fillStyle = '#0A0A0A'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-    // Fill the canvas with random gradients
     for (let i = 0; i < 1; i++) {
-      const rectWidth = getRandomInt(1920, 1920)
-      const rectHeight = getRandomInt(1080, 1080)
+      const rectWidth = 1920
+      const rectHeight = 1080
       const x = 0
       const y = 0
-      const cornerRadius = getRandomInt(
-        0,
-        0
-      )
+      const cornerRadius = 0
 
       const gradient = ctx.createLinearGradient(
         x,
@@ -109,7 +96,6 @@ export async function GET(req: NextRequest) {
         cornerRadius
       )
 
-      // Add noise to the current rectangle region
       addNoiseToRegion(
         ctx as unknown as CanvasRenderingContext2D,
         x,
@@ -118,34 +104,6 @@ export async function GET(req: NextRequest) {
         rectHeight
       )
     }
-
-    //  Rectangles
-      // for (let i = 0; i < 10; i++) {
-      //   const x = getRandomInt(canvas.width * 0.60, canvas.width)
-      //    const y = getRandomInt(0, canvas.height)
-      //    const gradWidth = getRandomInt(canvas.width / 4, canvas.width / 2)
-      //    const gradHeight = getRandomInt(canvas.height / 4, canvas.height / 2)
-      //    const gradient = ctx.createLinearGradient(
-      //       x,
-      //       y,
-      //       x + gradWidth,
-      //       y + gradHeight
-      //    )
-      //    gradient.addColorStop(0, getRandomColor())
-      //    gradient.addColorStop(1, getRandomColor())
-
-      //    ctx.fillStyle = gradient
-      //    ctx.fillRect(x, y, gradWidth, gradHeight)
-
-      //    // Add noise to the current gradient rectangle
-      //    addNoiseToRegion(
-      //       ctx as unknown as CanvasRenderingContext2D,
-      //       x,
-      //       y,
-      //       gradWidth,
-      //       gradHeight
-      //    )
-      // }
 
     const buffer = canvas.toBuffer('image/png')
 
@@ -222,9 +180,9 @@ export async function GET(req: NextRequest) {
                 marginLeft: 190,
                 marginRight: 190,
                 display: 'flex',
-                fontSize: 100,
+                fontSize: 80,
                 fontStyle: 'normal',
-                color: 'white',
+                color: 'rgba(255, 255, 255, 0.8)',
                 lineHeight: '120px',
                 whiteSpace: 'pre-wrap'
               }}
@@ -273,7 +231,7 @@ export async function GET(req: NextRequest) {
                   display: 'flex',
                   fontSize: 40,
                   fontStyle: 'normal',
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   whiteSpace: 'pre-wrap'
                 }}
               >
