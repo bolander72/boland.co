@@ -1,5 +1,5 @@
 const metadata = {
-  title: `Michael's Site`,
+  title: `Michael Boland`,
   description: 'Programmer, designer, and consultant.',
   metadataBase: new URL('https://boland.co'),
   keywords: [
@@ -63,8 +63,7 @@ const metadata = {
   twitter: {
     title: 'Lee Robinson',
     card: 'summary_large_image',
-    creator: '@bolander72',
-    image: 'https://boland.co/og'
+    creator: '@bolander72'
   }
 }
 
