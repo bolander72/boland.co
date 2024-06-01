@@ -49,7 +49,8 @@ const metadata = {
   twitter: {
     title: 'Michael Boland',
     card: 'summary_large_image',
-    creator: '@bolander72'
+    creator: '@bolander72',
+    description: 'Programmer, designer, and consultant.',
   }
 }
 
