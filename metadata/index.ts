@@ -1,4 +1,6 @@
-const metadata = {
+import type { Metadata } from "next"
+
+const metadata: Metadata = {
   title: `Michael Boland`,
   description: 'Programmer, designer, and consultant.',
   metadataBase: new URL('https://boland.co'),
@@ -31,7 +33,12 @@ const metadata = {
     url: 'https://boland.co',
     siteName: 'Michael Boland',
     locale: 'en_US',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://boland.co/og',
+      }
+    ]
   },
   robots: {
     index: true,
@@ -47,10 +54,11 @@ const metadata = {
     }
   },
   twitter: {
-    title: 'Michael Boland',
-    card: 'summary_large_image',
     creator: '@bolander72',
+    title: 'Michael Boland',
     description: 'Programmer, designer, and consultant.',
+    card: 'summary_large_image',
+    images: 'https://boland.co/og',
   }
 }
 
