@@ -3,11 +3,6 @@ import { posts } from '@/.velite'
 import Link from 'next/link'
 import Post from '@/components/post'
 
-export const metadata = {
-  title: 'Blog',
-  description: 'Thoughts, stories, and ideas.'
-}
-
 export default function Page() {
   const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
 

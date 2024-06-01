@@ -34,11 +34,6 @@ const metadata: Metadata = {
     siteName: 'Michael Boland',
     locale: 'en_US',
     type: 'website',
-    images: [
-      {
-        url: 'https://boland.co/og',
-      }
-    ]
   },
   robots: {
     index: true,
@@ -58,7 +53,6 @@ const metadata: Metadata = {
     title: 'Michael Boland',
     description: 'Programmer, designer, and consultant.',
     card: 'summary_large_image',
-    images: 'https://boland.co/og',
   }
 }
 
