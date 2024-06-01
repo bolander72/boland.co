@@ -1,15 +1,10 @@
 import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
 import { Title } from '@/components/title'
-import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import Link from 'next/link'
 import { Github, Linkedin, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-
-export const metadata = {
-  ...sharedMetadata
-}
 
 const X = ({ className }: { className?: string }) => (
   <svg viewBox='0 0 24 24' className={className}>

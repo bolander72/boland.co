@@ -1,11 +1,9 @@
 import { Title } from '@/components/title'
 import { posts } from '@/.velite'
 import Link from 'next/link'
-import sharedMetadata from '@/metadata'
 import Post from '@/components/post'
 
 export const metadata = {
-  ...sharedMetadata,
   title: 'Blog',
   description: 'Thoughts, stories, and ideas.'
 }

@@ -4,7 +4,6 @@ import { posts } from '@/.velite'
 import type { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
-import sharedMetadata from '@/metadata'
 import Prose from '@/components/prose'
 import { MDXContent } from '@/components/mdx-content'
 
@@ -29,13 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params)
   const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
 
-  if (!post)
-    return {
-      ...(sharedMetadata as Metadata)
-    }
+  if (!post) {
+    return {}
+  }
 
   return {
-    ...(sharedMetadata as Metadata),
     title: post.title,
     description: post.description,
     openGraph: {
@@ -51,7 +48,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ]
     },
     twitter: {
-      card: 'summary_large_image',
       title: `${post.title}: ${post.description}`,
       description: post.description,
       images: ogImage
