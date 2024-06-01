@@ -46,15 +46,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://boland.co/blog/${params.year}/${params.month}/${params.date}/${params.slug}`,
       images: [
         {
-          url: ogImage.toString()
+          url: ogImage
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `${post.title}: ${post.description}`,
       description: post.description,
-      images: [ogImage]
+      images: ogImage
     }
   }
 }
