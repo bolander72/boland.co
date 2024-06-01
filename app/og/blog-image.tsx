@@ -16,7 +16,7 @@ export default function BlogImage({ title, description }: Props) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: `url("https://localhost:3000/og/og-blog.jpg")`,
+          backgroundImage: `url("https://boland.co/og/og-blog.jpg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

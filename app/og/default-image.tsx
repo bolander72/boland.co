@@ -11,7 +11,7 @@ export default function DefaultImage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundImage: `url("https://localhost:3000/og/og-blog.jpg")`,
+          backgroundImage: `url("https://boland.co/og/og-blog.jpg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
