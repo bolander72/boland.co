@@ -80,14 +80,14 @@ export async function GET(req: NextRequest) {
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     // Fill the canvas with random gradients
-    for (let i = 0; i < 25; i++) {
-      const rectWidth = getRandomInt(100, 400)
-      const rectHeight = getRandomInt(100, 400)
-      const x = getRandomInt(0, canvas.width - rectWidth)
-      const y = getRandomInt(0, canvas.height - rectHeight)
+    for (let i = 0; i < 1; i++) {
+      const rectWidth = getRandomInt(1920, 1920)
+      const rectHeight = getRandomInt(1080, 1080)
+      const x = 0
+      const y = 0
       const cornerRadius = getRandomInt(
-        10,
-        Math.min(rectWidth, rectHeight) / 50
+        0,
+        0
       )
 
       const gradient = ctx.createLinearGradient(
@@ -120,32 +120,32 @@ export async function GET(req: NextRequest) {
     }
 
     //  Rectangles
-    //   for (let i = 0; i < 10; i++) {
-    //      const x = getRandomInt(0, canvas.width)
-    //      const y = getRandomInt(0, canvas.height)
-    //      const gradWidth = getRandomInt(canvas.width / 4, canvas.width / 2)
-    //      const gradHeight = getRandomInt(canvas.height / 4, canvas.height / 2)
-    //      const gradient = ctx.createLinearGradient(
-    //         x,
-    //         y,
-    //         x + gradWidth,
-    //         y + gradHeight
-    //      )
-    //      gradient.addColorStop(0, getRandomColor())
-    //      gradient.addColorStop(1, getRandomColor())
+      // for (let i = 0; i < 10; i++) {
+      //   const x = getRandomInt(canvas.width * 0.60, canvas.width)
+      //    const y = getRandomInt(0, canvas.height)
+      //    const gradWidth = getRandomInt(canvas.width / 4, canvas.width / 2)
+      //    const gradHeight = getRandomInt(canvas.height / 4, canvas.height / 2)
+      //    const gradient = ctx.createLinearGradient(
+      //       x,
+      //       y,
+      //       x + gradWidth,
+      //       y + gradHeight
+      //    )
+      //    gradient.addColorStop(0, getRandomColor())
+      //    gradient.addColorStop(1, getRandomColor())
 
-    //      ctx.fillStyle = gradient
-    //      ctx.fillRect(x, y, gradWidth, gradHeight)
+      //    ctx.fillStyle = gradient
+      //    ctx.fillRect(x, y, gradWidth, gradHeight)
 
-    //      // Add noise to the current gradient rectangle
-    //      addNoiseToRegion(
-    //         ctx as unknown as CanvasRenderingContext2D,
-    //         x,
-    //         y,
-    //         gradWidth,
-    //         gradHeight
-    //      )
-    //   }
+      //    // Add noise to the current gradient rectangle
+      //    addNoiseToRegion(
+      //       ctx as unknown as CanvasRenderingContext2D,
+      //       x,
+      //       y,
+      //       gradWidth,
+      //       gradHeight
+      //    )
+      // }
 
     const buffer = canvas.toBuffer('image/png')
 
