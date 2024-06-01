@@ -1,12 +1,7 @@
-'use client'
-
 import Link from 'next/link'
 import { ModeToggle } from './mode-toggle'
-import { usePathname } from 'next/navigation'
 
 export function Nav() {
-  const pathname = usePathname()
-
   return (
     <div className='mx-auto mb-12 max-w-lg px-4'>
       <nav className='flex flex-row space-x-6 space-y-0'>
