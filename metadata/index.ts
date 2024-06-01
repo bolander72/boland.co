@@ -47,7 +47,7 @@ const metadata = {
     }
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'Michael Boland',
     card: 'summary_large_image',
     creator: '@bolander72'
   }

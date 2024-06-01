@@ -5,9 +5,9 @@ import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
 
-// export const metadata = {
-//   ...sharedMetadata
-// }
+export const metadata = {
+  ...sharedMetadata
+}
 
 export default function RootLayout({
   children
