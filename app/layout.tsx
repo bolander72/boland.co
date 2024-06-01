@@ -5,10 +5,8 @@ import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
 
-export async function generateMetadata() {
-  return {
-    ...sharedMetadata
-  }
+export const metadata = {
+  ...sharedMetadata
 }
 
 export default function RootLayout({

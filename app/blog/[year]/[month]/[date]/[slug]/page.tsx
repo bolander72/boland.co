@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      url: `https://boland.co/blog/${params.year}/${params.month}/${params.date}/${params.slug}`,
+      url: `https://boland.co${post.permalink}`,
       images: [
         {
           url: ogImage
