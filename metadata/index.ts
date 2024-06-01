@@ -31,21 +31,7 @@ const metadata = {
     url: 'https://boland.co',
     siteName: 'Michael Boland',
     locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: 'https://boland.co/og',
-        width: 1200,
-        height: 630,
-        alt: 'Michael Boland'
-      },
-      {
-        url: 'https://boland.co/og',
-        width: 1200,
-        height: 630,
-        alt: 'Michael Boland'
-      }
-    ]
+    type: 'website'
   },
   robots: {
     index: true,
