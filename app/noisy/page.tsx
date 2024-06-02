@@ -19,6 +19,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { cn } from '@/lib/utils'
+import { Download } from 'lucide-react'
 
 const formSchema = z.object({
   text: z.string().max(12),
@@ -29,7 +30,7 @@ const formSchema = z.object({
 
 export default function Page() {
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { base64ImageUrl, refresh } = useNoisyGradient()
+  const { base64ImageUrl, refresh, download } = useNoisyGradient()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -58,54 +59,18 @@ export default function Page() {
           style={{ backgroundImage: `url(${base64ImageUrl})` }}
           id='noisy'
         />
-        {/* <div className='absolute bottom-3 left-3 text-sm text-white'>
-          <Button
-            variant='ghost'
-            size='icon'
-            type='button'
-            onClick={() =>
-              setBase64ImageUrl(
-                createNoisyGradient({
-                  stops: form.getValues('stops'),
-                  level: form.getValues('level')
-                })
-              )
-            }
-          >
-            <RefreshCw />
-          </Button>
-        </div> */}
-        {/* <div className='absolute right-3 top-3 text-sm text-white'>
+        <div className='absolute right-3 top-3 text-sm text-white'>
           <Button
             variant='ghost'
             size='icon'
             type='button'
             onClick={() => {
-              const img = new Image()
-              img.src = base64ImageUrl
-
-              img.onload = () => {
-                const canvas = document.createElement('canvas')
-                canvas.width = 1920
-                canvas.height = 1080
-
-                const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-
-                canvas.toBlob(blob => {
-                  const link = document.createElement('a')
-                  link.href = URL.createObjectURL(blob as Blob)
-                  link.download = 'noisy.webp'
-                  document.body.appendChild(link)
-                  link.click()
-                  document.body.removeChild(link)
-                }, 'noisy/webp')
-              }
+              download({ level: form.getValues('level') })
             }}
           >
             <Download />
           </Button>
-        </div> */}
+        </div>
         <div className='text-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl text-white'>
           {submittedText ?? 'Lorem Ipsum'}
         </div>
