@@ -2,9 +2,11 @@
 
 import { useCallback, useEffect, useId, useState } from 'react'
 
-const getRandomInt = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1)) + min
+const getRandomInt = (min: number, max: number): number =>
+  Math.floor(Math.random() * (max - min + 1)) + min
 
-const getRandomColor = (): string => `rgba(${getRandomInt(0, 255)},${getRandomInt(0, 255)},${getRandomInt(0, 255)},1)`
+const getRandomColor = (): string =>
+  `rgba(${getRandomInt(0, 255)},${getRandomInt(0, 255)},${getRandomInt(0, 255)},1)`
 
 const addNoiseToRegion = (
   ctx: CanvasRenderingContext2D,
@@ -49,9 +51,17 @@ const createRectangle = (
   ctx.fill()
 }
 
-const DEFAULT_STOPS = 2
-const DEFAULT_COLORS: (string | undefined)[] = []
-const DEFAULT_LEVEL = 8
+const INTERNAL_DEFAULT_STOPS = 2
+const INTERNAL_DEFAULT_COLORS: (string | undefined)[] = []
+const INTERNAL_DEFAULT_LEVEL = 8
+
+interface Props {
+  defaultValues?: {
+    stops: number
+    colors: (string | undefined)[]
+    level: number
+  }
+}
 
 interface NoisyGradientProps {
   stops?: number
@@ -59,22 +69,27 @@ interface NoisyGradientProps {
   level?: number
 }
 
-export default function useNoisyGradient() {
+export default function useNoisyGradient({ defaultValues }: Props = {}) {
   const [palette, setPalette] = useState<string[]>([])
   const [base64Image, setBase64Image] = useState<string>('')
   const id = useId()
 
   const createNoisyGradient = useCallback(
     ({
-      stops = DEFAULT_STOPS,
-      colors = DEFAULT_COLORS,
-      level = DEFAULT_LEVEL
+      stops = defaultValues?.stops || INTERNAL_DEFAULT_STOPS,
+      colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
+      level = defaultValues?.level || INTERNAL_DEFAULT_LEVEL
     }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
 
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      )
 
       const newPalette = []
 
@@ -97,18 +112,23 @@ export default function useNoisyGradient() {
       setPalette(newPalette)
       setBase64Image(canvas.toDataURL())
     },
-    [id]
+    [defaultValues?.colors, defaultValues?.level, defaultValues?.stops, id]
   )
 
   const download = useCallback(
-    ({ level = DEFAULT_LEVEL }: { level?: number } = {}) => {
+    ({ level = defaultValues?.level || INTERNAL_DEFAULT_LEVEL }: { level?: number } = {}) => {
       const canvas = document.createElement('canvas') as HTMLCanvasElement
       canvas.width = 1920
       canvas.height = 1080
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
 
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      )
 
       palette.forEach((color, index) => {
         gradient.addColorStop(index / palette.length, color)
@@ -125,12 +145,17 @@ export default function useNoisyGradient() {
       link.remove()
       canvas.remove()
     },
-    [palette]
+    [defaultValues?.level, palette]
   )
 
   useEffect(() => {
     createNoisyGradient()
   }, [createNoisyGradient])
 
-  return { refresh: createNoisyGradient, download, base64Image, id }
+  return {
+    refresh: createNoisyGradient,
+    download,
+    base64Image,
+    id
+  }
 }

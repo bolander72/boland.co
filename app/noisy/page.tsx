@@ -28,17 +28,24 @@ const formSchema = z.object({
   colors: z.array(z.string().optional())
 })
 
+const defaultValues = {
+  stops: 2,
+  colors: [],
+  level: 150
+}
+
 export default function Page() {
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { base64Image, refresh, download, id } = useNoisyGradient()
+  const { base64Image, refresh, download, id } =
+    useNoisyGradient({ defaultValues })
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       text: 'Lorem Ipsum',
-      stops: 2,
-      level: 8,
-      colors: []
+      stops: defaultValues.stops,
+      level: defaultValues.level,
+      colors: defaultValues.colors
     }
   })
 
@@ -98,7 +105,7 @@ export default function Page() {
                 <FormLabel>Color Stops</FormLabel>
                 <FormControl>
                   <Slider
-                    defaultValue={[2]}
+                    defaultValue={[defaultValues.stops]}
                     max={5}
                     min={1}
                     step={1}
@@ -163,7 +170,7 @@ export default function Page() {
                 <FormLabel>Noise Level</FormLabel>
                 <FormControl>
                   <Slider
-                    defaultValue={[8]}
+                    defaultValue={[defaultValues.level]}
                     max={150}
                     min={0}
                     step={1}
@@ -176,7 +183,9 @@ export default function Page() {
             )}
           />
           <div className='flex justify-end'>
-            <Button type='submit' variant='outline'>Refresh</Button>
+            <Button type='submit' variant='outline'>
+              Refresh
+            </Button>
           </div>
         </form>
       </Form>
