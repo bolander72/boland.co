@@ -19,12 +19,6 @@ import {
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { cn } from '@/lib/utils'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from '@/components/ui/collapsible'
-import { ChevronsUpDown } from 'lucide-react'
 
 const formSchema = z.object({
   text: z.string().max(12),
@@ -46,6 +40,8 @@ export default function Page() {
       colors: []
     }
   })
+
+  const watchStops = form.watch('stops')
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
@@ -115,7 +111,7 @@ export default function Page() {
         </div>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
           <FormField
             control={form.control}
             name='text'
@@ -136,13 +132,6 @@ export default function Page() {
               <FormItem>
                 <FormLabel>Color Stops</FormLabel>
                 <FormControl>
-                  {/* <Input
-                     placeholder='2'
-                     type='number'
-                     {...field}
-                     min={1}
-                     max={2500}
-                  /> */}
                   <Slider
                     defaultValue={[2]}
                     max={5}
@@ -156,67 +145,57 @@ export default function Page() {
               </FormItem>
             )}
           />
-          {Number(form.getValues('stops')) <= 5 && (
-            <Collapsible>
+          {watchStops >= 1 && watchStops <= 5 && (
+            <div>
+              <FormLabel className='mb-3 flex w-full cursor-pointer items-center justify-between'>
+                <span>
+                  Manual Colors <sup className='text-xs'>(optional)</sup>
+                </span>
+              </FormLabel>
               <div className='space-y-2'>
-                <CollapsibleTrigger className='w-full'>
-                  <FormLabel className='flex w-full cursor-pointer items-center justify-between'>
-                    <div>
-                      Colors <sup className='text-xs'>(optional)</sup>
-                    </div>
-                    <div>
-                      <ChevronsUpDown className='h-4 w-4' />
-                    </div>
-                  </FormLabel>
-                </CollapsibleTrigger>
-                <CollapsibleContent className='space-y-2'>
-                  {Array.from({ length: Number(form.getValues('stops')) }).map(
-                    (_, index) => (
-                      <FormField
-                        key={index}
-                        control={form.control}
-                        name={`colors.${index}`}
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormControl key={index}>
-                              <Input
-                                placeholder={
-                                  index === 0
-                                    ? '#00FFFF'
-                                    : index ===
-                                        Number(form.getValues('stops')) - 1
-                                      ? '#C04CFD'
-                                      : '#C04CFD'
-                                }
-                                type='text'
-                                {...field}
-                                className={cn(
-                                  `border border-[${field.value}]text-[${field.value}]`
-                                )}
-                                style={{
-                                  borderColor: field.value,
-                                  boxShadow: field.value
-                                    ? `0 0 0 1px ${field.value}`
-                                    : ''
-                                }}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    )
-                  )}
-                </CollapsibleContent>
+                {Array.from({ length: watchStops }).map((_, index) => (
+                  <FormField
+                    key={index}
+                    control={form.control}
+                    name={`colors.${index}`}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl key={index}>
+                          <Input
+                            placeholder={
+                              index === 0
+                                ? '#00FFFF'
+                                : index === Number(form.getValues('stops')) - 1
+                                  ? '...'
+                                  : '...'
+                            }
+                            type='text'
+                            {...field}
+                            className={cn(
+                              `border border-[${field.value}]text-[${field.value}]`
+                            )}
+                            style={{
+                              borderColor: field.value,
+                              boxShadow: field.value
+                                ? `0 0 0 1px ${field.value}`
+                                : ''
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                ))}
               </div>
-            </Collapsible>
+            </div>
           )}
           <FormField
             control={form.control}
             name='level'
             render={({ field }) => (
-              <FormItem className='flex flex-col pt-2'>
-                <FormLabel className='mb-2'>Noise Level</FormLabel>
+              <FormItem>
+                <FormLabel>Noise Level</FormLabel>
                 <FormControl>
                   <Slider
                     defaultValue={[8]}
@@ -232,7 +211,7 @@ export default function Page() {
             )}
           />
           <div className='flex justify-end'>
-            <Button type='submit'>Submit</Button>
+            <Button type='submit'>Refresh</Button>
           </div>
         </form>
       </Form>

@@ -56,6 +56,11 @@ function createRectangle(
   ctx.fill()
 }
 
+const DERFAULT_ID = 'noisy'
+const DEFAULT_STOPS = 2
+const DEFAULT_COLORS: (string | undefined)[] = []
+const DEFAULT_LEVEL = 8
+
 interface NoisyGradientProps {
   id?: string
   width?: number
@@ -70,10 +75,10 @@ export default function useNoisyGradient() {
 
   const createNoisyGradient = useCallback(
     ({
-      id = 'noisy',
-      stops = 2,
-      colors = [],
-      level = 8
+      id = DERFAULT_ID,
+      stops = DEFAULT_STOPS,
+      colors = DEFAULT_COLORS,
+      level = DEFAULT_LEVEL
     }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
 
@@ -104,6 +109,7 @@ export default function useNoisyGradient() {
       }
 
       ctx.fillStyle = gradient
+
       createRectangle(
         ctx,
         x,
@@ -129,8 +135,8 @@ export default function useNoisyGradient() {
 
   useEffect(() => {
     createNoisyGradient({
-      stops: 2,
-      level: 8
+      stops: DEFAULT_STOPS,
+      level: DEFAULT_LEVEL
     })
   }, [createNoisyGradient])
 
