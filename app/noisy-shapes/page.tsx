@@ -23,7 +23,6 @@ import useNoisyShapes from '@/hooks/use-noisy-shapes'
 import { useTheme } from 'next-themes'
 
 const formSchema = z.object({
-  text: z.string().max(12),
   count: z.coerce.number().min(1).max(7500),
   minWidth: z.coerce.number().min(1).max(500),
   maxWidth: z.coerce.number().min(1).max(500),
@@ -48,8 +47,6 @@ const defaultValues = {
 }
 
 export default function Page() {
-  const { theme } = useTheme()
-  const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
   const { id, refresh, download } = useNoisyShapes({
     defaultValues
   })
@@ -57,7 +54,6 @@ export default function Page() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      text: 'Lorem Ipsum',
       count: defaultValues.count,
       stops: defaultValues.stops,
       minWidth: defaultValues.minWidth,
@@ -76,7 +72,6 @@ export default function Page() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     refresh({ ...values })
-    setSubmittedText(values.text)
   }
 
   return (
@@ -106,25 +101,9 @@ export default function Page() {
             <RefreshCw />
           </Button>
         </div>
-        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl font-semibold text-primary'>
-          {submittedText ?? 'Lorem Ipsum'}
-        </div>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
-          <FormField
-            control={form.control}
-            name='text'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Display Text</FormLabel>
-                <FormControl>
-                  <Input placeholder='Lorem Ipsum' {...field} maxLength={12} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <FormField
             control={form.control}
             name='count'

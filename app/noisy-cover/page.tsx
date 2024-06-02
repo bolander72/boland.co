@@ -22,7 +22,6 @@ import { cn } from '@/lib/utils'
 import { Download, RefreshCw } from 'lucide-react'
 
 const formSchema = z.object({
-  text: z.string().max(12),
   stops: z.coerce.number().min(1).max(2500),
   level: z.coerce.number().min(0).max(150),
   colors: z.array(z.string().optional())
@@ -35,7 +34,6 @@ const defaultValues = {
 }
 
 export default function Page() {
-  const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
   const { id, refresh, download } = useNoisyCover({
     defaultValues
   })
@@ -43,7 +41,6 @@ export default function Page() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      text: 'Lorem Ipsum',
       stops: defaultValues.stops,
       level: defaultValues.level,
       colors: defaultValues.colors
@@ -54,7 +51,6 @@ export default function Page() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     refresh({ ...values })
-    setSubmittedText(values.text)
   }
 
   return (
@@ -83,25 +79,9 @@ export default function Page() {
             <RefreshCw />
           </Button>
         </div>
-        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl font-semibold text-primary'>
-          {submittedText ?? 'Lorem Ipsum'}
-        </div>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
-          <FormField
-            control={form.control}
-            name='text'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Display Text</FormLabel>
-                <FormControl>
-                  <Input placeholder='Lorem Ipsum' {...field} maxLength={12} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <FormField
             control={form.control}
             name='stops'
