@@ -76,9 +76,9 @@ export default function useNoisyGradient({ defaultValues }: Props = {}) {
 
   const createNoisyGradient = useCallback(
     ({
-      stops = defaultValues?.stops || INTERNAL_DEFAULT_STOPS,
+      stops = defaultValues?.stops ?? INTERNAL_DEFAULT_STOPS,
       colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
-      level = defaultValues?.level || INTERNAL_DEFAULT_LEVEL
+      level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL
     }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
@@ -116,7 +116,7 @@ export default function useNoisyGradient({ defaultValues }: Props = {}) {
   )
 
   const download = useCallback(
-    ({ level = defaultValues?.level || INTERNAL_DEFAULT_LEVEL }: { level?: number } = {}) => {
+    ({ level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL }: { level?: number } = {}) => {
       const canvas = document.createElement('canvas') as HTMLCanvasElement
       canvas.width = 1920
       canvas.height = 1080
