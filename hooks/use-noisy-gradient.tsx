@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useId, useState } from 'react'
 
 const getRandomInt = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1)) + min
 
@@ -49,13 +49,11 @@ const createRectangle = (
   ctx.fill()
 }
 
-const DEFAULT_ID = 'noisy'
 const DEFAULT_STOPS = 2
 const DEFAULT_COLORS: (string | undefined)[] = []
 const DEFAULT_LEVEL = 8
 
 interface NoisyGradientProps {
-  id?: string
   stops?: number
   colors?: (string | undefined)[]
   level?: number
@@ -64,10 +62,10 @@ interface NoisyGradientProps {
 export default function useNoisyGradient() {
   const [palette, setPalette] = useState<string[]>([])
   const [base64Image, setBase64Image] = useState<string>('')
+  const id = useId()
 
   const createNoisyGradient = useCallback(
     ({
-      id = DEFAULT_ID,
       stops = DEFAULT_STOPS,
       colors = DEFAULT_COLORS,
       level = DEFAULT_LEVEL
@@ -99,7 +97,7 @@ export default function useNoisyGradient() {
       setPalette(newPalette)
       setBase64Image(canvas.toDataURL())
     },
-    []
+    [id]
   )
 
   const download = useCallback(
@@ -134,5 +132,5 @@ export default function useNoisyGradient() {
     createNoisyGradient()
   }, [createNoisyGradient])
 
-  return { refresh: createNoisyGradient, download, base64Image }
+  return { refresh: createNoisyGradient, download, base64Image, id }
 }
