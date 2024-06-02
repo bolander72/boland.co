@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata } from 'next'
 
 const metadata: Metadata = {
   title: `Michael Boland`,
@@ -33,7 +33,7 @@ const metadata: Metadata = {
     url: 'https://boland.co',
     siteName: 'Michael Boland',
     locale: 'en_US',
-    type: 'website',
+    type: 'website'
   },
   robots: {
     index: true,
@@ -52,7 +52,7 @@ const metadata: Metadata = {
     creator: '@bolander72',
     title: 'Michael Boland',
     description: 'Programmer, designer, and consultant.',
-    card: 'summary_large_image',
+    card: 'summary_large_image'
   }
 }
 
