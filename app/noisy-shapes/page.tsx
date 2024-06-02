@@ -3,7 +3,6 @@
 import { Title } from '@/components/title'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import useNoisyGradient from '@/hooks/use-noisy-gradient'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -19,10 +18,17 @@ import {
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { cn } from '@/lib/utils'
-import { Download } from 'lucide-react'
+import { Download, RefreshCw } from 'lucide-react'
+import useNoisyShapes from '@/hooks/use-noisy-shapes'
 
 const formSchema = z.object({
   text: z.string().max(12),
+  count: z.coerce.number().min(1).max(7500),
+  minWidth: z.coerce.number().min(1).max(500),
+  maxWidth: z.coerce.number().min(1).max(500),
+  minHeight: z.coerce.number().min(1).max(500),
+  maxHeight: z.coerce.number().min(1).max(500),
+  cornerRadius: z.coerce.number().min(0).max(500),
   stops: z.coerce.number().min(1).max(2500),
   level: z.coerce.number().min(0).max(150),
   colors: z.array(z.string().optional())
@@ -30,40 +36,54 @@ const formSchema = z.object({
 
 const defaultValues = {
   stops: 2,
+  count: 50,
+  minWidth: 50,
+  maxWidth: 400,
+  minHeight: 50,
+  maxHeight: 400,
+  cornerRadius: 30,
   colors: [],
-  level: 8
+  level: 30
 }
 
 export default function Page() {
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { base64Image, refresh, download, id } =
-    useNoisyGradient({ defaultValues })
+  const { imageData, refresh, id, download } = useNoisyShapes({
+    defaultValues
+  })
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       text: 'Lorem Ipsum',
+      count: defaultValues.count,
       stops: defaultValues.stops,
+      minWidth: defaultValues.minWidth,
+      maxWidth: defaultValues.maxWidth,
+      minHeight: defaultValues.minHeight,
+      maxHeight: defaultValues.maxHeight,
+      cornerRadius: defaultValues.cornerRadius,
       level: defaultValues.level,
       colors: defaultValues.colors
     }
   })
 
   const watchStops = form.watch('stops')
+  const watchMinWidth = form.watch('minWidth')
+  const watchMinHeight = form.watch('minHeight')
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
     refresh({ ...values })
     setSubmittedText(values.text)
   }
 
   return (
     <section className='w-full space-y-6'>
-      <Title>Noisy Gradient</Title>
+      <Title>Noisy Shapes</Title>
       <div className='relative'>
         <canvas
-          className='h-72 w-full rounded-2xl'
-          style={{ backgroundImage: `url(${base64Image})` }}
+          className='aspect-video w-full rounded-2xl border'
+          style={{ backgroundImage: `url(${imageData})` }}
           id={id}
         />
         <div className='absolute right-3 top-3 text-sm text-white'>
@@ -71,11 +91,21 @@ export default function Page() {
             variant='ghost'
             size='icon'
             type='button'
-            onClick={() => {
-              download({ level: form.getValues('level') })
-            }}
+            className='text-white'
+            onClick={() => download()}
           >
             <Download />
+          </Button>
+        </div>
+        <div className='absolute bottom-3 left-3 text-sm text-white'>
+          <Button
+            variant='ghost'
+            size='icon'
+            type='button'
+            className='text-white'
+            onClick={() => onSubmit(form.getValues())}
+          >
+            <RefreshCw />
           </Button>
         </div>
         <div className='text-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl text-white'>
@@ -92,6 +122,124 @@ export default function Page() {
                 <FormLabel>Display Text</FormLabel>
                 <FormControl>
                   <Input placeholder='Lorem Ipsum' {...field} maxLength={12} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='count'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Shape Count</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={String(defaultValues.count)}
+                    {...field}
+                    type='number'
+                    min={1}
+                    max={7500}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className='grid grid-cols-2 gap-6'>
+            <FormField
+              control={form.control}
+              name='minWidth'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Min. Width</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={String(defaultValues.minWidth)}
+                      {...field}
+                      type='number'
+                      min={1}
+                      max={500}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='maxWidth'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Max. Width</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={String(defaultValues.maxWidth)}
+                      {...field}
+                      type='number'
+                      min={watchMinWidth}
+                      max={500}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='grid grid-cols-2 gap-6'>
+            <FormField
+              control={form.control}
+              name='minHeight'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Min. Height</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={String(defaultValues.minHeight)}
+                      {...field}
+                      type='number'
+                      min={1}
+                      max={500}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='maxHeight'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Max. Height</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={String(defaultValues.maxHeight)}
+                      {...field}
+                      type='number'
+                      min={watchMinHeight}
+                      max={500}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <FormField
+            control={form.control}
+            name='cornerRadius'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Corner Radius</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={String(defaultValues.cornerRadius)}
+                    {...field}
+                    type='number'
+                    min={0}
+                    max={500}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

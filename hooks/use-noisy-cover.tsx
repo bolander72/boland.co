@@ -53,7 +53,7 @@ const createRectangle = (
 
 const INTERNAL_DEFAULT_STOPS = 2
 const INTERNAL_DEFAULT_COLORS: (string | undefined)[] = []
-const INTERNAL_DEFAULT_LEVEL = 8
+const INTERNAL_DEFAULT_LEVEL = 30
 
 interface Props {
   defaultValues?: {
@@ -69,18 +69,21 @@ interface NoisyGradientProps {
   level?: number
 }
 
-export default function useNoisyGradient({ defaultValues }: Props = {}) {
+export default function useNoisyCover({ defaultValues }: Props = {}) {
   const [palette, setPalette] = useState<string[]>([])
-  const [base64Image, setBase64Image] = useState<string>('')
+  const [imageData, setImageData] = useState<string>('')
   const id = useId()
 
-  const createNoisyGradient = useCallback(
+  const createNoisyCover = useCallback(
     ({
       stops = defaultValues?.stops ?? INTERNAL_DEFAULT_STOPS,
       colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
       level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL
     }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
+      canvas.width = 1920
+      canvas.height = 1080
+
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
 
       ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -110,52 +113,29 @@ export default function useNoisyGradient({ defaultValues }: Props = {}) {
       addNoiseToRegion(ctx, 0, 0, canvas.width, canvas.height, level)
 
       setPalette(newPalette)
-      setBase64Image(canvas.toDataURL())
+      setImageData(canvas.toDataURL())
     },
     [defaultValues?.colors, defaultValues?.level, defaultValues?.stops, id]
   )
 
-  const download = useCallback(
-    ({ level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL }: { level?: number } = {}) => {
-      const canvas = document.createElement('canvas') as HTMLCanvasElement
-      canvas.width = 1920
-      canvas.height = 1080
-      const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+  const download = useCallback(() => {
+    const canvas = document.getElementById(id) as HTMLCanvasElement
 
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      )
-
-      palette.forEach((color, index) => {
-        gradient.addColorStop(index / palette.length, color)
-      })
-
-      ctx.fillStyle = gradient
-      createRectangle(ctx, 0, 0, canvas.width, canvas.height, 0)
-      addNoiseToRegion(ctx, 0, 0, canvas.width, canvas.height, level)
-
-      const link = document.createElement('a')
-      link.download = `${palette.toString()}.png`
-      link.href = canvas.toDataURL()
-      link.click()
-      link.remove()
-      canvas.remove()
-    },
-    [defaultValues?.level, palette]
-  )
+    const link = document.createElement('a')
+    link.download = 'noisy-cover.png'
+    link.href = canvas.toDataURL()
+    link.click()
+    link.remove()
+  }, [id])
 
   useEffect(() => {
-    createNoisyGradient()
-  }, [createNoisyGradient])
+    createNoisyCover()
+  }, [createNoisyCover])
 
   return {
-    refresh: createNoisyGradient,
+    refresh: createNoisyCover,
     download,
-    base64Image,
+    imageData,
     id
   }
 }
