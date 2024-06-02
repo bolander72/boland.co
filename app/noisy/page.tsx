@@ -31,7 +31,7 @@ const formSchema = z.object({
 const defaultValues = {
   stops: 2,
   colors: [],
-  level: 150
+  level: 8
 }
 
 export default function Page() {
