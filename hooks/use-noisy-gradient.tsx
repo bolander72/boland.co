@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 function getRandomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min
@@ -18,7 +18,7 @@ function addNoiseToRegion(
   y: number,
   width: number,
   height: number,
-  level = 30
+  level: number
 ): void {
   const imageData = ctx.getImageData(x, y, width, height)
   const data = imageData.data
@@ -65,8 +65,10 @@ interface NoisyGradientProps {
 }
 
 export default function useNoisyGradient() {
+  const [base64ImageUrl, setBase64ImageUrl] = useState<string>('')
+
   const createNoisyGradient = useCallback(
-    ({ id = 'noisy', stops = 2, level = 30 }: NoisyGradientProps) => {
+    ({ id = 'noisy', stops = 2, level = 8 }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
 
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
@@ -106,10 +108,17 @@ export default function useNoisyGradient() {
         level
       )
 
-      return canvas.toDataURL()
+      setBase64ImageUrl(canvas.toDataURL())
     },
     []
   )
 
-  return { createNoisyGradient }
+  useEffect(() => {
+    createNoisyGradient({
+      stops: 2,
+      level: 8
+    })
+  }, [createNoisyGradient])
+
+  return { refresh: createNoisyGradient, base64ImageUrl }
 }

@@ -26,19 +26,8 @@ const formSchema = z.object({
 })
 
 export default function Page() {
-  const [base64ImageUrl, setBase64ImageUrl] = useState('')
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { createNoisyGradient } = useNoisyGradient()
-
-  console.log(base64ImageUrl)
-
-  useEffect(() => {
-    setBase64ImageUrl(
-      createNoisyGradient({
-        stops: 2
-      })
-    )
-  }, [createNoisyGradient])
+  const { base64ImageUrl, refresh } = useNoisyGradient()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,14 +39,7 @@ export default function Page() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    setBase64ImageUrl(
-      createNoisyGradient({
-        stops: Number(values.stops),
-        level: Number(values.level)
-      })
-    )
-
+    refresh({ ...values })
     setSubmittedText(values.text)
   }
 
