@@ -45,7 +45,7 @@ export default function Page() {
     defaultValues: {
       text: 'Lorem Ipsum',
       stops: 2,
-      level: 10
+      level: 8
     }
   })
 
@@ -164,7 +164,7 @@ export default function Page() {
                 <FormLabel className='mb-2'>Noise Level</FormLabel>
                 <FormControl>
                   <Slider
-                    defaultValue={[10]}
+                    defaultValue={[8]}
                     max={150}
                     min={0}
                     step={1}
