@@ -211,7 +211,7 @@ export default function Page() {
             )}
           />
           <div className='flex justify-end'>
-            <Button type='submit'>Refresh</Button>
+            <Button type='submit' variant='outline'>Refresh</Button>
           </div>
         </form>
       </Form>
