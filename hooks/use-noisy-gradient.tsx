@@ -61,6 +61,7 @@ interface NoisyGradientProps {
   width?: number
   height?: number
   stops?: number
+  colors?: (string | undefined)[]
   level?: number
 }
 
@@ -68,7 +69,12 @@ export default function useNoisyGradient() {
   const [base64ImageUrl, setBase64ImageUrl] = useState<string>('')
 
   const createNoisyGradient = useCallback(
-    ({ id = 'noisy', stops = 2, level = 8 }: NoisyGradientProps = {}) => {
+    ({
+      id = 'noisy',
+      stops = 2,
+      colors = [],
+      level = 8
+    }: NoisyGradientProps = {}) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
 
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
@@ -86,7 +92,15 @@ export default function useNoisyGradient() {
       )
 
       for (let j = 0; j < stops; j++) {
-        gradient.addColorStop(j / stops, getRandomColor())
+        if (colors[j]) {
+          try {
+            gradient.addColorStop(j / stops, colors[j] as string)
+          } catch {
+            gradient.addColorStop(j / stops, getRandomColor())
+          }
+        } else {
+          gradient.addColorStop(j / stops, getRandomColor())
+        }
       }
 
       ctx.fillStyle = gradient
