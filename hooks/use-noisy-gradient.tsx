@@ -63,7 +63,7 @@ interface NoisyGradientProps {
 
 export default function useNoisyGradient() {
   const [palette, setPalette] = useState<string[]>([])
-  const [base64ImageUrl, setBase64ImageUrl] = useState<string>('')
+  const [base64Image, setBase64Image] = useState<string>('')
 
   const createNoisyGradient = useCallback(
     ({
@@ -97,7 +97,7 @@ export default function useNoisyGradient() {
       addNoiseToRegion(ctx, 0, 0, canvas.width, canvas.height, level)
 
       setPalette(newPalette)
-      setBase64ImageUrl(canvas.toDataURL())
+      setBase64Image(canvas.toDataURL())
     },
     []
   )
@@ -134,5 +134,5 @@ export default function useNoisyGradient() {
     createNoisyGradient()
   }, [createNoisyGradient])
 
-  return { refresh: createNoisyGradient, download, base64ImageUrl }
+  return { refresh: createNoisyGradient, download, base64Image }
 }

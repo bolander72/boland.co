@@ -30,7 +30,7 @@ const formSchema = z.object({
 
 export default function Page() {
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { base64ImageUrl, refresh, download } = useNoisyGradient()
+  const { base64Image, refresh, download } = useNoisyGradient()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,7 +56,7 @@ export default function Page() {
       <div className='relative'>
         <canvas
           className='h-72 w-full rounded-2xl'
-          style={{ backgroundImage: `url(${base64ImageUrl})` }}
+          style={{ backgroundImage: `url(${base64Image})` }}
           id='noisy'
         />
         <div className='absolute right-3 top-3 text-sm text-white'>
