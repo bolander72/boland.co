@@ -36,7 +36,7 @@ const defaultValues = {
 
 export default function Page() {
   const [submittedText, setSubmittedText] = useState('Lorem Ipsum')
-  const { imageData, refresh, download, id } = useNoisyCover({
+  const { id, refresh, download } = useNoisyCover({
     defaultValues
   })
 
@@ -61,12 +61,8 @@ export default function Page() {
     <section className='w-full space-y-6'>
       <Title>Noisy Cover</Title>
       <div className='relative'>
-        <canvas
-          className='aspect-video w-full rounded-2xl border'
-          style={{ backgroundImage: `url(${imageData})` }}
-          id={id}
-        />
-        <div className='absolute right-3 top-3 text-sm text-white'>
+        <canvas className='aspect-video w-full rounded-2xl border' id={id} />
+        <div className='absolute right-3 top-3 text-sm text-primary'>
           <Button
             variant='ghost'
             size='icon'
@@ -76,18 +72,18 @@ export default function Page() {
             <Download />
           </Button>
         </div>
-        <div className='absolute bottom-3 left-3 text-sm text-white'>
+        <div className='absolute bottom-3 left-3 text-sm text-primary'>
           <Button
             variant='ghost'
             size='icon'
             type='button'
-            className='text-white'
+            className='text-primary'
             onClick={() => onSubmit(form.getValues())}
           >
             <RefreshCw />
           </Button>
         </div>
-        <div className='text-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl text-white'>
+        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl font-semibold text-primary'>
           {submittedText ?? 'Lorem Ipsum'}
         </div>
       </div>

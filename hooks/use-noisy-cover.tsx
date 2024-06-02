@@ -71,7 +71,6 @@ interface NoisyGradientProps {
 
 export default function useNoisyCover({ defaultValues }: Props = {}) {
   const [palette, setPalette] = useState<string[]>([])
-  const [imageData, setImageData] = useState<string>('')
   const id = useId()
 
   const createNoisyCover = useCallback(
@@ -113,7 +112,7 @@ export default function useNoisyCover({ defaultValues }: Props = {}) {
       addNoiseToRegion(ctx, 0, 0, canvas.width, canvas.height, level)
 
       setPalette(newPalette)
-      setImageData(canvas.toDataURL())
+      canvas.setAttribute('background-image', `url(${canvas.toDataURL()})`)
     },
     [defaultValues?.colors, defaultValues?.level, defaultValues?.stops, id]
   )
@@ -135,7 +134,6 @@ export default function useNoisyCover({ defaultValues }: Props = {}) {
   return {
     refresh: createNoisyCover,
     download,
-    imageData,
     id
   }
 }

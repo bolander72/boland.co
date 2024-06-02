@@ -1,5 +1,6 @@
 'use client'
 
+import { useTheme } from 'next-themes'
 import { useCallback, useEffect, useId, useState } from 'react'
 
 const getRandomInt = (min: number, max: number): number =>
@@ -88,9 +89,7 @@ interface NoisyGradientProps {
 }
 
 export default function useNoisyShapes({ defaultValues }: Props = {}) {
-  const [imageData, setImageData] = useState<string>('')
   const id = useId()
-
   const createNoisyShapes = useCallback(
     ({
       stops = defaultValues?.stops ?? INTERNAL_DEFAULT_STOPS,
@@ -103,13 +102,11 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
       colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
       level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL
     }: NoisyGradientProps = {}) => {
-      const canvas = document.getElementById(id) as HTMLCanvasElement
+      const canvas = document?.getElementById(id) as HTMLCanvasElement
       canvas.width = 1920
       canvas.height = 1080
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
 
-      ctx.fillStyle = '#0A0A0A'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
       for (let i = 0; i < count; i++) {
         const rectWidth = getRandomInt(minWidth, maxWidth)
         const rectHeight = getRandomInt(minHeight, maxHeight)
@@ -132,8 +129,7 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
         createRectangle(ctx, x, y, rectWidth, rectHeight, cornerRadius)
         addNoiseToRegion(ctx, x, y, rectWidth, rectHeight, level)
       }
-
-      setImageData(canvas.toDataURL())
+      canvas.setAttribute('background-image', `url(${canvas.toDataURL()})`)
     },
     [
       defaultValues?.colors,
@@ -152,7 +148,10 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
   const download = useCallback(() => {
     const canvas = document.getElementById(id) as HTMLCanvasElement
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+    ctx.globalCompositeOperation = 'destination-over'
     ctx.fillStyle = 'transparent'
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     const link = document.createElement('a')
     link.download = 'noisy-shapes.png'
@@ -168,7 +167,6 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
   return {
     refresh: createNoisyShapes,
     download,
-    imageData,
     id
   }
 }
