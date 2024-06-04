@@ -2,6 +2,11 @@ import { Title } from '@/components/title'
 import { posts } from '@/.velite'
 import Link from 'next/link'
 import Post from '@/components/post'
+import sharedMetadata from '@/metadata'
+
+export const metadata = {
+  ...sharedMetadata
+}
 
 export default function Page() {
   const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
