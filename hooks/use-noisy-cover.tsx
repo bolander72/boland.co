@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useId, useState } from 'react'
+import { useCallback, useEffect, useId, useRef } from 'react'
 
 const getRandomInt = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min
@@ -50,42 +50,31 @@ const createRectangle = (
   ctx.closePath()
   ctx.fill()
 }
-
-const INTERNAL_DEFAULT_STOPS = 2
-const INTERNAL_DEFAULT_COLORS: (string | undefined)[] = []
-const INTERNAL_DEFAULT_LEVEL = 30
-
 interface Props {
-  defaultValues?: {
+  defaultValues: {
     stops: number
     colors: (string | undefined)[]
     level: number
+    blur: number
+    locked: boolean
   }
 }
 
-interface NoisyGradientProps {
-  stops?: number
-  colors?: (string | undefined)[]
-  level?: number
-}
-
-export default function useNoisyCover({ defaultValues }: Props = {}) {
-  const [palette, setPalette] = useState<string[]>([])
+export default function useNoisyCover({ defaultValues }: Props) {
+  const gradientRef = useRef<CanvasGradient | null>(null)
   const id = useId()
 
   const createNoisyCover = useCallback(
-    ({
-      stops = defaultValues?.stops ?? INTERNAL_DEFAULT_STOPS,
-      colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
-      level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL
-    }: NoisyGradientProps = {}) => {
+    ({ stops, colors, level, blur, locked }: Props['defaultValues']) => {
       const canvas = document.getElementById(id) as HTMLCanvasElement
       canvas.width = 1920
       canvas.height = 1080
 
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+      ctx.filter = `blur(${blur}px)`
 
       ctx.fillRect(0, 0, canvas.width, canvas.height)
+
       const gradient = ctx.createLinearGradient(
         0,
         0,
@@ -93,28 +82,22 @@ export default function useNoisyCover({ defaultValues }: Props = {}) {
         canvas.height
       )
 
-      const newPalette = []
-
-      for (let i = 0; i < stops; i++) {
-        if (colors[i]) {
+      if (!locked) {
+        for (let i = 0; i < stops; i++) {
           const color = colors[i] || getRandomColor()
           gradient.addColorStop(i / stops, color)
-          newPalette.push(color)
-        } else {
-          const color = getRandomColor()
-          gradient.addColorStop(i / stops, color)
-          newPalette.push(color)
         }
+
+        gradientRef.current = gradient
       }
 
-      ctx.fillStyle = gradient
+      ctx.fillStyle = gradientRef.current || gradient
       createRectangle(ctx, 0, 0, canvas.width, canvas.height, 0)
       addNoiseToRegion(ctx, 0, 0, canvas.width, canvas.height, level)
 
-      setPalette(newPalette)
       canvas.setAttribute('background-image', `url(${canvas.toDataURL()})`)
     },
-    [defaultValues?.colors, defaultValues?.level, defaultValues?.stops, id]
+    [id]
   )
 
   const download = useCallback(() => {
@@ -128,8 +111,8 @@ export default function useNoisyCover({ defaultValues }: Props = {}) {
   }, [id])
 
   useEffect(() => {
-    createNoisyCover()
-  }, [createNoisyCover])
+    createNoisyCover({ ...defaultValues })
+  }, [createNoisyCover, defaultValues])
 
   return {
     refresh: createNoisyCover,

@@ -21,15 +21,16 @@ import { Download, RefreshCw } from 'lucide-react'
 import useNoisyShapes from '@/hooks/use-noisy-shapes'
 
 const formSchema = z.object({
-  count: z.coerce.number().min(1).max(7500),
+  count: z.coerce.number().min(1).max(100),
   minWidth: z.coerce.number().min(1).max(500),
   maxWidth: z.coerce.number().min(1).max(500),
   minHeight: z.coerce.number().min(1).max(500),
   maxHeight: z.coerce.number().min(1).max(500),
   cornerRadius: z.coerce.number().min(0).max(500),
-  stops: z.coerce.number().min(1).max(2500),
+  stops: z.coerce.number().min(1).max(5),
   level: z.coerce.number().min(0).max(150),
-  colors: z.array(z.string().optional())
+  colors: z.array(z.string().optional()),
+  blur: z.coerce.number().min(0).max(200)
 })
 
 const defaultValues = {
@@ -41,7 +42,8 @@ const defaultValues = {
   maxHeight: 400,
   cornerRadius: 30,
   colors: [],
-  level: 30
+  level: 30,
+  blur: 0
 }
 
 export default function Page() {
@@ -51,17 +53,7 @@ export default function Page() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      count: defaultValues.count,
-      stops: defaultValues.stops,
-      minWidth: defaultValues.minWidth,
-      maxWidth: defaultValues.maxWidth,
-      minHeight: defaultValues.minHeight,
-      maxHeight: defaultValues.maxHeight,
-      cornerRadius: defaultValues.cornerRadius,
-      level: defaultValues.level,
-      colors: defaultValues.colors
-    }
+    defaultValues
   })
 
   const watchStops = form.watch('stops')
@@ -94,14 +86,14 @@ export default function Page() {
             size='icon'
             type='button'
             className='text-primary'
-            onClick={() => onSubmit(form.getValues())}
+            onClick={form.handleSubmit(onSubmit)}
           >
             <RefreshCw />
           </Button>
         </div>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
           <FormField
             control={form.control}
             name='count'
@@ -114,7 +106,7 @@ export default function Page() {
                     {...field}
                     type='number'
                     min={1}
-                    max={7500}
+                    max={100}
                   />
                 </FormControl>
                 <FormMessage />
@@ -301,6 +293,25 @@ export default function Page() {
                   />
                 </FormControl>
                 <FormDescription>{form.getValues('level')}</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='blur'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Blur</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder={String(defaultValues.blur)}
+                    {...field}
+                    type='number'
+                    min={0}
+                    max={200}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}

@@ -1,7 +1,6 @@
 'use client'
 
-import { useTheme } from 'next-themes'
-import { useCallback, useEffect, useId, useState } from 'react'
+import { useCallback, useEffect, useId } from 'react'
 
 const getRandomInt = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min
@@ -36,8 +35,13 @@ const createRectangle = (
   y: number,
   width: number,
   height: number,
-  radius: number
+  radius: number,
+  blur: number
 ): void => {
+  if (blur > 0) {
+    ctx.filter = `blur(${blur}px)`
+  }
+
   ctx.beginPath()
   ctx.moveTo(x + radius, y)
   ctx.lineTo(x + width - radius, y)
@@ -50,20 +54,14 @@ const createRectangle = (
   ctx.arcTo(x, y, x + radius, y, radius)
   ctx.closePath()
   ctx.fill()
+
+  if (blur > 0) {
+    ctx.filter = 'none'
+  }
 }
 
-const INTERNAL_DEFAULT_STOPS = 2
-const INTERNAL_DEFAULT_COUNT = 50
-const INTERNAL_DEFAULT_MIN_WIDTH = 50
-const INTERNAL_DEFAULT_MAX_WIDTH = 400
-const INTERNAL_DEFAULT_MIN_HEIGHT = 50
-const INTERNAL_DEFAULT_MAX_HEIGHT = 400
-const INTERNAL_CORNER_RADIUS = 30
-const INTERNAL_DEFAULT_COLORS: (string | undefined)[] = []
-const INTERNAL_DEFAULT_LEVEL = 30
-
 interface Props {
-  defaultValues?: {
+  defaultValues: {
     stops: number
     count: number
     minWidth: number
@@ -73,39 +71,32 @@ interface Props {
     cornerRadius: number
     colors: (string | undefined)[]
     level: number
+    blur: number
   }
 }
 
-interface NoisyGradientProps {
-  stops?: number
-  count?: number
-  minWidth?: number
-  maxWidth?: number
-  minHeight?: number
-  maxHeight?: number
-  cornerRadius?: number
-  colors?: (string | undefined)[]
-  level?: number
-}
-
-export default function useNoisyShapes({ defaultValues }: Props = {}) {
+export default function useNoisyShapes({ defaultValues }: Props) {
   const id = useId()
+
   const createNoisyShapes = useCallback(
     ({
-      stops = defaultValues?.stops ?? INTERNAL_DEFAULT_STOPS,
-      count = defaultValues?.count ?? INTERNAL_DEFAULT_COUNT,
-      minWidth = defaultValues?.minWidth ?? INTERNAL_DEFAULT_MIN_WIDTH,
-      maxWidth = defaultValues?.maxWidth ?? INTERNAL_DEFAULT_MAX_WIDTH,
-      minHeight = defaultValues?.minHeight ?? INTERNAL_DEFAULT_MIN_HEIGHT,
-      maxHeight = defaultValues?.maxHeight ?? INTERNAL_DEFAULT_MAX_HEIGHT,
-      cornerRadius = defaultValues?.cornerRadius ?? INTERNAL_CORNER_RADIUS,
-      colors = defaultValues?.colors || INTERNAL_DEFAULT_COLORS,
-      level = defaultValues?.level ?? INTERNAL_DEFAULT_LEVEL
-    }: NoisyGradientProps = {}) => {
+      stops,
+      count,
+      minWidth,
+      maxWidth,
+      minHeight,
+      maxHeight,
+      cornerRadius,
+      colors,
+      level,
+      blur
+    }: Props['defaultValues']) => {
       const canvas = document?.getElementById(id) as HTMLCanvasElement
       canvas.width = 1920
       canvas.height = 1080
+
       const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+      ctx.fillStyle = 'transparent'
 
       for (let i = 0; i < count; i++) {
         const rectWidth = getRandomInt(minWidth, maxWidth)
@@ -126,29 +117,17 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
         })
 
         ctx.fillStyle = gradient
-        createRectangle(ctx, x, y, rectWidth, rectHeight, cornerRadius)
+        createRectangle(ctx, x, y, rectWidth, rectHeight, cornerRadius, blur)
         addNoiseToRegion(ctx, x, y, rectWidth, rectHeight, level)
       }
       canvas.setAttribute('background-image', `url(${canvas.toDataURL()})`)
     },
-    [
-      defaultValues?.colors,
-      defaultValues?.cornerRadius,
-      defaultValues?.count,
-      defaultValues?.level,
-      defaultValues?.maxHeight,
-      defaultValues?.maxWidth,
-      defaultValues?.minHeight,
-      defaultValues?.minWidth,
-      defaultValues?.stops,
-      id
-    ]
+    [id]
   )
 
   const download = useCallback(() => {
     const canvas = document.getElementById(id) as HTMLCanvasElement
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
-    ctx.globalCompositeOperation = 'destination-over'
     ctx.fillStyle = 'transparent'
 
     ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -161,8 +140,8 @@ export default function useNoisyShapes({ defaultValues }: Props = {}) {
   }, [id])
 
   useEffect(() => {
-    createNoisyShapes()
-  }, [createNoisyShapes])
+    createNoisyShapes({ ...defaultValues })
+  }, [createNoisyShapes, defaultValues])
 
   return {
     refresh: createNoisyShapes,
