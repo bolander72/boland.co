@@ -18,7 +18,9 @@ import {
 import { Input } from '@/components/ui/input'
 import { Slider } from '@/components/ui/slider'
 import { cn } from '@/lib/utils'
-import { Download, Lock, LockOpen, RefreshCw } from 'lucide-react'
+import { Download, Lock, LockOpen, Maximize, RefreshCw } from 'lucide-react'
+import UAParser from 'ua-parser-js'
+import { useState, useEffect } from 'react'
 
 const formSchema = z.object({
   stops: z.coerce.number().min(1).max(2500),
@@ -37,9 +39,17 @@ const defaultValues = {
 }
 
 export default function Page() {
+  const [isSafari, setIsSafari] = useState(false)
   const { id, refresh, download } = useNoisyCover({
     defaultValues
   })
+
+  useEffect(() => {
+    const parser = new UAParser()
+    const results = parser.getResult()
+
+    setIsSafari(results.browser.name === 'Safari')
+  }, [])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,7 +60,6 @@ export default function Page() {
   const watchLocked = form.watch('locked')
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
     refresh({ ...values })
   }
 
@@ -59,6 +68,21 @@ export default function Page() {
       <Title>Noisy Cover</Title>
       <div className='relative'>
         <canvas className='aspect-video w-full rounded-2xl border' id={id} />
+        <div className='absolute left-3 top-3 text-sm text-primary'>
+          <Button
+            variant='ghost'
+            size='icon'
+            type='button'
+            onClick={() => {
+              const canvas = document.getElementById(id) as HTMLCanvasElement
+              canvas.toBlob(blob =>
+                window.open(URL.createObjectURL(blob as Blob), '_blank')
+              )
+            }}
+          >
+            <Maximize />
+          </Button>
+        </div>
         <div className='absolute right-3 top-3 text-sm text-primary'>
           <Button
             variant='ghost'
@@ -181,25 +205,27 @@ export default function Page() {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name='blur'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Blur</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={String(defaultValues.blur)}
-                    {...field}
-                    type='number'
-                    min={0}
-                    max={5000}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          {!isSafari && (
+            <FormField
+              control={form.control}
+              name='blur'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Blur</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={String(defaultValues.blur)}
+                      {...field}
+                      type='number'
+                      min={0}
+                      max={5000}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
           <div className='flex justify-end'>
             <Button type='submit' variant='outline'>
               Refresh

@@ -120,6 +120,7 @@ export default function useNoisyShapes({ defaultValues }: Props) {
         createRectangle(ctx, x, y, rectWidth, rectHeight, cornerRadius, blur)
         addNoiseToRegion(ctx, x, y, rectWidth, rectHeight, level)
       }
+
       canvas.setAttribute('background-image', `url(${canvas.toDataURL()})`)
     },
     [id]
