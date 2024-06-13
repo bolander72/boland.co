@@ -67,7 +67,7 @@ export default function Page() {
     <section className='w-full space-y-6'>
       <Title>Noisy Cover</Title>
       <div className='relative'>
-        <canvas className='aspect-video w-full rounded-2xl border' id={id} />
+        <canvas className='aspect-video w-full rounded-md border' id={id} />
         <div className='absolute left-3 top-3 text-sm text-primary'>
           <Button
             variant='ghost'
@@ -117,7 +117,7 @@ export default function Page() {
         </div>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
           {!watchLocked && (
             <FormField
               control={form.control}
