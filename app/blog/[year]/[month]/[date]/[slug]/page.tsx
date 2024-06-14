@@ -82,7 +82,9 @@ export default function PostPage({ params }: Props) {
           </span>
         </div>
       </div>
-      {post.cover && <img src={post.cover} alt={post.title} />}
+      {post.cover && (
+        <img src={post.cover.src} alt={post.title} className='rounded-md' />
+      )}
       <Separator />
       <Prose>
         <MDXContent code={post.content} />

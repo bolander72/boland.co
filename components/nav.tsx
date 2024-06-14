@@ -15,12 +15,6 @@ export function Nav() {
           >
             blog
           </Link>
-          <Link
-            href='/bits'
-            className='text-blue-600 underline dark:text-blue-500 hidden lg:inline-flex'
-          >
-            bits
-          </Link>
         </div>
         <ModeToggle />
       </div>
