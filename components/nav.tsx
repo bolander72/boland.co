@@ -17,7 +17,7 @@ export function Nav() {
           </Link>
           <Link
             href='/bits'
-            className='text-blue-600 underline dark:text-blue-500'
+            className='text-blue-600 underline dark:text-blue-500 hidden lg:inline-flex'
           >
             bits
           </Link>
