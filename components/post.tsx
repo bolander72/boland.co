@@ -1,5 +1,4 @@
 import { Post as PostType } from '@/.velite'
-import Prose from './prose'
 
 interface Props {
   post: PostType
@@ -23,11 +22,13 @@ export default function Post({ post, showDate = true }: Props) {
         )}
         <div className='font-semibold'>{title}</div>
       </div>
-      <img
-        src={cover.src}
-        alt={post.title}
-        className='mb-1 w-full rounded-md sm:mb-0 sm:w-32'
-      />
+      {cover && (
+        <img
+          src={cover.src}
+          alt={post.title}
+          className='mb-1 w-full rounded-md sm:mb-0 sm:w-32'
+        />
+      )}
     </div>
   )
 }
