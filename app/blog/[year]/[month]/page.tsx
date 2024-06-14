@@ -31,7 +31,7 @@ export default function Page({ params }: Props) {
   const formattedDateWords = formattedDate.split(' ').join(', ')
 
   return (
-    <section className='w-full space-y-6'>
+    <section className='w-full space-y-4'>
       <Title>Blog :: {formattedDateWords}</Title>
       {sortedPosts.map(post => (
         <div key={post.permalink}>

@@ -26,7 +26,7 @@ export default function PagePage({ params }: Props) {
   }
 
   return (
-    <article className='space-y-6'>
+    <article className='space-y-4'>
       <Title>{page.title}</Title>
       <Prose>
         <MDXContent code={page.body} />

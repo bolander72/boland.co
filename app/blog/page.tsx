@@ -12,7 +12,7 @@ export default function Page() {
   const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
 
   return (
-    <section className='w-full space-y-6'>
+    <section className='w-full space-y-4'>
       <Title>Blog</Title>
       {sortedPosts.map(post => (
         <div key={post.permalink}>

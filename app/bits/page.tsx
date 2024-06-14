@@ -17,7 +17,7 @@ const bits = [
 
 export default function Page() {
   return (
-    <section className='space-y-6'>
+    <section className='space-y-4'>
       <Title>Bits</Title>
       {bits.map(bit => (
         <div key={bit.title}>

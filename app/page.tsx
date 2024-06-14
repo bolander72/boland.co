@@ -58,14 +58,14 @@ export default function Page() {
   const page = pages.find(page => page.slug === 'home')
 
   return (
-    <article className='space-y-6'>
+    <article className='space-y-4'>
       <div>
         <Title>Hello, I&apos;m Michael.</Title>
       </div>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <div className='flex space-x-3'>
+      <div className='flex space-x-3 pt-4'>
         {socialLinks.map(link => (
           <Link key={link.href} href={link.href} target='_blank'>
             <Button size='icon' variant='outline'>

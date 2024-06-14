@@ -1,13 +1,12 @@
 'use client'
 
-import Prose from '@/components/prose'
 import { Title } from '@/components/title'
 
 export default function Error() {
   return (
-    <section className='w-full space-y-6'>
+    <section className='space-y-4'>
       <Title>Error</Title>
-      <p>Something went wrong.</p>
+      <p className='font-serif text-lg'>Something went wrong.</p>
     </section>
   )
 }
