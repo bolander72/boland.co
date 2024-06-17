@@ -4,6 +4,17 @@ import Link from 'next/link'
 import Post from '@/components/post'
 import { notFound } from 'next/navigation'
 
+export async function generateStaticParams() {
+  return posts.map(post => {
+    const [year, month, date] = post.date.split('-')
+    return {
+      year,
+      month,
+      date: date.split('T')[0]
+    }
+  })
+}
+
 interface Props {
   params: {
     year: string

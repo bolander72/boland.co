@@ -15,7 +15,7 @@ export default function Post({ post, showDate = true }: Props) {
   })
 
   return (
-    <div className='flex w-full justify-between text-xl flex-row items-center'>
+    <div className='flex w-full flex-row items-center justify-between text-xl'>
       <div className='flex flex-col-reverse'>
         {showDate && (
           <div className='w-fit border-b text-sm'>{formattedDate}</div>
@@ -26,7 +26,7 @@ export default function Post({ post, showDate = true }: Props) {
         <img
           src={cover.src}
           alt={post.title}
-          className='mb-1 rounded-md w-32'
+          className='mb-1 w-32 rounded-md'
         />
       )}
     </div>

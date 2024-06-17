@@ -1,11 +1,22 @@
 import { notFound } from 'next/navigation'
 import { posts } from '@/.velite'
-
 import type { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
 import Prose from '@/components/prose'
 import { MDXContent } from '@/components/mdx-content'
+
+export async function generateStaticParams() {
+  return posts.map(post => {
+    const [year, month, date] = post.date.split('-')
+    return {
+      year,
+      month,
+      date: date.split('T')[0],
+      slug: post.slug
+    }
+  })
+}
 
 interface Props {
   params: {
@@ -26,7 +37,7 @@ function getPostBySlug(params: Props['params']) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(params)
-  const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
+  // const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
 
   if (!post) {
     return {}
@@ -41,22 +52,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://boland.co${post.permalink}`,
       images: [
         {
-          url: ogImage
+          url: post.cover.src
         }
       ]
     },
     twitter: {
       title: `${post.title}: ${post.description}`,
       description: post.description,
-      images: ogImage
+      images: post.cover.src
     }
   }
-}
-
-export function generateStaticParams(): Partial<Props['params']>[] {
-  return posts.map(post => ({
-    slug: post.slug
-  }))
 }
 
 export default function PostPage({ params }: Props) {
