@@ -16,7 +16,7 @@ export function Nav() {
             blog
           </Link>
         </div>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </div>
     </nav>
   )
