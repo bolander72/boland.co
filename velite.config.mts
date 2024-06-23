@@ -126,7 +126,7 @@ export default defineConfig({
 
           return {
             ...data,
-            title: data.title.replace(/\\/g, ''), // Remove escpaed backslashes
+            title: data.title.replace(/\\/g, ''), // Remove escaped backslashes
             permalink: `/blog/${year}/${month}/${date}/${data.slug}`
           }
         })

@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { posts } from '@/.velite'
-import type { Metadata } from 'next'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
 import Prose from '@/components/prose'
@@ -35,34 +34,34 @@ function getPostBySlug(params: Props['params']) {
   )
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug(params)
-  // const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const post = getPostBySlug(params)
+//   const ogImage = `https://boland.co/og?title=${post.title}&description=${post.description}`
 
-  if (!post) {
-    return {}
-  }
+//   if (!post) {
+//     return {}
+//   }
 
-  return {
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: 'article',
-      publishedTime: post.date,
-      url: `https://boland.co${post.permalink}`,
-      images: [
-        {
-          url: post.cover.src
-        }
-      ]
-    },
-    twitter: {
-      title: `${post.title}: ${post.description}`,
-      description: post.description,
-      images: post.cover.src
-    }
-  }
-}
+//   return {
+//     openGraph: {
+//       title: post.title,
+//       description: post.description,
+//       type: 'article',
+//       publishedTime: post.date,
+//       url: `https://boland.co${post.permalink}`,
+//       images: [
+//         {
+//           url: post.cover.src
+//         }
+//       ]
+//     },
+//     twitter: {
+//       title: `${post.title}: ${post.description}`,
+//       description: post.description,
+//       images: post.cover.src
+//     }
+//   }
+// }
 
 export default function PostPage({ params }: Props) {
   const post = getPostBySlug(params)
