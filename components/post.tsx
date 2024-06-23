@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function Post({ post, showDate = true }: Props) {
-  const { title, description, date, cover } = post
+  const { title, description, date } = post
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -16,19 +16,15 @@ export default function Post({ post, showDate = true }: Props) {
 
   return (
     <div className='flex w-full flex-row items-center justify-between text-xl'>
-      <div className='flex flex-col-reverse'>
+      <div className='flex flex-col'>
         {showDate && (
-          <div className='w-fit border-b text-sm'>{formattedDate}</div>
+          <div className='mb-1 w-fit border-b text-xs text-muted-foreground'>
+            {formattedDate}
+          </div>
         )}
         <div className='font-semibold'>{title}</div>
+        <div className='mt-1 text-sm'>{description}</div>
       </div>
-      {cover && (
-        <img
-          src={cover.src}
-          alt={post.title}
-          className='mb-1 w-32 rounded-md'
-        />
-      )}
     </div>
   )
 }

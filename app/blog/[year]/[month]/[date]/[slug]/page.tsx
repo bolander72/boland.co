@@ -71,25 +71,29 @@ export default function PostPage({ params }: Props) {
     notFound()
   }
 
+  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+
   return (
     <article className='space-y-4'>
       <div className='space-y-2'>
         <div className='space-y-2'>
+          <div className='-mb-1 w-fit border-b text-sm text-muted-foreground'>
+            {formattedDate}
+          </div>
           <Title>{post.title}</Title>
-          {post.description && (
-            <p className='text-[17px] leading-7'>{post.description}</p>
-          )}
+          {post.description && <p className='text-sm'>{post.description}</p>}
         </div>
         <div className='flex items-center text-sm'>
-          <span className='text-primary'>
+          <span className='text-muted-foreground'>
             {' '}
             ~ {post.metadata.readingTime} min
           </span>
         </div>
       </div>
-      {post.cover && (
-        <img src={post.cover.src} alt={post.title} className='rounded-md' />
-      )}
       <Separator />
       <Prose>
         <MDXContent code={post.content} />

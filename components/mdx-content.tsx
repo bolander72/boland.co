@@ -1,5 +1,5 @@
 import * as runtime from 'react/jsx-runtime'
-import CustomLink from './mdx/CustomLink'
+import CustomLink from './custom-link'
 import BlogImage from './mdx/BlogImage'
 
 interface MdxProps {
