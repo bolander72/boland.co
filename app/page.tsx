@@ -4,7 +4,6 @@ import { Title } from '@/components/title'
 import Prose from '@/components/prose'
 import Link from 'next/link'
 import { Github, Linkedin, Zap } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 const X = ({ className }: { className?: string }) => (
   <svg viewBox='0 0 24 24' className={className}>
@@ -23,35 +22,35 @@ const Nostr = ({ className }: { className?: string }) => (
 
 const socialLinks = [
   {
-    title: 'GitHub',
+    name: 'GitHub',
     href: 'https://github.com/bolander72',
     icon: Github,
     iconClass: 'text-red-600 dark:text-red-500'
   },
   {
-    title: 'LinkedIn',
+    name: 'LinkedIn',
     href: 'https://linkedin.com/in/bolander72',
     icon: Linkedin,
     iconClass: 'text-sky-600 dark:text-sky-500'
   },
   {
-    title: 'Twitter',
+    name: 'Twitter',
     href: 'https://twitter.com/bolander72',
     icon: X,
-    iconClass: 'fill-primary h-[21px] w-[21px]'
-  },
-  {
-    title: 'Stacker News',
-    href: 'https://stacker.news/bolander72',
-    icon: Zap,
-    iconClass: 'text-yellow-600 dark:text-yellow-500'
-  },
-  {
-    title: 'Nostr',
-    href: 'https://njump.me/npub1ge93aqdp0rjewv2tq7f7u5d5mv4p78w2d74539fsjvr042cwcntsqxgusd',
-    icon: Nostr,
-    iconClass: 'h-[33px] w-[33px]'
+    iconClass: 'fill-primary h-[14.4px] w-[14.4px]'
   }
+  // {
+  //   name: 'Stacker News',
+  //   href: 'https://stacker.news/bolander72',
+  //   icon: Zap,
+  //   iconClass: 'text-yellow-600 dark:text-yellow-500'
+  // },
+  // {
+  //   name: 'Nostr',
+  //   href: 'https://njump.me/npub1ge93aqdp0rjewv2tq7f7u5d5mv4p78w2d74539fsjvr042cwcntsqxgusd',
+  //   icon: Nostr,
+  //   iconClass: 'h-[20px] w-[20px]'
+  // }
 ]
 
 export default function Page() {
@@ -65,13 +64,21 @@ export default function Page() {
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <div className='flex space-x-3 pt-4'>
+      <div className='flex space-x-4 pt-4 text-sm'>
         {socialLinks.map(link => (
-          <Link key={link.href} href={link.href} target='_blank'>
-            <Button size='icon' variant='outline'>
-              <link.icon className={link.iconClass} size={22} />
-            </Button>
+          <Link
+            key={link.href}
+            href={link.href}
+            target='_blank'
+            className='text-blue-600 underline dark:text-blue-500'
+          >
+            {link.name}
           </Link>
+          // <Link key={link.href} href={link.href} target='_blank'>
+          //   <Button size='icon' className='h-7 w-7' variant='outline'>
+          //     <link.icon className={link.iconClass} size={14.4} />
+          //   </Button>
+          // </Link>
         ))}
       </div>
     </article>
