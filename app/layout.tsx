@@ -4,9 +4,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
-import { Lora, Cabin } from 'next/font/google'
+import { Cabin } from 'next/font/google'
 
-const serif = Lora({ subsets: ['latin'], variable: '--font-lora' })
 const sans = Cabin({ subsets: ['latin'], variable: '--font-cabin' })
 
 export const metadata = {
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty ${sans.variable} ${serif.variable} font-sans text-xl leading-8 tracking-wide`}
+        className={`my-12 text-pretty ${sans.variable} font-sans text-xl leading-7 tracking-wide`}
       >
         <Providers
           attribute='class'
@@ -31,7 +30,7 @@ export default function RootLayout({
         >
           <>
             <Nav />
-            <main className='mx-auto max-w-md px-4'>{children}</main>
+            <main className='mx-auto max-w-[430px] px-4'>{children}</main>
           </>
         </Providers>
         <Analytics />

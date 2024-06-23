@@ -74,10 +74,10 @@ export default function PostPage({ params }: Props) {
   return (
     <article className='space-y-4'>
       <div className='space-y-2'>
-        <div>
+        <div className='space-y-2'>
           <Title>{post.title}</Title>
           {post.description && (
-            <p className='font-serif text-base'>{post.description}</p>
+            <p className='text-[17px] leading-7'>{post.description}</p>
           )}
         </div>
         <div className='flex items-center text-sm'>

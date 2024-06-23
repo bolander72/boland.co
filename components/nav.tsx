@@ -3,7 +3,7 @@ import { ModeToggle } from './mode-toggle'
 
 export function Nav() {
   return (
-    <nav className='mx-auto my-12 max-w-md px-4'>
+    <nav className='mx-auto my-12 max-w-[430px] px-4'>
       <div className='flex w-full items-center justify-between'>
         <div className='space-x-4'>
           <Link href='/' className='text-blue-600 underline dark:text-blue-500'>
