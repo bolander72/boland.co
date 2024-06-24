@@ -13,17 +13,17 @@ export default function Posts({ posts }: Props) {
   }
 
   return (
-    <>
+    <div className='flex flex-col space-y-4 pt-1.5'>
       {posts.map((post, index) => (
-        <div
-          key={post.permalink}
-          className={cn('pb-4', index !== posts.length - 1 && 'border-b')}
-        >
-          <Link key={post.permalink} href={post.permalink}>
+        <Link key={post.permalink} href={post.permalink}>
+          <div
+            key={post.permalink}
+            className={cn('pb-4', index !== posts.length - 1 && 'border-b')}
+          >
             <Post post={post} />
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
-    </>
+    </div>
   )
 }
