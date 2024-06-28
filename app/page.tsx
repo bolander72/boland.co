@@ -23,7 +23,7 @@ export default function Page() {
   const page = pages.find(page => page.slug === 'home')
 
   return (
-    <article className='space-y-4'>
+    <section className='space-y-4'>
       <Title>Hello, I&apos;m Michael.</Title>
       <Prose>
         <MDXContent code={page.body} />
@@ -35,6 +35,6 @@ export default function Page() {
           </CustomLink>
         ))}
       </div>
-    </article>
+    </section>
   )
 }
