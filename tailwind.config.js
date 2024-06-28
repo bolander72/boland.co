@@ -27,9 +27,11 @@ const config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       fontFamily: {
-        sans: ['var(--font-cabin)']
+        sans: ['var(--font-cabin)'],
+        marker: ['var(--font-permanent-marker)']
       },
       colors: {
+        'off-white': '#FFFAF2',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

@@ -24,6 +24,9 @@ export default function Page() {
 
   return (
     <section className='space-y-4'>
+      <Title className='bg-gradient-to-r from-[#BCA776] via-[#4D6A50] to-[#496E6E] bg-clip-text font-marker text-transparent dark:from-[#D7CAAD] dark:via-[#6F9673] dark:to-[#699B9B]'>
+        {page.title}
+      </Title>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
