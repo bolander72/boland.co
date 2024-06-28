@@ -8,8 +8,9 @@ import { Cabin, Permanent_Marker } from 'next/font/google'
 
 const sans = Cabin({ subsets: ['latin'], variable: '--font-cabin' })
 const marker = Permanent_Marker({
+  subsets: ['latin'],
   weight: '400',
-  variable: '--font-permanent-marker'
+  variable: '--font-permanent-marker',
 })
 
 export const metadata = {
