@@ -24,11 +24,10 @@ export default function Page() {
 
   return (
     <section className='space-y-4'>
-      <Title>Hello, I&apos;m Michael.</Title>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <div className='flex space-x-4 text-[17px]'>
+      <div className='flex space-x-4 text-lg'>
         {socialLinks.map(link => (
           <CustomLink key={link.href} href={link.href}>
             {link.name}

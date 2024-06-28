@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty ${sans.variable} font-sans text-xl tracking-wide`}
+        className={`my-12 text-pretty ${sans.variable} font-sans tracking-wide`}
       >
         <Providers
           attribute='class'

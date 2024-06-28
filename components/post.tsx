@@ -23,7 +23,7 @@ export default function Post({ post, showDate = true }: Props) {
           </div>
         )}
         <div className='font-semibold'>{title}</div>
-        <div className='mt-1 text-base'>{description}</div>
+        <div className='mt-1 line-clamp-2 text-base'>{description}</div>
       </div>
     </div>
   )
