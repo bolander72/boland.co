@@ -9,12 +9,12 @@ export function ModeToggle() {
 
   return (
     <Button
-      variant='outline'
+      variant='ghost'
       size='icon'
       className='h-7 w-7'
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <Circle className='h-[0.9rem] w-[0.9rem] text-primary' />
+      <Circle className='h-4 w-4 text-primary' />
       <span className='sr-only'>Toggle theme</span>
     </Button>
   )

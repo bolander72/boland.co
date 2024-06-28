@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import CustomLink from './custom-link'
+import { ModeToggle } from './mode-toggle'
 
 export function Nav() {
   return (
@@ -9,6 +9,7 @@ export function Nav() {
           <CustomLink href='/'>about</CustomLink>
           <CustomLink href='/blog'>blog</CustomLink>
         </div>
+        <ModeToggle />
       </div>
     </nav>
   )
