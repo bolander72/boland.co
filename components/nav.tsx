@@ -7,7 +7,7 @@ export function Nav() {
       <div className='flex w-full items-center justify-between'>
         <div className='space-x-4 text-xl'>
           <CustomLink href='/'>about</CustomLink>
-          {/* <CustomLink href='/blog'>blog</CustomLink> */}
+          <CustomLink href='/blog'>blog</CustomLink>
         </div>
         <ModeToggle />
       </div>
