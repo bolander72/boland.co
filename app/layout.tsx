@@ -4,13 +4,67 @@ import { Analytics } from '@vercel/analytics/react'
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
-import { Cabin, Permanent_Marker } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const sans = Cabin({ subsets: ['latin'], variable: '--font-cabin' })
-const marker = Permanent_Marker({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-permanent-marker',
+const hultog = localFont({
+  src: [
+    {
+      path: '../public/fonts/hultog/Hultog.ttf',
+      weight: '400'
+    },
+    {
+      path: '../public/fonts/hultog/Hultog Italic.ttf',
+      style: 'italic',
+      weight: '400'
+    }
+  ],
+  variable: '--font-hultog'
+})
+
+const neueMontreal = localFont({
+  src: [
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-LightItalic.woff2',
+      weight: '300',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-Italic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-MediumItalic.woff2',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/neue-montreal/NeueMontreal-BoldItalic.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-neue-montreal',
 })
 
 export const metadata = {
@@ -25,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty ${sans.variable} ${marker.variable} bg-off-white font-sans tracking-wide dark:bg-background`}
+        className={`my-12 text-pretty ${hultog.variable} ${neueMontreal.variable} bg-off-white font-sans tracking-wide dark:bg-background`}
       >
         <Providers
           attribute='class'

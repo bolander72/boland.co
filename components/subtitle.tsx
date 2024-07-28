@@ -6,5 +6,5 @@ interface Props {
 }
 
 export function Subtitle({ className, children }: Props) {
-  return <h2 className={cn('text-2xl font-semibold', className)}>{children}</h2>
+  return <h2 className={cn('text-2xl font-medium', className)}>{children}</h2>
 }

@@ -20,7 +20,8 @@ interface Props {
 
 export default function Page({ params }: Props) {
   const filteredPosts = posts.filter(post => post.date.startsWith(params.year))
-  const sortedPosts = filteredPosts.sort((a, b) => b.date.localeCompare(a.date))
+  const nonDraftPosts = filteredPosts.filter((post) => !post.draft)
+  const sortedPosts = nonDraftPosts.sort((a, b) => b.date.localeCompare(a.date))
 
   if (sortedPosts.length === 0) {
     notFound()

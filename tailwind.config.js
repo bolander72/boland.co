@@ -27,8 +27,8 @@ const config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       fontFamily: {
-        sans: ['var(--font-cabin)'],
-        marker: ['var(--font-permanent-marker)']
+        sans: ['var(--font-neue-montreal)'],
+        serif: ['var(--font-hultog)'],
       },
       colors: {
         'off-white': '#FFFAF2',

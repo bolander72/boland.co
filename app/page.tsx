@@ -24,13 +24,13 @@ export default function Page() {
 
   return (
     <section className='space-y-4'>
-      <Title className='bg-gradient-to-r from-[#BCA776] via-[#4D6A50] to-[#496E6E] bg-clip-text font-marker text-transparent dark:from-[#D7CAAD] dark:via-[#6F9673] dark:to-[#699B9B]'>
+      <Title className='font-sans'>
         {page.title}
       </Title>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
-      <div className='flex space-x-4 text-lg'>
+      <div className='pt-4 flex space-x-4 text-lg font-sans font-medium'>
         {socialLinks.map(link => (
           <CustomLink key={link.href} href={link.href}>
             {link.name}

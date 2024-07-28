@@ -84,7 +84,7 @@ export default function PostPage({ params }: Props) {
             {formattedDate}
           </div>
           <Title>{post.title}</Title>
-          {post.description && <p className='text-base'>{post.description}</p>}
+          {post.description && <p className='text-lg font-serif'>{post.description}</p>}
         </div>
         <div className='flex items-center text-sm'>
           <span className='text-muted-foreground'>
