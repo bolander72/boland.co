@@ -6,19 +6,17 @@ import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
 import localFont from 'next/font/local'
 
-const hultog = localFont({
+// const marker = Permanent_Marker({ weight: '400', variable: '--font-marker' })
+
+const marker = localFont({
   src: [
     {
-      path: '../public/fonts/hultog/Hultog.ttf',
-      weight: '400'
-    },
-    {
-      path: '../public/fonts/hultog/Hultog Italic.ttf',
-      style: 'italic',
-      weight: '400'
+      path: '../public/fonts/marker/MarkerScratch-Regular.ttf',
+      weight: '400',
+      style: 'normal'
     }
   ],
-  variable: '--font-hultog'
+  variable: '--font-marker'
 })
 
 const neueMontreal = localFont({
@@ -26,45 +24,45 @@ const neueMontreal = localFont({
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-Light.woff2',
       weight: '300',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-LightItalic.woff2',
       weight: '300',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-Regular.woff2',
       weight: '400',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-Italic.woff2',
       weight: '400',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-Medium.woff2',
       weight: '500',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-MediumItalic.woff2',
       weight: '500',
-      style: 'italic',
+      style: 'italic'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-Bold.woff2',
       weight: '700',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: '../public/fonts/neue-montreal/NeueMontreal-BoldItalic.woff2',
       weight: '700',
-      style: 'italic',
-    },
+      style: 'italic'
+    }
   ],
-  variable: '--font-neue-montreal',
+  variable: '--font-neue-montreal'
 })
 
 export const metadata = {
@@ -79,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty ${hultog.variable} ${neueMontreal.variable} bg-off-white font-sans tracking-wide dark:bg-background`}
+        className={`my-12 text-pretty ${neueMontreal.variable} ${marker.variable} bg-[#FFFAF2] dark:bg-background`}
       >
         <Providers
           attribute='class'
@@ -89,7 +87,7 @@ export default function RootLayout({
         >
           <>
             <Nav />
-            <main className='mx-auto max-w-[430px] px-4'>{children}</main>
+            <main className='mx-auto max-w-[380px] px-4'>{children}</main>
           </>
         </Providers>
         <Analytics />
