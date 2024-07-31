@@ -6,10 +6,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}'
   ],
-  prefix: '',
   theme: {
-    transparent: 'transparent',
-    current: 'currentColor',
     container: {
       center: true,
       padding: '2rem',
@@ -25,7 +22,7 @@ const config = {
       },
       fontFamily: {
         montreal: ['var(--font-neue-montreal)'],
-        marker: ['var(--font-marker)']
+        brush: ['var(--font-brush)']
       },
       colors: {
         border: 'hsl(var(--border))',

@@ -6,17 +6,15 @@ import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
 import localFont from 'next/font/local'
 
-// const marker = Permanent_Marker({ weight: '400', variable: '--font-marker' })
-
-const marker = localFont({
+const brush = localFont({
   src: [
     {
-      path: '../public/fonts/marker/MarkerScratch-Regular.ttf',
+      path: '../public/fonts/bomber-brush/BomberBrush-Regular.ttf',
       weight: '400',
       style: 'normal'
     }
   ],
-  variable: '--font-marker'
+  variable: '--font-brush'
 })
 
 const neueMontreal = localFont({
@@ -77,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`my-12 text-pretty ${neueMontreal.variable} ${marker.variable} bg-[#FFFAF2] dark:bg-background`}
+        className={`my-12 text-pretty ${neueMontreal.variable} ${brush.variable} dark:bg-background`}
       >
         <Providers
           attribute='class'
