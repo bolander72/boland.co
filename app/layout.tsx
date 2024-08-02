@@ -1,6 +1,5 @@
 import './globals.css'
 
-import { Analytics } from '@vercel/analytics/react'
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
@@ -73,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={`my-12 text-pretty ${neueMontreal.variable} ${brush.variable} dark:bg-background`}
       >
@@ -88,7 +87,6 @@ export default function RootLayout({
             <main className='mx-auto max-w-[380px] px-4'>{children}</main>
           </>
         </Providers>
-        <Analytics />
       </body>
     </html>
   )
