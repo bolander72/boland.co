@@ -1,7 +1,7 @@
 import { posts } from '@/.velite'
 import { notFound } from 'next/navigation'
 import BlogTitle from '@/components/blog-title'
-import Posts from '@/components/posts'
+import Posts from '@/components/blog/posts'
 
 export async function generateStaticParams() {
   return posts.map(post => {
