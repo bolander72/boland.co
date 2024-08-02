@@ -25,6 +25,7 @@ const config = {
         brush: ['var(--font-brush)']
       },
       colors: {
+        'rich-black': '#030712',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

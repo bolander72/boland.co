@@ -13,7 +13,7 @@ export default function Posts({ posts }: Props) {
   }
 
   return (
-    <div className='flex flex-col space-y-4 pt-1.5'>
+    <div className='flex flex-col space-y-4'>
       {posts.map((post, index) => (
         <Link key={post.permalink} href={post.permalink}>
           <div

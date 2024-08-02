@@ -40,30 +40,18 @@ export default function Entry({ entry }: Props) {
             src={entry.logoLink}
             className={cn(
               'max-h-5 max-w-5',
-              entry.name === 'Carry' &&
-                'max-w-[1.125rem]',
-              entry.name === 'Mainline' &&
-                'max-h-6 max-w-5',
-              entry.name === 'AIMG' &&
-                'max-w-10',
-              entry.name === 'AE Studio' &&
-                'max-h-[1.125rem] max-w-[1.125rem]',
-              entry.name === 'The.com' &&
-                'max-w-6',
-              entry.name === 'WorkHound' &&
-                'max-h-6 max-w-6',
-              entry.name === 'BlockEarner' &&
-                'max-w-[1.875rem]',
-              entry.name === 'Hy-Vee' &&
-                'max-w-4',
-              entry.name === 'FastPath' &&
-                '',
-              entry.name === 'Corteva' &&
-                '',
-              entry.name === 'SmartLocker' &&
-                'max-h-6 max-w-6',
-              entry.name === 'SwissContact' &&
-                'max-w-5'
+              entry.name === 'Carry' && 'max-w-[1.125rem]',
+              entry.name === 'Mainline' && 'max-h-6 max-w-5',
+              entry.name === 'AIMG' && 'max-w-10',
+              entry.name === 'AE Studio' && 'max-h-[1.125rem] max-w-[1.125rem]',
+              entry.name === 'The.com' && 'max-w-6',
+              entry.name === 'WorkHound' && 'max-h-6 max-w-6',
+              entry.name === 'BlockEarner' && 'max-w-[1.875rem]',
+              entry.name === 'Hy-Vee' && 'max-w-4',
+              entry.name === 'FastPath' && '',
+              entry.name === 'Corteva' && '',
+              entry.name === 'SmartLocker' && 'max-h-6 max-w-6',
+              entry.name === 'SwissContact' && 'max-w-5'
             )}
             alt={entry.name}
             width={32}

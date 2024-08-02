@@ -28,7 +28,9 @@ export default function Page() {
 
   return (
     <section className='space-y-4'>
-      <Title className='text-5xl font-brush tracking-wide text-[#51819F]'>{page.title}</Title>
+      <Title className='pb-6 font-brush text-5xl tracking-wide text-[#51819F]'>
+        {page.title}
+      </Title>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>

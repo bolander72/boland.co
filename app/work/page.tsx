@@ -3,8 +3,8 @@ import Resume from '@/components/work/resume'
 
 export default function Page() {
   return (
-    <section className='space-y-4'>
-      <Title className='text-5xl font-brush tracking-wide text-[#51819F]'>Work</Title>
+    <section className='space-y-6'>
+      <Title>Work</Title>
       <Resume />
     </section>
   )

@@ -8,9 +8,7 @@ interface Props {
 
 const AnimatedTitle = ({ text, className, charClassName }: Props) => {
   return (
-    <h1
-      className={cn('text-center font-brush text-5xl', className)}
-    >
+    <h1 className={cn('text-center font-brush text-5xl', className)}>
       <span className='tracking-wide text-[#51819F]'>
         {text.split('').map((char, index) => {
           let delay = 0
