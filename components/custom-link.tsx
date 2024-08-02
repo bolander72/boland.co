@@ -8,6 +8,7 @@ export default function CustomLink(props: any) {
     return (
       <Link
         href={href}
+        prefetch={href !== '/rss'}
         className='text-blue-600 hover:underline dark:text-blue-500'
       >
         {props.children}

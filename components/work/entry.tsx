@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import CustomLink from '../custom-link'
+import Image from 'next/image'
 
 interface Props {
   entry: {
@@ -35,33 +36,34 @@ export default function Entry({ entry }: Props) {
         <div className='flex items-center justify-between'>
           <div className='text-base'>{entry.role}</div>
           <img
+            fetchPriority='high'
             src={entry.logoLink}
             className={cn(
               'max-h-5 max-w-5',
               entry.name === 'Carry' &&
-                'max-w-[1.125rem] animate-fade-left animate-duration-[1500ms] animate-once',
+                'max-w-[1.125rem]',
               entry.name === 'Mainline' &&
-                'max-h-6 max-w-5 animate-fade-left animate-delay-[250ms] animate-duration-[1500ms] animate-once',
+                'max-h-6 max-w-5',
               entry.name === 'AIMG' &&
-                'max-w-10 animate-fade-left animate-delay-[500ms] animate-duration-[1500ms] animate-once',
+                'max-w-10',
               entry.name === 'AE Studio' &&
-                'max-h-[1.125rem] max-w-[1.125rem] animate-fade-left animate-delay-[750ms] animate-duration-[1500ms] animate-once',
+                'max-h-[1.125rem] max-w-[1.125rem]',
               entry.name === 'The.com' &&
-                'max-w-6 animate-fade-left animate-delay-[1000ms] animate-duration-[1500ms] animate-once',
+                'max-w-6',
               entry.name === 'WorkHound' &&
-                'max-h-6 max-w-6 animate-fade-left animate-delay-[1250ms] animate-duration-[1500ms] animate-once',
+                'max-h-6 max-w-6',
               entry.name === 'BlockEarner' &&
-                'max-w-[1.875rem] animate-fade-left animate-delay-[1500ms] animate-duration-[1500ms] animate-once',
+                'max-w-[1.875rem]',
               entry.name === 'Hy-Vee' &&
-                'max-w-4 animate-fade-left animate-delay-[1750ms] animate-duration-[1500ms] animate-once',
+                'max-w-4',
               entry.name === 'FastPath' &&
-                'animate-fade-left animate-delay-[2000ms] animate-duration-[1500ms] animate-once',
+                '',
               entry.name === 'Corteva' &&
-                'animate-fade-left animate-delay-[2250ms] animate-duration-[1500ms] animate-once',
+                '',
               entry.name === 'SmartLocker' &&
-                'max-h-6 max-w-6 animate-fade-left animate-delay-[2500ms] animate-duration-[1500ms] animate-once',
+                'max-h-6 max-w-6',
               entry.name === 'SwissContact' &&
-                'max-w-5 animate-fade-left animate-delay-[2750ms] animate-duration-[1500ms] animate-once'
+                'max-w-5'
             )}
             alt={entry.name}
             width={32}
