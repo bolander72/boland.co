@@ -91,12 +91,12 @@ const entries = [
     logoLink: '/logos/smartlocker.webp'
   },
   {
-    name: 'SwissContact',
+    name: 'Swiss EP',
     duration: '',
     role: 'EiR',
     tags: [],
-    websiteLink: 'https://swisscontact.org',
-    logoLink: '/logos/swisscontact.webp'
+    websiteLink: 'https://swissep.org',
+    logoLink: '/logos/swissep.webp'
   }
 ]
 
