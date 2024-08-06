@@ -22,7 +22,7 @@ export default function Post({ post, showDate = true }: Props) {
             {formattedDate}
           </div>
         )}
-        <div className='mb-1.5 font-montreal font-medium tracking-wide'>
+        <div className='mb-1.5 font-montreal tracking-wide text-blue-600 dark:text-blue-500'>
           {title}
         </div>
         <div className='line-clamp-2 text-base'>{description}</div>
