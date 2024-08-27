@@ -3,6 +3,14 @@ import Entry from './entry'
 
 const entries = [
   {
+    name: 'Bitcoin Layers',
+    duration: 'Present',
+    role: 'Lead Product Engineer',
+    tags: [],
+    websiteLink: 'https://bitcoinlayers.org?ref=boland.co',
+    logoLink: '/logos/bitcoin-layers.webp'
+  },
+  {
     name: 'Carry',
     duration: 'Present',
     role: 'Design Engineer',
@@ -15,7 +23,7 @@ const entries = [
     duration: 'Present',
     role: 'Lead Product Engineer',
     tags: ['design', 'engineering'],
-    websiteLink: 'https://getmainline.io',
+    websiteLink: 'https://getmainline.io?ref=boland.co',
     logoLink: '/logos/mainline.webp'
   },
   {
@@ -95,7 +103,7 @@ const entries = [
     duration: '',
     role: 'EiR',
     tags: [],
-    websiteLink: 'https://swissep.org',
+    websiteLink: 'https://swissep.org?ref=boland.co',
     logoLink: '/logos/swissep.webp'
   }
 ]
