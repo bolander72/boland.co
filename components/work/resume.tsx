@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import Entry from './entry'
+import CustomLink from '../custom-link'
 
 const entries = [
   {
@@ -111,21 +112,21 @@ const entries = [
 export default function Resume() {
   return (
     <div className='flex flex-col space-y-4'>
-      {/* <div className='flex flex-row items-center justify-between border-b pb-4 text-xl'>
+      <div className='flex flex-row items-center justify-between border-b pb-4 text-xl'>
         <div className='flex w-full flex-col'>
           <div className='flex items-center justify-between'>
-            <div className='text-lg'>This can be you.</div>
+            <div className='text-lg'>Your Project</div>
             <div className='animate-pulse text-sm !text-green-600 text-muted-foreground animate-duration-[2000ms] animate-thrice'>
               Available
             </div>
           </div>
-          <div className='mt-1 text-sm'>
+          <div className='text-sm'>
             Schedule a call{' '}
             <CustomLink href='https://cal.com/bolander72/chat'>here</CustomLink>
             .
           </div>
         </div>
-      </div> */}
+      </div>
 
       {entries.map((entry, index) => (
         <div
