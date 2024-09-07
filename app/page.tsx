@@ -3,6 +3,7 @@ import { pages } from '@/.velite'
 import Prose from '@/components/prose'
 import CustomLink from '@/components/custom-link'
 import { Title } from '@/components/title'
+import AnimatedTitle from '@/components/animated-title'
 
 const socialLinks = [
   // {
@@ -28,9 +29,9 @@ export default function Page() {
 
   return (
     <section className='space-y-4'>
-      <Title className='pb-6 font-brush text-5xl tracking-wide text-[#51819F]'>
-        {page.title}
-      </Title>
+      <div className='font-brush text-5xl tracking-wide text-[#51819F]'>
+        <AnimatedTitle text={page.title} />
+      </div>
       <Prose>
         <MDXContent code={page.body} />
       </Prose>
