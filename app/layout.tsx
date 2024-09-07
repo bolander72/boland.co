@@ -76,7 +76,8 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <body
-          className={`my-12 text-pretty text-rich-black ${neueMontreal.variable} ${brush.variable} dark:bg-background`}
+          className={`my-12 text-pretty text-rich-black ${neueMontreal.variable} ${brush.variable}
+            dark:bg-background`}
         >
           <Providers
             attribute='class'

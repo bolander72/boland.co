@@ -17,8 +17,14 @@ const nextConfig = {
       {
         source: '/.well-known/nostr.json',
         headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET' }
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*'
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET'
+          }
         ]
       }
     ]

@@ -28,7 +28,10 @@ export default defineConfig({
           slug: s.slug('global', ['admin', 'login']),
           body: s.mdx()
         })
-        .transform(data => ({ ...data, permalink: `/${data.slug}` }))
+        .transform(data => ({
+          ...data,
+          permalink: `/${data.slug}`
+        }))
     },
     posts: {
       name: 'Post',

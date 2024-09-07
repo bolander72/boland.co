@@ -1,6 +1,5 @@
 import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
-import Prose from '@/components/prose'
 import CustomLink from '@/components/custom-link'
 import AnimatedTitle from '@/components/animated-title'
 
@@ -27,9 +26,7 @@ export default function Page() {
       <div className='font-brush text-5xl tracking-wide text-[#51819F]'>
         <AnimatedTitle text={page.title} />
       </div>
-      <Prose>
-        <MDXContent code={page.body} />
-      </Prose>
+      <MDXContent code={page.body} />
       <div className='flex space-x-4 text-lg'>
         {socialLinks.map(link => (
           <CustomLink key={link.href} href={link.href}>

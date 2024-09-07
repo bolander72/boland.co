@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import { posts } from '@/.velite'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
-import Prose from '@/components/prose'
 import { MDXContent } from '@/components/mdx-content'
 
 export async function generateStaticParams() {
@@ -65,9 +64,7 @@ export default function PostPage({ params }: Props) {
         </div>
       </div>
       <Separator />
-      <Prose>
-        <MDXContent code={post.content} />
-      </Prose>
+      <MDXContent code={post.content} />
     </article>
   )
 }

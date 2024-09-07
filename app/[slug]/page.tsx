@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
 import { Title } from '@/components/title'
-import Prose from '@/components/prose'
 
 type Props = {
   params: {
@@ -28,9 +27,7 @@ export default function PagePage({ params }: Props) {
   return (
     <article className='space-y-4'>
       <Title>{page.title}</Title>
-      <Prose>
-        <MDXContent code={page.body} />
-      </Prose>
+      <MDXContent code={page.body} />
     </article>
   )
 }

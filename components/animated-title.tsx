@@ -24,7 +24,9 @@ export default function AnimatedTitle({
               'animate-fade animate-duration-[2000ms] animate-once',
               charClassName
             )}
-            style={{ animationDelay: `${calculateDelay(index)}ms` }}
+            style={{
+              animationDelay: `${calculateDelay(index)}ms`
+            }}
           >
             {char}
           </span>
