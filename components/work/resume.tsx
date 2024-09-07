@@ -120,7 +120,7 @@ export default function Resume() {
               Available
             </div>
           </div>
-          <div className='text-sm'>
+          <div className='text-sm text-muted-foreground'>
             Schedule a call{' '}
             <CustomLink href='https://cal.com/bolander72/chat'>here</CustomLink>
             .
