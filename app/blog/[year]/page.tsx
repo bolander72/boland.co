@@ -28,7 +28,7 @@ export default function Page({ params }: Props) {
   }
 
   return (
-    <section className='w-full space-y-4'>
+    <section className='w-full space-y-6'>
       <div className='flex items-baseline justify-between space-x-2'>
         <BlogTitle />
         <span className='text-xs text-muted-foreground'>{params.year}</span>

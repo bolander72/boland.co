@@ -2,14 +2,9 @@ import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
 import Prose from '@/components/prose'
 import CustomLink from '@/components/custom-link'
-import { Title } from '@/components/title'
 import AnimatedTitle from '@/components/animated-title'
 
 const socialLinks = [
-  // {
-  //   name: 'Cal',
-  //   href: 'https://cal.com/bolander72/chat'
-  // },
   {
     name: 'GitHub',
     href: 'https://github.com/bolander72'

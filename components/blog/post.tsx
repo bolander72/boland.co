@@ -15,17 +15,17 @@ export default function Post({ post, showDate = true }: Props) {
   })
 
   return (
-    <div className='flex w-full flex-row items-center justify-between text-xl'>
+    <div className='group flex w-full flex-row items-center justify-between text-xl'>
       <div className='flex flex-col'>
         {showDate && (
           <div className='mb-1 w-fit border-b text-xs text-muted-foreground'>
             {formattedDate}
           </div>
         )}
-        <div className='mb-1.5 font-montreal tracking-wide text-blue-500 hover:text-blue-700 dark:text-blue-500'>
+        <div className='mb-1.5 font-montreal tracking-wide text-blue-500 group-hover:text-blue-700 dark:text-blue-500'>
           {title}
         </div>
-        <div className='line-clamp-2 text-base'>{description}</div>
+        <div className='line-clamp-2 text-base text-primary'>{description}</div>
       </div>
     </div>
   )
