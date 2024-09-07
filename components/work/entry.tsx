@@ -22,11 +22,11 @@ export default function Entry({ entry }: Props) {
         </div>
         <div className='flex items-center justify-between'>
           {entry.websiteLink ? (
-            <CustomLink href={entry.websiteLink}>
-              <div className='flex flex-col text-lg'>
+            <>
+              <div className='flex text-lg'>
                 <p>{entry.name}</p>
               </div>
-            </CustomLink>
+            </>
           ) : (
             <div className='flex text-lg'>
               <p>{entry.name}</p>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 export default function CustomLink(props: any) {
   const href = props.href
@@ -9,7 +9,7 @@ export default function CustomLink(props: any) {
       <Link
         href={href}
         prefetch={href !== '/rss'}
-        className='text-blue-600 dark:text-blue-500'
+        className='text-blue-500 hover:text-blue-700 dark:text-blue-500'
       >
         {props.children}
       </Link>
@@ -19,7 +19,7 @@ export default function CustomLink(props: any) {
   return (
     <Link
       target='_blank'
-      className='group inline-flex text-blue-600 dark:text-blue-500'
+      className='group inline-flex text-blue-500 hover:text-blue-700 dark:text-blue-500'
       rel='noopener noreferrer'
       {...props}
     >

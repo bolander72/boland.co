@@ -3,6 +3,7 @@ import './globals.css'
 import { Nav } from '@/components/nav'
 import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
+import { ViewTransitions } from 'next-view-transitions'
 import localFont from 'next/font/local'
 
 const brush = localFont({
@@ -72,22 +73,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body
-        className={`my-12 text-pretty text-rich-black ${neueMontreal.variable} ${brush.variable} dark:bg-background`}
-      >
-        <Providers
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
+    <ViewTransitions>
+      <html lang='en' suppressHydrationWarning>
+        <body
+          className={`my-12 text-pretty text-rich-black ${neueMontreal.variable} ${brush.variable} dark:bg-background`}
         >
-          <>
-            <Nav />
-            <main className='mx-auto max-w-[380px] px-4'>{children}</main>
-          </>
-        </Providers>
-      </body>
-    </html>
+          <Providers
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <>
+              <Nav />
+              <main className='mx-auto max-w-[380px] px-4'>{children}</main>
+            </>
+          </Providers>
+        </body>
+      </html>
+    </ViewTransitions>
   )
 }
