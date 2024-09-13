@@ -1,3 +1,7 @@
+import tailwindCssAnimatePlugin from 'tailwindcss-animate'
+import tailwindCssAnimatedPlugin from 'tailwindcss-animated'
+import typographyPlugin from '@tailwindcss/typography'
+
 const config = {
   darkMode: ['class'],
   content: [
@@ -89,9 +93,9 @@ const config = {
     }
   },
   plugins: [
-    require('tailwindcss-animate'),
-    require('@tailwindcss/typography'),
-    require('tailwindcss-animated')
+    tailwindCssAnimatePlugin,
+    tailwindCssAnimatedPlugin,
+    typographyPlugin
   ]
 }
 
