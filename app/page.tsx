@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section className='space-y-4'>
       <div className='font-brush text-5xl tracking-wide text-[#51819F]'>
-        <Title className='text-left font-brush text-5xl'>Hello, I'm Michael.</Title>
+        <Title className='text-left font-brush text-5xl'>Hello, I&apos;m Michael.</Title>
       </div>
       <MDXContent code={page.body} />
       <div className='flex space-x-4 text-lg'>
