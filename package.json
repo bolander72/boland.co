@@ -2,7 +2,7 @@
   "name": "boland.co",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev --turbo --experimental-https",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

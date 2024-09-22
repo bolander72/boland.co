@@ -1,7 +1,7 @@
 import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
 import CustomLink from '@/components/custom-link'
-import AnimatedTitle from '@/components/animated-title'
+import { Title } from '@/components/title'
 
 const socialLinks = [
   {
@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section className='space-y-4'>
       <div className='font-brush text-5xl tracking-wide text-[#51819F]'>
-        <AnimatedTitle text={page.title} />
+        <Title className='text-left font-brush text-5xl'>Hello, I'm Michael.</Title>
       </div>
       <MDXContent code={page.body} />
       <div className='flex space-x-4 text-lg'>

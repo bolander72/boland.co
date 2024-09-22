@@ -116,10 +116,7 @@ export default function Resume() {
         <div className='flex w-full flex-col'>
           <div className='flex items-center justify-between'>
             <div className='text-lg'>Your Project</div>
-            <div
-              className='animate-pulse text-sm !text-green-600 text-muted-foreground
-                animate-duration-[2000ms] animate-thrice'
-            >
+            <div className='text-sm text-green-600'>
               Available
             </div>
           </div>
