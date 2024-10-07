@@ -11,8 +11,6 @@ function getPageBySlug() {
 export default function Page() {
   const page = getPageBySlug()
 
-  console.log(page)
-
   if (!page) {
     notFound()
   }
@@ -26,10 +24,10 @@ export default function Page() {
   return (
     <article className='space-y-4'>
       <div className='space-y-2'>
-      <div className='w-fit text-sm text-muted-foreground border-b -mb-1'>
-        Updated on {formattedDate}
-      </div>
-          <Title>{page.title}</Title>
+        <div className='-mb-1 w-fit border-b text-sm text-muted-foreground'>
+          {formattedDate}
+        </div>
+        <Title>{page.title}</Title>
       </div>
       <Separator />
       <MDXContent code={page.body} />

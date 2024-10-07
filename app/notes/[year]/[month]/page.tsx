@@ -1,7 +1,7 @@
 import { posts } from '@/.velite'
 import { notFound } from 'next/navigation'
 import NotesTitle from '@/components/notes-title'
-import Posts from '@/components/blog/posts'
+import Notes from '@/components/notes/notes'
 
 export async function generateStaticParams() {
   return posts.map(post => {
@@ -48,7 +48,7 @@ export default function Page({ params }: Props) {
           {formattedDateWords}
         </span>
       </div>
-      <Posts posts={sortedPosts} />
+      <Notes posts={sortedPosts} />
     </section>
   )
 }

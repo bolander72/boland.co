@@ -30,7 +30,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <body
-          className={`my-12 text-pretty text-rich-black ${brush.variable} mx-auto w-auto px-6
+          className={`my-12 text-pretty text-primary ${brush.variable} mx-auto w-auto px-6
             dark:bg-background sm:max-w-2xl md:max-w-3xl lg:max-w-4xl`}
         >
           <Providers

@@ -22,10 +22,15 @@ export default function Post({ post, showDate = true }: Props) {
             {formattedDate}
           </div>
         )}
-        <div className='mb-1.5 tracking-wide text-blue-500 group-hover:text-blue-700 dark:text-blue-500'>
+        <div
+          className='mb-1.5 tracking-wide text-blue-500 no-underline group-hover:text-blue-700
+            dark:text-blue-500'
+        >
           {title}
         </div>
-        <div className='line-clamp-2 text-base text-primary'>{description}</div>
+        <div className='line-clamp-2 text-base text-primary no-underline'>
+          {description}
+        </div>
       </div>
     </div>
   )
