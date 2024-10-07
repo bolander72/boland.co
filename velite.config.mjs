@@ -26,7 +26,8 @@ export default defineConfig({
         .object({
           title: s.string().max(99),
           slug: s.slug('global', ['admin', 'login']),
-          body: s.mdx()
+          body: s.mdx(),
+          date: s.isodate().optional()
         })
         .transform(data => ({
           ...data,
