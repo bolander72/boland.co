@@ -116,9 +116,7 @@ export default function Resume() {
         <div className='flex w-full flex-col'>
           <div className='flex items-center justify-between'>
             <div className='text-lg'>Your Project</div>
-            <div className='text-sm text-green-600'>
-              Available
-            </div>
+            <div className='text-sm text-green-600'>Available</div>
           </div>
           <div className='text-sm text-muted-foreground'>
             Schedule a call{' '}

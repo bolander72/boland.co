@@ -1,5 +1,5 @@
 import { posts } from '@/.velite'
-import BlogTitle from '@/components/blog-title'
+import BlogTitle from '@/components/notes-title'
 import Posts from '@/components/blog/posts'
 
 const nonDraftPosts = posts.filter(post => !post.draft)

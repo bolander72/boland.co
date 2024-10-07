@@ -47,7 +47,7 @@ export default defineConfig({
           description: s.string().max(999).optional(),
           draft: s.boolean().default(false),
           featured: s.boolean().default(false),
-          categories: s.array(s.string()).default(['Blog']),
+          categories: s.array(s.string()).default(['Notes']),
           tags: s.array(s.string()).default([]),
           meta: meta,
           metadata: s.metadata(),
@@ -62,7 +62,7 @@ export default defineConfig({
           return {
             ...data,
             title: data.title.replace(/\\/g, ''), // Remove escaped backslashes
-            permalink: `/blog/${year}/${month}/${date}/${data.slug}`
+            permalink: `/notes/${year}/${month}/${date}/${data.slug}`
           }
         })
     }

@@ -4,7 +4,7 @@ interface Props {
   bottomCaption?: string
 }
 
-export default function BlogImage({ src, topCaption, bottomCaption }: Props) {
+export default function NoteImage({ src, topCaption, bottomCaption }: Props) {
   return (
     <div>
       <img src={src} alt='' className='mb-2 rounded-md' />

@@ -1,6 +1,7 @@
 import tailwindCssAnimatePlugin from 'tailwindcss-animate'
 import tailwindCssAnimatedPlugin from 'tailwindcss-animated'
 import typographyPlugin from '@tailwindcss/typography'
+import textScalePlugin from 'tailwindcss-text-scale'
 
 const config = {
   darkMode: ['class'],
@@ -95,7 +96,8 @@ const config = {
   plugins: [
     tailwindCssAnimatePlugin,
     tailwindCssAnimatedPlugin,
-    typographyPlugin
+    typographyPlugin,
+    textScalePlugin({})
   ]
 }
 

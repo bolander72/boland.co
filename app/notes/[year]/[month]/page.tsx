@@ -1,15 +1,14 @@
 import { posts } from '@/.velite'
 import { notFound } from 'next/navigation'
-import BlogTitle from '@/components/blog-title'
+import NotesTitle from '@/components/notes-title'
 import Posts from '@/components/blog/posts'
 
 export async function generateStaticParams() {
   return posts.map(post => {
-    const [year, month, date] = post.date.split('-')
+    const [year, month] = post.date.split('-')
     return {
       year,
-      month,
-      date: date.split('T')[0]
+      month
     }
   })
 }
@@ -18,13 +17,12 @@ interface Props {
   params: {
     year: string
     month: string
-    date: string
   }
 }
 
 export default function Page({ params }: Props) {
   const filteredPosts = posts.filter(post =>
-    post.date.startsWith(`${params.year}-${params.month}-${params.date}`)
+    post.date.startsWith(`${params.year}-${params.month}`)
   )
   const nonDraftPosts = filteredPosts.filter(post => !post.draft)
   const sortedPosts = nonDraftPosts.sort((a, b) => b.date.localeCompare(a.date))
@@ -37,15 +35,18 @@ export default function Page({ params }: Props) {
 
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+    month: 'long'
   })
+
+  const formattedDateWords = formattedDate.split(' ').join(', ')
 
   return (
     <section className='w-full space-y-6'>
       <div className='flex items-baseline justify-between space-x-2'>
-        <BlogTitle />
-        <span className='text-xs text-muted-foreground'>{formattedDate}</span>
+        <NotesTitle />
+        <span className='text-xs text-muted-foreground'>
+          {formattedDateWords}
+        </span>
       </div>
       <Posts posts={sortedPosts} />
     </section>

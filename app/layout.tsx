@@ -17,52 +17,6 @@ const brush = localFont({
   variable: '--font-brush'
 })
 
-const neueMontreal = localFont({
-  src: [
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-Light.woff2',
-      weight: '300',
-      style: 'normal'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-LightItalic.woff2',
-      weight: '300',
-      style: 'italic'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-Regular.woff2',
-      weight: '400',
-      style: 'normal'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-Italic.woff2',
-      weight: '400',
-      style: 'italic'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-Medium.woff2',
-      weight: '500',
-      style: 'normal'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-MediumItalic.woff2',
-      weight: '500',
-      style: 'italic'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-Bold.woff2',
-      weight: '700',
-      style: 'normal'
-    },
-    {
-      path: '../public/fonts/neue-montreal/NeueMontreal-BoldItalic.woff2',
-      weight: '700',
-      style: 'italic'
-    }
-  ],
-  variable: '--font-neue-montreal'
-})
-
 export const metadata = {
   ...sharedMetadata
 }
@@ -76,8 +30,8 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <body
-          className={`my-12 text-pretty text-rich-black ${neueMontreal.variable} ${brush.variable}
-            dark:bg-background`}
+          className={`my-12 text-pretty text-rich-black ${brush.variable} mx-auto w-auto px-6
+            dark:bg-background sm:max-w-2xl md:max-w-3xl lg:max-w-4xl`}
         >
           <Providers
             attribute='class'
@@ -87,7 +41,7 @@ export default function RootLayout({
           >
             <>
               <Nav />
-              <main className='mx-auto max-w-[380px] px-4'>{children}</main>
+              <main className='mx-auto'>{children}</main>
             </>
           </Providers>
         </body>

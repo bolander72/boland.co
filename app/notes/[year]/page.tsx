@@ -1,6 +1,6 @@
 import { posts } from '@/.velite'
 import { notFound } from 'next/navigation'
-import BlogTitle from '@/components/blog-title'
+import NotesTitle from '@/components/notes-title'
 import Posts from '@/components/blog/posts'
 
 export async function generateStaticParams() {
@@ -30,7 +30,7 @@ export default function Page({ params }: Props) {
   return (
     <section className='w-full space-y-6'>
       <div className='flex items-baseline justify-between space-x-2'>
-        <BlogTitle />
+        <NotesTitle />
         <span className='text-xs text-muted-foreground'>{params.year}</span>
       </div>
       <Posts posts={sortedPosts} />
