@@ -1,6 +1,8 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "@next/next/no-duplicate-head": "off", // https://github.com/vercel/next.js/issues/64409#issuecomment-2343832704
+    "@next/next/no-page-custom-font": "off" // https://github.com/vercel/next.js/issues/64409
   }
 }

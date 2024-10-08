@@ -1,7 +1,5 @@
 import { Post as PostType } from '@/.velite'
-import { cn } from '@/lib/utils'
-import Post from './note'
-import CustomLink from '../custom-link'
+import Note from './note'
 
 interface Props {
   posts: PostType[]
@@ -13,23 +11,9 @@ export default function Posts({ posts }: Props) {
   }
 
   return (
-    <div className='flex flex-col space-y-4 pt-1'>
-      {posts.map((post, index) => (
-        <CustomLink
-          key={post.permalink}
-          href={post.permalink}
-          className='no-underline'
-        >
-          <div
-            key={post.permalink}
-            className={cn(
-              'pb-4 no-underline',
-              index !== posts.length - 1 && 'border-b'
-            )}
-          >
-            <Post post={post} />
-          </div>
-        </CustomLink>
+    <div className='grid grid-cols-1 gap-x-8 gap-y-4 pt-1 sm:grid-cols-2'>
+      {posts.map(post => (
+        <Note key={post.permalink} post={post} />
       ))}
     </div>
   )

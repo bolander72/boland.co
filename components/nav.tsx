@@ -6,7 +6,7 @@ export function Nav() {
       <div className='flex w-full items-center justify-between'>
         <div className='flex space-x-4 text-lg'>
           <CustomLink href='/'>home</CustomLink>
-          {/* <CustomLink href='/notes'>notes</CustomLink> */}
+          <CustomLink href='/notes'>notes</CustomLink>
         </div>
       </div>
     </nav>

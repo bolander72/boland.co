@@ -9,8 +9,7 @@ export default function CustomLink(props: any) {
       <Link
         href={href}
         prefetch={href !== '/rss'}
-        className='text-blue-700 underline transition-colors visited:text-purple-700
-          hover:text-blue-500 visited:hover:text-purple-500'
+        className='text-blue-700 transition-colors hover:text-blue-500'
       >
         {props.children}
       </Link>
@@ -22,8 +21,8 @@ export default function CustomLink(props: any) {
       target='_blank'
       rel='noopener noreferrer'
       {...props}
-      className={`${props.className} group inline-flex text-blue-700 underline transition-colors
-        visited:text-purple-700 hover:text-blue-500 visited:hover:text-purple-500`}
+      className={`${props.className} group inline-flex text-blue-700 transition-colors
+        hover:text-blue-500`}
     >
       {props.children}
       {/* <ChevronUp className='-mr-1 h-4 w-4 rotate-45 text-blue-600 transition-all duration-500 group-hover:rotate-90 dark:text-blue-500' /> */}

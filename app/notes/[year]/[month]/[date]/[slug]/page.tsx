@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { posts } from '@/.velite'
-import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/title'
 import { MDXContent } from '@/components/mdx-content'
 
@@ -63,7 +62,7 @@ export default function PostPage({ params }: Props) {
           </span>
         </div>
       </div>
-      <Separator />
+      <hr />
       <MDXContent code={post.content} />
     </article>
   )
