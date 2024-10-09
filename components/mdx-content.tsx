@@ -1,4 +1,4 @@
-#import * as runtime from 'react/jsx-runtime'
+import * as runtime from 'react/jsx-runtime'
 import CustomLink from './custom-link'
 import NoteImage from './note-image'
 import { Post } from '@/.velite'
