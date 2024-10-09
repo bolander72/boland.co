@@ -4,21 +4,17 @@ import { Title } from '@/components/title'
 import { MDXContent } from '@/components/mdx-content'
 
 function getPageBySlug() {
-  return pages.find(page => page.slug === 'credo')
+  return pages.find(page => page.slug === 'colophon')
 }
 
 export default function Page() {
   const page = getPageBySlug()
 
+  console.log(pages)
+
   if (!page) {
     notFound()
   }
-
-  const formattedDate = new Date(page.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
 
   return (
     <article className='space-y-4'>

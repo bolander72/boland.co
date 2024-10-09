@@ -42,7 +42,7 @@ export default function Page() {
     <section className='space-y-4'>
       <Title
         className='text-nowrap text-left font-brush text-5xl tracking-wide !text-[#51819F]
-          sm:text-7xl md:text-8xl lg:text-[6.75rem] xl:text-9xl'
+          sm:text-7xl md:text-8xl lg:text-[6.75rem] xl:text-9xl font-medium'
       >
         {page.title}
       </Title>
