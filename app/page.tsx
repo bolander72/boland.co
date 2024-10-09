@@ -48,7 +48,7 @@ export default function Page() {
       </Title>
       <div className='gap-8 sm:grid sm:grid-cols-2'>
         <MDXContent code={page.body} />
-        <div className='mt-8 space-y-8 sm:mt-4'>
+        <div className='mt-12 space-y-8 sm:mt-4'>
           <LinkSection
             title='Currently working with'
             links={currentWorkLinks}
