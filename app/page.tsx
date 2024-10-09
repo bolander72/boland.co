@@ -54,7 +54,7 @@ export default function Page() {
             links={currentWorkLinks}
           />
           <LinkSection title='Socials' links={elsewhereLinks} />
-          <LinkSection title='Blog wall' links={blogLinks} />
+          <LinkSection title='Blogroll' links={blogLinks} />
         </div>
       </div>
     </section>
