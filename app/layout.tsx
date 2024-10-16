@@ -1,3 +1,4 @@
+import Footer from '@/components/footer'
 import './globals.css'
 
 import { Nav } from '@/components/nav'
@@ -30,8 +31,8 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <body
-          className={`my-12 text-pretty ${brush.variable} mx-auto w-auto px-6 dark:bg-background
-            sm:max-w-2xl md:max-w-3xl lg:max-w-4xl`}
+          className={`text-pretty ${brush.variable} mx-auto max-w-full px-6 dark:bg-background
+            sm:max-w-xl`}
         >
           <Providers
             attribute='class'
@@ -39,10 +40,13 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <>
-              <Nav />
-              <main className='mx-auto'>{children}</main>
-            </>
+            <div className='flex min-h-screen flex-col justify-between py-20'>
+              <div className='flex flex-col'>
+                <Nav />
+                <main className='flex-grow'>{children}</main>
+              </div>
+              <Footer />
+            </div>
           </Providers>
         </body>
       </html>

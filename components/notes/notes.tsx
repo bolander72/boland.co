@@ -11,7 +11,7 @@ export default function Posts({ posts }: Props) {
   }
 
   return (
-    <div className='grid grid-cols-1 gap-x-8 gap-y-4 pt-1 sm:grid-cols-2'>
+    <div className='pt-1'>
       {posts.map(post => (
         <Note key={post.permalink} post={post} />
       ))}

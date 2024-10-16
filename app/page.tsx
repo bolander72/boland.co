@@ -42,21 +42,11 @@ export default function Page() {
     <section className='space-y-4'>
       <Title
         className='text-nowrap text-left font-brush text-5xl font-medium tracking-wide
-          !text-[#51819F] sm:text-7xl md:text-8xl lg:text-[6.75rem] xl:text-9xl'
+          text-[#51819F]'
       >
         {page.title}
       </Title>
-      <div className='gap-8 sm:grid sm:grid-cols-2'>
-        <MDXContent code={page.body} />
-        <div className='mt-12 space-y-8 sm:mt-4'>
-          <LinkSection
-            title='Currently working with'
-            links={currentWorkLinks}
-          />
-          <LinkSection title='Socials' links={elsewhereLinks} />
-          <LinkSection title='Blogroll' links={blogLinks} />
-        </div>
-      </div>
+      <MDXContent code={page.body} />
     </section>
   )
 }
