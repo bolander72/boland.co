@@ -3,6 +3,7 @@ import CustomLink from './custom-link'
 import { Post } from '@/.velite'
 import { ReactNode } from 'react'
 import Blockquote from './mdx-blockquote'
+import { cn } from '@/lib/utils'
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code)
@@ -14,17 +15,27 @@ interface Props {
   components?: Record<string, React.ComponentType>
   children?: ReactNode
   post?: Post
+  className?: string
 }
 
-export function MDXContent({ code, components, children, post }: Props) {
+export function MDXContent({
+  code,
+  components,
+  children,
+  post,
+  className
+}: Props) {
   const Component = useMDXComponent(code)
 
   return (
     <div
-      className='space-y-4 prose-headings:font-medium prose-headings:tracking-wide
-        prose-headings:text-black prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-        prose-p:text-base prose-p:text-black prose-ol:ml-8 prose-ol:list-decimal
-        prose-ol:space-y-1.5 prose-ul:ml-4 prose-ul:space-y-1.5 prose-ul:text-primary'
+      className={cn(
+        'space-y-4 prose-headings:font-medium prose-headings:tracking-wide',
+        'prose-headings:text-black prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl',
+        'prose-p:text-base prose-p:text-black prose-ol:ml-8 prose-ol:list-decimal',
+        'prose-ol:space-y-1.5 prose-ul:ml-4 prose-ul:space-y-1.5 prose-ul:text-primary',
+        className
+      )}
       dangerouslySetInnerHTML={post ? { __html: post.content } : undefined}
     >
       {post ? undefined : (
