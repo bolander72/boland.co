@@ -13,12 +13,13 @@ export async function generateStaticParams() {
 }
 
 interface Props {
-  params: {
+  params: Promise<{
     year: string
-  }
+  }>
 }
 
-export default function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params
   const filteredPosts = posts.filter(post => post.date.startsWith(params.year))
   const nonDraftPosts = filteredPosts.filter(post => !post.draft)
   const sortedPosts = nonDraftPosts.sort((a, b) => b.date.localeCompare(a.date))
