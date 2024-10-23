@@ -4,6 +4,9 @@ import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize from 'rehype-sanitize'
 
 const meta = s
   .object({
@@ -65,21 +68,19 @@ export default defineConfig({
           const month = ('0' + (new Date(data.date).getMonth() + 1)).slice(-2)
           const date = ('0' + new Date(data.date).getDate()).slice(-2)
 
-          // Convert MDX to HTML
-          const processedContent = await unified()
-            .use(remarkParse)
-            .use(remarkRehype)
-            .use(rehypePrettyCode)
-            .use(rehypeStringify)
-            .process(data.content)
-
-            console.log('content', processedContent)
+          // Process the content to pure HTML
+          const file = await unified()
+          .use(remarkParse) // Convert into markdown AST
+          .use(remarkRehype) // Transform to HTML AST
+          .use(rehypeSanitize) // Sanitize HTML input
+          .use(rehypeStringify) // Convert AST into serialized HTML
+          .process(data.raw)
 
           return {
             ...data,
             title: data.title.replace(/\\/g, ''), // Remove escaped backslashes
             permalink: `/notes/${year}/${month}/${date}/${data.slug}`,
-            html: String(processedContent.value)
+            html: String(file)
           }
         })
     }
