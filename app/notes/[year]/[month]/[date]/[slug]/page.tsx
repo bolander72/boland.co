@@ -16,15 +16,20 @@ export async function generateStaticParams() {
 }
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
     year: string
     month: string
     date: string
-  }
+  }>
 }
 
-function getPostBySlug(params: Props['params']) {
+function getPostBySlug(params: {
+  slug: string
+  year: string
+  month: string
+  date: string
+}) {
   return posts.find(
     post =>
       post.slug === params.slug &&
@@ -32,7 +37,8 @@ function getPostBySlug(params: Props['params']) {
   )
 }
 
-export default function PostPage({ params }: Props) {
+export default async function PostPage(props: Props) {
+  const params = await props.params
   const post = getPostBySlug(params)
 
   if (!post) {

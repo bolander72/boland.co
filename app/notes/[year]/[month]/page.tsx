@@ -14,13 +14,14 @@ export async function generateStaticParams() {
 }
 
 interface Props {
-  params: {
+  params: Promise<{
     year: string
     month: string
-  }
+  }>
 }
 
-export default function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params
   const filteredPosts = posts.filter(post =>
     post.date.startsWith(`${params.year}-${params.month}`)
   )
