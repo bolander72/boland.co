@@ -10,14 +10,14 @@ export function Nav() {
             sm:items-center sm:space-y-0'
         >
           <CustomLink href='/'>
-            <Title className='bg-clip-text text-left text-5xl font-medium'>
+            <Title className='text-left text-5xl font-medium'>
               Michael Boland
             </Title>
           </CustomLink>
           <div className='flex space-x-4 text-lg'>
-            <CustomLink href='/projects'>projects</CustomLink>
+            {/* <CustomLink href='/projects'>projects</CustomLink> */}
             <CustomLink href='/notes'>notes</CustomLink>
-            {/* <CustomLink href='/colophon'>colophon</CustomLink> */}
+            <CustomLink href='/colophon'>colophon</CustomLink>
           </div>
         </div>
       </nav>

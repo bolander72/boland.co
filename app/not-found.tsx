@@ -2,9 +2,9 @@ import { Title } from '@/components/title'
 
 export default function NotFound() {
   return (
-    <section className='space-y-4'>
-      <Title>Not Found</Title>
-      <p className='text-lg'>This page doesn&apos;t exist.</p>
+    <section>
+      <Title className='text-xl'>Not Found</Title>
+      <p className='text-base'>This page doesn&apos;t exist.</p>
     </section>
   )
 }
