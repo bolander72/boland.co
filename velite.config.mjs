@@ -6,6 +6,9 @@ import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeFormat from 'rehype-format'
+import { Feed } from 'feed'
+import { writeFile, mkdir } from 'fs/promises'
+import path from 'path'
 
 const meta = s
   .object({
@@ -15,8 +18,10 @@ const meta = s
   })
   .default({})
 
+  /** @type {import('velite').UserConfig} */
 export default defineConfig({
   root: 'content',
+  strict: true,
   output: {
     data: '.velite',
     assets: 'public/static',
@@ -79,10 +84,54 @@ export default defineConfig({
           return {
             ...data,
             title: data.title.replace(/\\/g, ''), // Remove escaped backslashes
-            permalink: `/notes/${year}/${month}/${date}/${data.slug}`,
+            permalink: `/notes/${data.slug}`,
             html: String(file)
           }
         })
+    }
+  },
+  complete: async (data) => {
+    const feed = new Feed({
+      title: "Michael Boland",
+      description: "RSS Feed",
+      id: "https://boland.co",
+      link: "https://boland.co",
+      language: "en",
+      favicon: "https://boland.co/favicon.ico",
+      copyright: `Michael Boland © ${new Date().getFullYear()}`,
+      updated: new Date(Math.max(...data.posts.map(post => new Date(post.date).getTime()))),
+      author: {
+        name: "Michael Boland",
+        link: "https://boland.co"
+      }
+    });
+
+    data.posts
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .forEach(post => {
+        feed.addItem({
+          title: post.title,
+          id: `https://boland.co${post.permalink}`,
+          link: `https://boland.co${post.permalink}`,
+          description: post.description,
+          content: post.html,
+          date: new Date(post.date)
+        });
+      });
+
+    const rss = feed.rss2();
+    const publicDir = path.join(process.cwd(), 'public');
+    const filePath = path.join(publicDir, 'rss.xml');
+
+    try {
+      // Ensure the public directory exists
+      await mkdir(publicDir, { recursive: true });
+      
+      // Write the RSS feed
+      await writeFile(filePath, rss);
+      console.log('RSS feed written to', filePath);
+    } catch (error) {
+      console.error('Error writing RSS feed:', error);
     }
   },
   markdown: {

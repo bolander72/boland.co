@@ -5,11 +5,7 @@ import { MDXContent } from '@/components/mdx-content'
 
 export async function generateStaticParams() {
   return posts.map(post => {
-    const [year, month, date] = post.date.split('-')
     return {
-      year,
-      month,
-      date: date.split('T')[0],
       slug: post.slug
     }
   })
@@ -18,17 +14,13 @@ export async function generateStaticParams() {
 interface Props {
   params: {
     slug: string
-    year: string
-    month: string
-    date: string
   }
 }
 
 function getPostBySlug(params: Props['params']) {
   return posts.find(
     post =>
-      post.slug === params.slug &&
-      post.date.startsWith(`${params.year}-${params.month}-${params.date}`)
+      post.slug === params.slug
   )
 }
 
@@ -54,12 +46,6 @@ export default function PostPage({ params }: Props) {
           </div>
           <Title>{post.title}</Title>
           {post.description && <p className='text-base'>{post.description}</p>}
-        </div>
-        <div className='flex items-center text-sm'>
-          <span className='text-muted-foreground'>
-            {' '}
-            ~ {post.metadata.readingTime} min
-          </span>
         </div>
       </div>
       <hr />

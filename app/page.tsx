@@ -1,4 +1,3 @@
-import { Title } from '@/components/title'
 import { MDXContent } from '@/components/mdx-content'
 import { pages } from '@/.velite'
 

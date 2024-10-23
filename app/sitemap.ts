@@ -1,4 +1,4 @@
-import { Post, posts } from '@/.velite'
+import { Post, posts, pages } from '@/.velite'
 
 export default async function sitemap() {
   let notes = posts.map((post: Post) => {
@@ -8,7 +8,7 @@ export default async function sitemap() {
     }
   })
 
-  let routes = ['', '/notes', '/now'].map(route => ({
+  let routes = ['', '/notes', ...pages.map(page => `/${page.slug}`)].sort().map(route => ({
     url: `https://boland.co${route}`,
     lastModified: new Date().toISOString().split('T')[0]
   }))
