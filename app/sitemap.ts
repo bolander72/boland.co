@@ -8,10 +8,12 @@ export default async function sitemap() {
     }
   })
 
-  let routes = ['', '/notes', ...pages.map(page => `/${page.slug}`)].sort().map(route => ({
-    url: `https://boland.co${route}`,
-    lastModified: new Date().toISOString().split('T')[0]
-  }))
+  let routes = ['', '/notes', ...pages.map(page => `/${page.slug}`)]
+    .sort()
+    .map(route => ({
+      url: `https://boland.co${route}`,
+      lastModified: new Date().toISOString().split('T')[0]
+    }))
 
   return [...routes, ...notes]
 }

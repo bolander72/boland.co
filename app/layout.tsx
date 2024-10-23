@@ -2,7 +2,6 @@ import Footer from '@/components/footer'
 import './globals.css'
 
 import { Nav } from '@/components/nav'
-import { Providers } from '@/components/providers'
 import sharedMetadata from '@/metadata'
 import { ViewTransitions } from 'next-view-transitions'
 import localFont from 'next/font/local'
@@ -34,17 +33,10 @@ export default function RootLayout({
           className={`text-pretty ${brush.variable} mx-auto max-w-full px-6 dark:bg-background
             sm:max-w-xl`}
         >
-          <Providers
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className='py-14'>
-              <Nav />
-              <main className='flex-grow'>{children}</main>
-            </div>
-          </Providers>
+          <div className='py-14'>
+            <Nav />
+            <main className='flex-grow'>{children}</main>
+          </div>
         </body>
       </html>
     </ViewTransitions>

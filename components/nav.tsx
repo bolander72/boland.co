@@ -5,11 +5,12 @@ export function Nav() {
   return (
     <header>
       <nav className='mb-8'>
-        <div className='flex space-y-2 sm:space-y-0 flex-col sm:flex-row w-full items-start sm:items-center justify-between'>
+        <div
+          className='flex w-full flex-col items-start justify-between space-y-2 sm:flex-row
+            sm:items-center sm:space-y-0'
+        >
           <CustomLink href='/'>
-            <Title
-              className="text-left text-5xl font-medium bg-clip-text"
-            >
+            <Title className='bg-clip-text text-left text-5xl font-medium'>
               Michael Boland
             </Title>
           </CustomLink>

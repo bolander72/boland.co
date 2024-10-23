@@ -18,7 +18,7 @@ const meta = s
   })
   .default({})
 
-  /** @type {import('velite').UserConfig} */
+/** @type {import('velite').UserConfig} */
 export default defineConfig({
   root: 'content',
   strict: true,
@@ -67,19 +67,19 @@ export default defineConfig({
           content: s.mdx(),
           raw: s.raw()
         })
-        .transform(async (data) => {
+        .transform(async data => {
           const year = new Date(data.date).getFullYear()
           const month = ('0' + (new Date(data.date).getMonth() + 1)).slice(-2)
           const date = ('0' + new Date(data.date).getDate()).slice(-2)
 
           // Process the content to pure HTML
           const file = await unified()
-          .use(remarkParse) // Convert into markdown AST
-          .use(remarkRehype) // Transform to HTML AST
-          .use(rehypeSanitize) // Sanitize HTML input
-          .use(rehypeFormat) // Format HTML with proper spacing and indentation
-          .use(rehypeStringify) // Convert AST into serialized HTML
-          .process(data.raw)
+            .use(remarkParse) // Convert into markdown AST
+            .use(remarkRehype) // Transform to HTML AST
+            .use(rehypeSanitize) // Sanitize HTML input
+            .use(rehypeFormat) // Format HTML with proper spacing and indentation
+            .use(rehypeStringify) // Convert AST into serialized HTML
+            .process(data.raw)
 
           return {
             ...data,
@@ -90,21 +90,23 @@ export default defineConfig({
         })
     }
   },
-  complete: async (data) => {
+  complete: async data => {
     const feed = new Feed({
-      title: "Michael Boland",
-      description: "RSS Feed",
-      id: "https://boland.co",
-      link: "https://boland.co",
-      language: "en",
-      favicon: "https://boland.co/favicon.ico",
+      title: 'Michael Boland',
+      description: 'RSS Feed',
+      id: 'https://boland.co',
+      link: 'https://boland.co',
+      language: 'en',
+      favicon: 'https://boland.co/favicon.ico',
       copyright: `Michael Boland © ${new Date().getFullYear()}`,
-      updated: new Date(Math.max(...data.posts.map(post => new Date(post.date).getTime()))),
+      updated: new Date(
+        Math.max(...data.posts.map(post => new Date(post.date).getTime()))
+      ),
       author: {
-        name: "Michael Boland",
-        link: "https://boland.co"
+        name: 'Michael Boland',
+        link: 'https://boland.co'
       }
-    });
+    })
 
     data.posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -116,22 +118,22 @@ export default defineConfig({
           description: post.description,
           content: post.html,
           date: new Date(post.date)
-        });
-      });
+        })
+      })
 
-    const rss = feed.rss2();
-    const publicDir = path.join(process.cwd(), 'public');
-    const filePath = path.join(publicDir, 'rss.xml');
+    const rss = feed.rss2()
+    const publicDir = path.join(process.cwd(), 'public')
+    const filePath = path.join(publicDir, 'rss.xml')
 
     try {
       // Ensure the public directory exists
-      await mkdir(publicDir, { recursive: true });
-      
+      await mkdir(publicDir, { recursive: true })
+
       // Write the RSS feed
-      await writeFile(filePath, rss);
-      console.log('RSS feed written to', filePath);
+      await writeFile(filePath, rss)
+      console.log('RSS feed written to', filePath)
     } catch (error) {
-      console.error('Error writing RSS feed:', error);
+      console.error('Error writing RSS feed:', error)
     }
   },
   markdown: {

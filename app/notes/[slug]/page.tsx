@@ -18,10 +18,7 @@ interface Props {
 }
 
 function getPostBySlug(params: Props['params']) {
-  return posts.find(
-    post =>
-      post.slug === params.slug
-  )
+  return posts.find(post => post.slug === params.slug)
 }
 
 export default function PostPage({ params }: Props) {
