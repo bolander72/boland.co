@@ -25,6 +25,7 @@
     "react-dom": "18.3.1",
     "react-hook-form": "^7.53.0",
     "rehype-pretty-code": "^0.14.0",
+    "rehype-stringify": "^10.0.1",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-text-scale": "^0.3.1"
   },

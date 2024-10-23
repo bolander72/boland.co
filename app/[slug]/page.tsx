@@ -4,20 +4,21 @@ import { pages } from '@/.velite'
 import { Title } from '@/components/title'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 function getPageBySlug(slug: string) {
   return pages.find(page => page.slug === slug)
 }
 
-export function generateStaticParams(): Props['params'][] {
+export function generateStaticParams() {
   return pages.map(page => ({ slug: page.slug }))
 }
 
-export default function PagePage({ params }: Props) {
+export default async function PagePage(props: Props) {
+  const params = await props.params
   const page = getPageBySlug(params.slug)
 
   if (!page) {

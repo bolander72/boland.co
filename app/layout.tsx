@@ -40,12 +40,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className='flex min-h-[100dvh] flex-col justify-between py-20'>
-              <div>
-                <Nav />
-                <main className='flex-grow'>{children}</main>
-              </div>
-              <Footer />
+            <div className='py-14'>
+              <Nav />
+              <main className='flex-grow'>{children}</main>
             </div>
           </Providers>
         </body>

@@ -1,5 +1,9 @@
 import rehypePrettyCode from 'rehype-pretty-code'
 import { defineConfig, s } from 'velite'
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import { unified } from 'unified'
 
 const meta = s
   .object({
@@ -53,23 +57,35 @@ export default defineConfig({
           meta: meta,
           metadata: s.metadata(),
           excerpt: s.excerpt(),
-          content: s.mdx()
+          content: s.mdx(),
+          raw: s.raw()
         })
-        .transform(data => {
+        .transform(async (data) => {
           const year = new Date(data.date).getFullYear()
           const month = ('0' + (new Date(data.date).getMonth() + 1)).slice(-2)
           const date = ('0' + new Date(data.date).getDate()).slice(-2)
 
+          // Convert MDX to HTML
+          const processedContent = await unified()
+            .use(remarkParse)
+            .use(remarkRehype)
+            .use(rehypePrettyCode)
+            .use(rehypeStringify)
+            .process(data.content)
+
+            console.log('content', processedContent)
+
           return {
             ...data,
             title: data.title.replace(/\\/g, ''), // Remove escaped backslashes
-            permalink: `/notes/${year}/${month}/${date}/${data.slug}`
+            permalink: `/notes/${year}/${month}/${date}/${data.slug}`,
+            html: String(processedContent.value)
           }
         })
     }
   },
   markdown: {
     // https://rehype-pretty-code.netlify.app/
-    rehypePlugins: [rehypePrettyCode]
+    rehypePlugins: [rehypePrettyCode, rehypeStringify]
   }
 })
