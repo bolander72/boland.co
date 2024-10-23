@@ -5,6 +5,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import rehypeSanitize from 'rehype-sanitize'
+import rehypeFormat from 'rehype-format'
 
 const meta = s
   .object({
@@ -71,6 +72,7 @@ export default defineConfig({
           .use(remarkParse) // Convert into markdown AST
           .use(remarkRehype) // Transform to HTML AST
           .use(rehypeSanitize) // Sanitize HTML input
+          .use(rehypeFormat) // Format HTML with proper spacing and indentation
           .use(rehypeStringify) // Convert AST into serialized HTML
           .process(data.raw)
 
