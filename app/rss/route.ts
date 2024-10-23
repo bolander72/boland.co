@@ -5,7 +5,7 @@ import { Feed } from 'feed'
 function generateAtomFeed() {
   const feed = new Feed({
     title: "Michael Boland",
-    description: "Atom Feed",
+    description: "RSS Feed",
     id: "https://boland.co/",
     link: "https://boland.co/",
     language: "en",
@@ -31,7 +31,7 @@ function generateAtomFeed() {
       });
     });
 
-  return feed.atom1();
+  return feed.rss2();
 }
 
 export function generateStaticParams() {
