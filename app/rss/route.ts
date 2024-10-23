@@ -1,30 +1,37 @@
 import { posts } from '@/.velite'
 import { NextResponse } from 'next/server'
+import { Feed } from 'feed'
 
-function generateRSSFeed() {
-  const itemsXml = posts
+function generateAtomFeed() {
+  const feed = new Feed({
+    title: "Michael Boland",
+    description: "Atom Feed",
+    id: "https://boland.co/",
+    link: "https://boland.co/",
+    language: "en",
+    favicon: "https://boland.co/favicon.ico",
+    copyright: `© ${new Date().getFullYear()} | Michael Boland`,
+    updated: new Date(Math.max(...posts.map(post => new Date(post.date).getTime()))),
+    author: {
+      name: "Michael Boland",
+      link: "https://boland.co"
+    }
+  });
+
+  posts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map(
-      post =>
-        `<item>
-          <title><![CDATA[${post.title}]]></title>
-          <link>https://boland.co${post.permalink}</link>
-          <description><![CDATA[${post.description}]]></description>
-          <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-          <content:encoded><![CDATA[${post.html}]]></content:encoded>
-        </item>`
-    )
-    .join('\n')
+    .forEach(post => {
+      feed.addItem({
+        title: post.title,
+        id: `https://boland.co${post.permalink}`,
+        link: `https://boland.co${post.permalink}`,
+        description: post.description,
+        content: post.html,
+        date: new Date(post.date)
+      });
+    });
 
-  return `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-    <channel>
-        <title>Michael Boland</title>
-        <link>https://boland.co</link>
-        <description>RSS Feed</description>
-        ${itemsXml}
-    </channel>
-  </rss>`
+  return feed.atom1();
 }
 
 export function generateStaticParams() {
@@ -32,10 +39,10 @@ export function generateStaticParams() {
 }
 
 export async function GET() {
-  const rssFeed = generateRSSFeed()
-  return new NextResponse(rssFeed, {
+  const atomFeed = generateAtomFeed()
+  return new NextResponse(atomFeed, {
     headers: {
-      'Content-Type': 'text/xml'
+      'Content-Type': 'application/atom+xml; charset=utf-8'
     }
   })
 }
