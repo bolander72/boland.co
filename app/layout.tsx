@@ -1,4 +1,3 @@
-import Footer from '@/components/footer'
 import './globals.css'
 
 import { Nav } from '@/components/nav'
