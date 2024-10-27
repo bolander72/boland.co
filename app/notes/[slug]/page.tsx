@@ -41,7 +41,7 @@ export default function PostPage({ params }: Props) {
           <div className='-mb-1 w-fit border-b text-sm text-muted-foreground'>
             {formattedDate}
           </div>
-          <Title>{post.title}</Title>
+          <Title className='text-3xl font-medium'>{post.title}</Title>
           {post.description && <p className='text-base'>{post.description}</p>}
         </div>
       </div>

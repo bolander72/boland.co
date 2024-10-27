@@ -11,7 +11,7 @@ export default function Notes({ posts }: Props) {
   }
 
   return (
-    <div className='pt-1'>
+    <div className='space-y-4 pt-1'>
       {posts.map(post => {
         const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
           year: 'numeric',
