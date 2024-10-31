@@ -11,7 +11,7 @@ export default function Notes({ posts }: Props) {
   }
 
   return (
-    <div className='space-y-4 pt-1'>
+    <div className='space-y-4'>
       {posts.map(post => {
         const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
           year: 'numeric',
@@ -21,21 +21,15 @@ export default function Notes({ posts }: Props) {
 
         return (
           <div
-            className='group flex w-full flex-row items-center justify-between text-xl'
+            className='flex w-full flex-row items-center justify-between text-xl'
             key={post.slug}
           >
             <div className='flex flex-col'>
-              <div className='mb-1 w-fit border-b text-xs text-muted-foreground'>
+              <CustomLink href={post.permalink}>{post.title}</CustomLink>
+              <div className='text-xs text-muted-foreground'>
                 {formattedDate}
               </div>
-              <CustomLink
-                href={post.permalink}
-                className='tracking-wide text-blue-500 no-underline group-hover:text-blue-700
-                  dark:text-blue-500'
-              >
-                {post.title}
-              </CustomLink>
-              <div className='mt-1 line-clamp-2 text-base text-primary no-underline'>
+              <div className='mt-2 line-clamp-2 text-base text-primary no-underline'>
                 {post.description}
               </div>
             </div>

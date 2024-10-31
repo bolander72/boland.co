@@ -17,12 +17,8 @@ interface Props {
   }
 }
 
-function getPostBySlug(params: Props['params']) {
-  return posts.find(post => post.slug === params.slug)
-}
-
 export default function PostPage({ params }: Props) {
-  const post = getPostBySlug(params)
+  const post = posts.find(post => post.slug === params.slug)
 
   if (!post) {
     notFound()
@@ -36,15 +32,13 @@ export default function PostPage({ params }: Props) {
 
   return (
     <article className='space-y-4'>
-      <div className='space-y-2'>
-        <div className='space-y-2'>
-          <div className='-mb-1 w-fit border-b text-sm text-muted-foreground'>
-            {formattedDate}
-          </div>
-          <Title className='text-3xl font-medium'>{post.title}</Title>
-          {post.description && <p className='text-base'>{post.description}</p>}
+      <header className='space-y-2'>
+        <div>
+          <Title className='-mb-1.5 text-3xl font-medium'>{post.title}</Title>
+          <time className='text-xs text-muted-foreground'>{formattedDate}</time>
         </div>
-      </div>
+        {post.description && <p className='text-base'>{post.description}</p>}
+      </header>
       <hr />
       <MDXContent code={post.content} />
     </article>

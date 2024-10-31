@@ -25,7 +25,7 @@ export default async function PagePage(props: Props) {
   }
 
   return (
-    <article className='space-y-4'>
+    <article>
       <MDXContent code={page.body} />
     </article>
   )
