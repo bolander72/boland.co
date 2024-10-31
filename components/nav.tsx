@@ -1,24 +1,27 @@
 import CustomLink from './custom-link'
-import { Title } from './title'
 
 export function Nav() {
   return (
-    <header>
-      <nav className='mb-8'>
+    <header className='mb-8'>
+      <nav aria-label='Main navigation'>
         <div
           className='flex w-full flex-col items-start justify-between space-y-2 sm:flex-row
             sm:items-center sm:space-y-0'
         >
-          <CustomLink href='/'>
-            <Title className='text-left text-5xl font-medium'>
-              Michael Boland
-            </Title>
+          <CustomLink href='/' aria-label='Home'>
+            <h1 className='text-left text-5xl font-medium'>Michael Boland</h1>
           </CustomLink>
-          <div className='flex space-x-4 text-lg'>
-            {/* <CustomLink href='/projects'>projects</CustomLink> */}
-            <CustomLink href='/notes'>notes</CustomLink>
-            <CustomLink href='/colophon'>colophon</CustomLink>
-          </div>
+          <ul
+            className='flex space-x-4 text-lg'
+            aria-label='Secondary navigation'
+          >
+            <li>
+              <CustomLink href='/notes'>notes</CustomLink>
+            </li>
+            <li>
+              <CustomLink href='/colophon'>colophon</CustomLink>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

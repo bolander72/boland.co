@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { posts } from '@/.velite'
-import { Title } from '@/components/title'
 import { MDXContent } from '@/components/mdx-content'
 
 export async function generateStaticParams() {
@@ -17,7 +16,7 @@ interface Props {
   }
 }
 
-export default function PostPage({ params }: Props) {
+export default function Page({ params }: Props) {
   const post = posts.find(post => post.slug === params.slug)
 
   if (!post) {
@@ -33,14 +32,14 @@ export default function PostPage({ params }: Props) {
   return (
     <article className='space-y-4'>
       <header className='space-y-2'>
-        <div>
-          <Title className='-mb-1.5 text-3xl font-medium'>{post.title}</Title>
-          <time className='text-xs text-muted-foreground'>{formattedDate}</time>
-        </div>
+        <h1 className='-mb-1.5 text-3xl font-medium'>{post.title}</h1>
+        <time className='text-xs text-muted-foreground'>{formattedDate}</time>
         {post.description && <p className='text-base'>{post.description}</p>}
       </header>
       <hr />
-      <MDXContent code={post.content} />
+      <section>
+        <MDXContent code={post.content} />
+      </section>
     </article>
   )
 }

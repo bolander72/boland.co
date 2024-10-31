@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 
 const metadata: Metadata = {
-  title: `Michael Boland`,
+  title: {
+    default: 'Michael Boland',
+    template: '%s | Michael Boland'
+  },
   description: 'Programmer, designer, and consultant.',
   metadataBase: new URL('https://boland.co'),
   keywords: [
@@ -33,7 +36,15 @@ const metadata: Metadata = {
     url: 'https://boland.co',
     siteName: 'Michael Boland',
     locale: 'en_US',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://boland.co/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Michael Boland'
+      }
+    ]
   },
   robots: {
     index: true,
@@ -52,7 +63,18 @@ const metadata: Metadata = {
     creator: '@bolander72',
     title: 'Michael Boland',
     description: 'Programmer, designer, and consultant.',
-    card: 'summary_large_image'
+    card: 'summary_large_image',
+    images: ['https://boland.co/opengraph-image.png']
+  },
+  alternates: {
+    canonical: 'https://boland.co',
+    types: {
+      'application/rss+xml': 'https://boland.co/rss.xml'
+    }
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico'
   }
 }
 

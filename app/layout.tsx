@@ -3,18 +3,6 @@ import './globals.css'
 import { Nav } from '@/components/nav'
 import sharedMetadata from '@/metadata'
 import { ViewTransitions } from 'next-view-transitions'
-import localFont from 'next/font/local'
-
-const brush = localFont({
-  src: [
-    {
-      path: '../public/fonts/bomber-brush/BomberBrush-Regular.ttf',
-      weight: '400',
-      style: 'normal'
-    }
-  ],
-  variable: '--font-brush'
-})
 
 export const metadata = {
   ...sharedMetadata
@@ -29,12 +17,18 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en' suppressHydrationWarning>
         <body
-          className={`text-pretty ${brush.variable} mx-auto max-w-full px-6 dark:bg-background
-            sm:max-w-xl`}
+          className={
+            'mx-auto max-w-full text-pretty px-6 dark:bg-background sm:max-w-xl'
+          }
         >
           <div className='py-14'>
             <Nav />
-            <main className='flex-grow'>{children}</main>
+            <main className='flex-grow'>
+              <article>{children}</article>
+            </main>
+            <footer className='mt-8 flex justify-center text-center text-sm text-muted-foreground'>
+              <img src='/favicon.ico' className='h-5 w-5 invert saturate-200' />
+            </footer>
           </div>
         </body>
       </html>

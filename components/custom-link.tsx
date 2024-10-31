@@ -1,31 +1,44 @@
 import { Link } from 'next-view-transitions'
+import { ReactNode } from 'react'
 
-export default function CustomLink(props: any) {
-  const href = props.href
+interface Props {
+  href: string
+  children: ReactNode
+  className?: string
+  [key: string]: any // For any additional props
+}
+
+export default function CustomLink({
+  href,
+  children,
+  className,
+  ...props
+}: Props) {
   const isInternalLink = href && href.startsWith('/')
 
   if (isInternalLink) {
     return (
       <Link
         href={href}
-        prefetch={href !== '/rss'}
         className='text-blue-700 transition-colors hover:text-blue-500'
+        {...props}
       >
-        {props.children}
+        {children}
       </Link>
     )
   }
 
   return (
     <Link
+      href={href}
       target='_blank'
       rel='noopener noreferrer'
-      {...props}
-      className={`${props.className} group inline-flex text-blue-700 transition-colors
+      className={`${className} group inline-flex text-blue-700 transition-colors
         hover:text-blue-500`}
+      {...props}
     >
-      {props.children}
-      {/* <ChevronUp className='-mr-1 h-4 w-4 rotate-45 text-blue-600 transition-all duration-500 group-hover:rotate-90 dark:text-blue-500' /> */}
+      {children}
+      <span className='sr-only'>(opens in new tab)</span>
     </Link>
   )
 }

@@ -5,13 +5,13 @@ interface Props {
 }
 
 const Blockquote = ({ children, author, work }: Props) => (
-  <div className='px-8'>
-    <blockquote className=''>{children}</blockquote>
-    <div className='mt-4 flex flex-col items-end'>
-      <div>{author}</div>
+  <figure className='px-8'>
+    <blockquote cite={work}>{children}</blockquote>
+    <figcaption className='mt-4 flex flex-col items-end'>
+      <span>{author}</span>
       {work && <cite>{work}</cite>}
-    </div>
-  </div>
+    </figcaption>
+  </figure>
 )
 
 export default Blockquote

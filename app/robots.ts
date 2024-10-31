@@ -2,7 +2,8 @@ export default function robots() {
   return {
     rules: [
       {
-        userAgent: '*'
+        userAgent: '*',
+        allow: '/'
       }
     ],
     sitemap: 'https://boland.co/sitemap.xml',
