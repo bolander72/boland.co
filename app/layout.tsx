@@ -27,7 +27,11 @@ export default function RootLayout({
               <article>{children}</article>
             </main>
             <footer className='mt-8 flex justify-center text-center text-sm text-muted-foreground'>
-              <img src='/favicon.ico' className='h-5 w-5 invert saturate-200' />
+              <img
+                src='/favicon.ico'
+                alt='b'
+                className='h-5 w-5 invert saturate-200'
+              />
             </footer>
           </div>
         </body>
