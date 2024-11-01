@@ -45,9 +45,9 @@ export default function RootLayout({
             </main>
             <footer className='mt-8 flex justify-center text-center text-sm text-muted-foreground'>
               <img
-                src='/favicon.ico'
+                src='/b.png'
                 alt='b'
-                className='h-5 w-5 invert saturate-200'
+                className='h-4 w-auto'
               />
             </footer>
           </div>
