@@ -71,7 +71,7 @@ const metadata: Metadata = {
     types: {
       'application/rss+xml': 'https://boland.co/rss.xml'
     }
-  },
+  }
   // icons: {
   //   icon: '/favicon.ico',
   //   shortcut: '/favicon.ico',

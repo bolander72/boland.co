@@ -12,7 +12,7 @@ export function Nav() {
             <h1 className='text-left text-5xl font-medium'>Michael Boland</h1>
           </CustomLink>
           <ul
-            className='flex space-x-4 text-lg'
+            className='flex space-x-4 text-lg sm:grid sm:grid-cols-2 sm:space-x-0'
             aria-label='Secondary navigation'
           >
             <li>
@@ -20,6 +20,12 @@ export function Nav() {
             </li>
             <li>
               <CustomLink href='/colophon'>colophon</CustomLink>
+            </li>
+            <li>
+              <CustomLink href='/credo'>credo</CustomLink>
+            </li>
+            <li>
+              <CustomLink href='/now'>now</CustomLink>
             </li>
           </ul>
         </div>

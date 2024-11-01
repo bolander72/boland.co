@@ -44,11 +44,7 @@ export default function RootLayout({
               <article>{children}</article>
             </main>
             <footer className='mt-8 flex justify-center text-center text-sm text-muted-foreground'>
-              <img
-                src='/b.png'
-                alt='b'
-                className='h-4 w-auto'
-              />
+              <img src='/b.png' alt='b' className='h-4 w-auto' />
             </footer>
           </div>
         </body>
