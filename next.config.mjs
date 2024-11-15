@@ -9,9 +9,6 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
 /** @type {import('next').NextConfig} */
 export default {
 	reactStrictMode: true,
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
 	images: {
 		remotePatterns: [
 			{

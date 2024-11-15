@@ -5,7 +5,6 @@ interface Props {
 	href: string;
 	children: ReactNode;
 	className?: string;
-	[key: string]: any; // For any additional props
 }
 
 export default function CustomLink({
