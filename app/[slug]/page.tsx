@@ -1,32 +1,32 @@
-import { notFound } from 'next/navigation'
-import { MDXContent } from '@/components/mdx-content'
-import { pages } from '@/.velite'
+import { notFound } from "next/navigation";
+import { MDXContent } from "@/components/mdx-content";
+import { pages } from "@/.velite";
 
 type Props = {
-  params: Promise<{
-    slug: string
-  }>
-}
+	params: Promise<{
+		slug: string;
+	}>;
+};
 
 function getPageBySlug(slug: string) {
-  return pages.find(page => page.slug === slug)
+	return pages.find((page) => page.slug === slug);
 }
 
 export function generateStaticParams() {
-  return pages.map(page => ({ slug: page.slug }))
+	return pages.map((page) => ({ slug: page.slug }));
 }
 
 export default async function PagePage(props: Props) {
-  const params = await props.params
-  const page = getPageBySlug(params.slug)
+	const params = await props.params;
+	const page = getPageBySlug(params.slug);
 
-  if (!page) {
-    notFound()
-  }
+	if (!page) {
+		notFound();
+	}
 
-  return (
-    <article>
-      <MDXContent code={page.body} />
-    </article>
-  )
+	return (
+		<article>
+			<MDXContent code={page.body} />
+		</article>
+	);
 }
