@@ -17,9 +17,6 @@ export default {
 			},
 		],
 	},
-	experimental: {
-		serverComponentsExternalPackages: ["@napi-rs/canvas"],
-	},
 	headers: () => {
 		return [
 			{

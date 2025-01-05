@@ -11,13 +11,14 @@ export async function generateStaticParams() {
 }
 
 interface Props {
-	params: {
+	params: Promise<{
 		slug: string;
-	};
+	}>;
 }
 
-export default function Page({ params }: Props) {
-	const post = posts.find((post) => post.slug === params.slug);
+export default async function Page({ params }: Props) {
+	const { slug } = await params;
+	const post = posts.find((post) => post.slug === slug);
 
 	if (!post) {
 		notFound();
