@@ -1,13 +1,10 @@
+import { build } from "velite";
+
 const isDev = process.argv.indexOf("dev") !== -1;
 const isBuild = process.argv.indexOf("build") !== -1;
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-	process.env.VELITE_STARTED = "1";
-	const { build } = await import("velite");
-	await build({ watch: isDev, clean: !isDev });
-}
 
 /** @type {import('next').NextConfig} */
-export default {
+const config = {
 	reactStrictMode: true,
 	images: {
 		remotePatterns: [
@@ -16,6 +13,9 @@ export default {
 				hostname: "**",
 			},
 		],
+	},
+	experimental: {
+		viewTransition: true,
 	},
 	headers: () => {
 		return [
@@ -35,3 +35,10 @@ export default {
 		];
 	},
 };
+
+if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+	process.env.VELITE_STARTED = "1";
+	await build({ watch: isDev, clean: !isDev });
+}
+
+export default config;

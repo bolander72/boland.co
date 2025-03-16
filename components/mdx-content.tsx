@@ -1,9 +1,11 @@
 import * as runtime from "react/jsx-runtime";
-import CustomLink from "./custom-link";
+import CustomLink from "@/components/custom-link";
 import { Post } from "@/.velite";
 import { ReactNode } from "react";
-import Blockquote from "./mdx-blockquote";
+import Blockquote from "@/components/mdx-blockquote";
 import { cn } from "@/lib/utils";
+import ReferenceList from "@/components/references/reference-list";
+import ContributionList from "@/components/contributions/contribution-list";
 
 const useMDXComponent = (code: string) => {
 	const fn = new Function(code);
@@ -45,6 +47,8 @@ export function MDXContent({
 						...components,
 						a: CustomLink,
 						Blockquote,
+						ContributionList,
+						ReferenceList,
 					}}
 				/>
 			)}

@@ -1,6 +1,5 @@
-import { Link } from "next-view-transitions";
 import { ReactNode } from "react";
-
+import Link from "next/link";
 interface Props {
 	href: string;
 	children: ReactNode;
