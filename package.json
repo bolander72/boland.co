@@ -1,0 +1,40 @@
+{
+  "name": "7d2.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bolander72/7d2.net.git"
+  },
+  "keywords": [],
+  "author": "bolander72",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bolander72/7d2.net/issues"
+  },
+  "homepage": "https://github.com/bolander72/7d2.net#readme",
+  "dependencies": {
+    "@astrojs/react": "^4.2.7",
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/vercel": "^8.0.4",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.13",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "tw-animate-css": "^1.3.0"
+  }
+}
