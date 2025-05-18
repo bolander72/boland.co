@@ -49,19 +49,25 @@ const testimonials = [
 ---
 
 <Layout>
-    <main>
-        <div class="flex flex-col gap-4">
-            {
-                testimonials.map((testimonial) => (
-                    <TestimonialCard
-                        content={testimonial.content}
-                        authorName={testimonial.authorName}
-                        authorTitle={testimonial.authorTitle}
-                        authorCompany={testimonial.authorCompany}
-                        authorImageSrc={testimonial.authorImageSrc}
-                    />
-                ))
-            }
-        </div>
+    <main class="space-y-4">
+        <section class="space-y-2">
+            <h1>Testimonials</h1>
+            <div class="flex flex-col gap-0">
+                {
+                    testimonials.map((testimonial, index) => (
+                        <div>
+                            <TestimonialCard
+                                content={testimonial.content}
+                                authorName={testimonial.authorName}
+                                authorTitle={testimonial.authorTitle}
+                                authorCompany={testimonial.authorCompany}
+                                authorImageSrc={testimonial.authorImageSrc}
+                            />
+                            {index !== testimonials.length - 1 && <hr />}
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
     </main>
 </Layout>

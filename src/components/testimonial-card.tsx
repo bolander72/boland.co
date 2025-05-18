@@ -24,18 +24,18 @@ export default function TestimonialCard({
 	authorImageSrc,
 }: Props) {
 	return (
-		<Card className="shadow-none">
-			<CardContent className="space-y-4">
+		<Card className="border-none shadow-none">
+			<CardContent className="space-y-4 px-0">
 				{content.map((paragraph, index) => (
-					<p key={index} className="!text-sm">
+					<p key={index}>
 						{paragraph}
 					</p>
 				))}
 			</CardContent>
-			<CardHeader className="flex flex-row items-center justify-between">
+			<CardHeader className="flex flex-row items-center justify-between px-0">
 				<div className="flex flex-col gap-1">
-					<CardTitle className="!font-normal">{authorName}</CardTitle>
-					<CardDescription className="!font-normal">
+					<CardTitle>{authorName}</CardTitle>
+					<CardDescription>
 						{authorTitle}, {authorCompany}
 					</CardDescription>
 				</div>
