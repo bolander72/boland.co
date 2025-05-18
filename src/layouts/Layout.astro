@@ -1,6 +1,11 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
+import {
+    ArrowUpRightIcon,
+    ChevronRightIcon,
+    ExternalLinkIcon,
+} from "lucide-react";
 
 interface Props {
     title?: string;
@@ -68,27 +73,44 @@ const {
     <body class="min-h-screen max-w-[550px] mx-auto px-4 py-12">
         <slot />
         <footer class="flex flex-col border-t items-center mt-8 pt-4">
-            <div class="flex gap-12 w-full">
+            <div class="flex flex-col gap-4 w-full">
                 <div class="flex flex-col">
                     <span>/ <a href="/">home</a></span>
                     <span>/ <a href="/testimonials">testimonials</a></span>
                 </div>
                 <div class="flex flex-col">
-                    <span
+                    <span class="flex items-start gap-1"
                         >/ <a
                             href="https://linkedin.com/in/bolander72"
                             target="_blank">linkedin</a
-                        ></span
+                        ><ChevronRightIcon
+                            className="size-3 rotate-315"
+                        /></span
                     >
-                    <span
+                    <span class="flex items-start gap-1"
                         >/ <a
+                            href="https://cal.com/bolander72/chat"
+                            target="_blank">calendar</a
+                        ><ChevronRightIcon
+                            className="size-3 rotate-315"
+                        /></span
+                    >
+                    <span class="flex items-start gap-1">
+                        / <a
                             href="https://adplist.org/members/michael-boland"
-                            target="_blank">adplist</a
-                        ></span
+                            target="_blank">mentoring</a
+                        ><ChevronRightIcon
+                            className="size-3 rotate-315"
+                        /></span
                     >
                 </div>
                 <div class="flex flex-col">
-                    <span>/ <a href="https://7d2.net">7d2.net</a></span>
+                    <span class="flex items-start gap-1"
+                        >/ <a href="https://7d2.net">personal</a
+                        ><ChevronRightIcon
+                            className="size-3 rotate-315"
+                        /></span
+                    >
                 </div>
             </div>
         </footer>
