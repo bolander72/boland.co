@@ -1,6 +1,7 @@
 ---
 import TestimonialCard from "@/components/testimonial-card";
 import Layout from "@/layouts/Layout.astro";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
     {
@@ -49,13 +50,13 @@ const testimonials = [
 ---
 
 <Layout>
-    <main class="space-y-4">
+    <main>
         <section class="space-y-2">
             <h1>Proof of work</h1>
-            <div class="flex flex-col gap-0">
+            <div class="flex flex-col">
                 {
                     testimonials.map((testimonial, index) => (
-                        <div>
+                        <div class={cn({ "mt-4": index !== 0 })}>
                             <TestimonialCard
                                 content={testimonial.content}
                                 authorName={testimonial.authorName}
@@ -63,7 +64,9 @@ const testimonials = [
                                 authorCompany={testimonial.authorCompany}
                                 authorImageSrc={testimonial.authorImageSrc}
                             />
-                            {index !== testimonials.length - 1 && <hr />}
+                            {index !== testimonials.length - 1 && (
+                                <hr class="mt-4" />
+                            )}
                         </div>
                     ))
                 }
