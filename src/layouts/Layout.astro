@@ -66,67 +66,78 @@ const {
             class="invert"
         />
     </head>
-    <body class="min-h-screen max-w-[550px] mx-auto px-4 py-12">
-        <slot />
-        <footer class="flex flex-col items-center mt-8">
-            <div class="flex flex-col gap-4 w-full">
-                <div class="flex flex-col">
-                    <span>/ <a href="/">home</a></span>
-                    <span>/ <a href="/about">about</a></span>
-                    <span>/ <a href="/proof">proof</a></span>
+    <body
+        class="min-h-screen max-w-[550px] md:max-w-[710px] mx-auto px-4 py-12"
+    >
+        <div class="flex flex-col md:flex-row md:items-start gap-8">
+            <main class="w-full md:w-4/5">
+                <slot />
+            </main>
+            <footer
+                class="w-full md:w-1/5 flex flex-col items-center mt-0 md:mt-0 md:py-9.5"
+            >
+                <div class="grid grid-cols-1 gap-4 w-full md:grid-cols-1">
+                    <div class="flex flex-col">
+                        <span><a href="/">home</a></span>
+                        <span><a href="/about">about</a></span>
+                        <span><a href="/notes">notes</a></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="flex items-start gap-1"
+                            ><a
+                                href="https://se.ro/profile/97d18738-41e8-4f70-996b-db9efeb72a2c"
+                                target="_blank">sero</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                        <span class="flex items-start gap-1"
+                            ><a
+                                href="https://linkedin.com/in/bolander72/"
+                                target="_blank">linkedin</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                        <span class="flex items-start gap-1"
+                            ><a
+                                href="https://cal.com/bolander72/chat"
+                                target="_blank">calendar</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                        <span class="flex items-start gap-1">
+                            <a
+                                href="https://adplist.org/mentors/michael-boland"
+                                target="_blank">mentoring</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                        <span class="flex items-start gap-1"
+                            ><a href="/testimonials">testimonials</a></span
+                        >
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="flex items-start gap-1"
+                            ><a href="https://x.com/bolander72" target="_blank"
+                                >twitter</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                        <span class="flex items-start gap-1"
+                            ><a
+                                href="https://github.com/bolander72"
+                                target="_blank">github</a
+                            ><ChevronRightIcon
+                                className="size-3 rotate-315"
+                            /></span
+                        >
+                    </div>
                 </div>
-                <div class="flex flex-col">
-                    <span class="flex items-start gap-1"
-                        >/ <a
-                            href="https://se.ro/profile/97d18738-41e8-4f70-996b-db9efeb72a2c"
-                            target="_blank">sero</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                    <span class="flex items-start gap-1"
-                        >/ <a
-                            href="https://linkedin.com/in/bolander72/"
-                            target="_blank">linkedin</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                    <span class="flex items-start gap-1"
-                        >/ <a
-                            href="https://cal.com/bolander72/chat"
-                            target="_blank">calendar</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                    <span class="flex items-start gap-1">
-                        / <a
-                            href="https://adplist.org/mentors/michael-boland"
-                            target="_blank">mentoring</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                </div>
-                <div class="flex flex-col">
-                    <span class="flex items-start gap-1"
-                        >/ <a href="https://x.com/bolander72" target="_blank"
-                            >twitter</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                    <span class="flex items-start gap-1"
-                        >/ <a
-                            href="https://github.com/bolander72"
-                            target="_blank">github</a
-                        ><ChevronRightIcon
-                            className="size-3 rotate-315"
-                        /></span
-                    >
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
     </body>
 </html>
