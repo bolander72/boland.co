@@ -24,7 +24,7 @@ export default function TestimonialCard({
 	authorImageSrc,
 }: Props) {
 	return (
-		<section>
+		<section className="border p-4 rounded-lg space-y-2">
 			<div className="space-y-4">
 				{content.map((paragraph, index) => (
 					<p key={index}>
