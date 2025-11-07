@@ -70,79 +70,15 @@ const {
             class="invert"
         />
     </head>
-    <body
-        class="min-h-screen max-w-[550px] md:max-w-[710px] mx-auto px-4 py-12 font-figtree"
-    >
-        <div class="flex flex-col md:flex-row md:items-start gap-8">
-            <main class="w-full md:w-4/5">
+    <body class="min-h-screen max-w-[650px] mx-auto px-4 py-12 font-figtree">
+        <div class="gap-8">
+            <main class="w-full">
                 <slot />
             </main>
-            <footer
-                class="w-full md:w-1/5 flex flex-col items-center mt-0 md:mt-0 md:py-9.5"
-            >
-                <div class="grid grid-cols-1 gap-4 w-full md:grid-cols-1">
-                    <!-- <div class="flex flex-col">
-                        <span><a href="/">home</a></span>
-                        <span><a href="/about">about</a></span>
-                        <span><a href="/writing">writing</a></span>
-                        <span><a href="/streams">streams</a></span>
-                    </div> -->
-                    <!-- <div class="flex flex-col">
-                        <span class="flex items-start gap-1"
-                            ><a
-                                href="https://linkedin.com/in/bolander72/"
-                                target="_blank">linkedin</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        >
-                        <span class="flex items-start gap-1"
-                            ><a
-                                href="https://cal.com/bolander72/chat"
-                                target="_blank">calendar</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        >
-                        <span class="flex items-start gap-1">
-                            <a
-                                href="https://adplist.org/mentors/michael-boland"
-                                target="_blank">mentoring</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        >
-                    </div> -->
-                    <div class="flex flex-col">
-                        <span class="flex items-start gap-1"
-                            ><a href="mailto:michael@boland.co">mail</a></span
-                        >
-                        <span class="flex items-start gap-1"
-                            ><a
-                                href="https://github.com/bolander72"
-                                target="_blank">github</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        >
-                        <span class="flex items-start gap-1"
-                            ><a href="https://x.com/bolander72" target="_blank"
-                                >twitter</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        >
-                        <!-- <span class="flex items-start gap-1"
-                            ><a
-                                href="https://bsky.app/profile/bolander72.bsky.social"
-                                target="_blank">bluesky</a
-                            ><ChevronRightIcon
-                                className="size-3 rotate-315"
-                            /></span
-                        > -->
-                    </div>
-                </div>
-            </footer>
         </div>
+        <footer
+            class="w-full md:w-1/5 flex flex-col items-center mt-0 md:mt-0 md:py-9.5"
+        >
+        </footer>
     </body>
 </html>

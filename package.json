@@ -1,5 +1,5 @@
 {
-  "name": "7d2.net",
+  "name": "boland.co",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/bolander72/7d2.net.git"
   },
   "keywords": [],
-  "author": "bolander72",
+  "author": "Michael Boland (@bolander72)",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {

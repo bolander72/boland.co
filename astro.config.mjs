@@ -10,6 +10,9 @@ export default defineConfig({
     integrations: [sitemap(), react()],
     output: "static",
     adapter: vercel(),
+    server: {
+        port: 3000
+    },
     vite: {
         plugins: [tailwindcss()],
         resolve: {
